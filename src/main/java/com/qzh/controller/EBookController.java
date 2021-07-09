@@ -1,10 +1,11 @@
 package com.qzh.controller;
 
 import com.qzh.domain.Ebook;
+import com.qzh.req.EbookReq;
+import com.qzh.resp.EbookResp;
 import com.qzh.resp.CommonResp;
-import com.qzh.service.EBookServiceImpl;
+import com.qzh.service.impl.EBookServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -37,6 +38,15 @@ public class EBookController {
         commonResp.setContent(list);
 
         return commonResp;
+    }
+
+    @RequestMapping("/likeServlet/list")
+    public CommonResp likeNameList(EbookReq ebookReq){
+        CommonResp<List<EbookResp>> resp = new CommonResp<>();
+        List<EbookResp> respList = eBookService.likeNameList(ebookReq);
+        resp.setContent(respList);
+
+        return resp;
     }
 
 }
