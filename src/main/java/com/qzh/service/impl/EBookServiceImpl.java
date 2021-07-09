@@ -6,7 +6,7 @@ import com.qzh.mapper.EbookMapper;
 import com.qzh.req.EbookReq;
 import com.qzh.resp.EbookResp;
 import com.qzh.service.EBookService;
-import org.springframework.beans.BeanUtils;
+import com.qzh.util.CopyUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -41,15 +41,19 @@ public class EBookServiceImpl implements EBookService {
         List<EbookResp> ebookRespList = new ArrayList<>();
         System.out.println(ebookList);
 
-        for (Ebook ebook : ebookList) {
-            EbookResp ebookResp = new EbookResp();
-            //注意下面源跟目标 源是每一个循环的ebook 目标是对应的实体
-            BeanUtils.copyProperties(ebook,ebookResp);
-//            System.out.println(ebookResp);
-            ebookRespList.add(ebookResp);
-        }
-        System.out.println(ebookRespList);
+//        for (Ebook ebook : ebookList) {
+////            EbookResp ebookResp = new EbookResp();
+//            //注意下面源跟目标 源是每一个循环的ebook 目标是对应的实体
+//            BeanUtils.copyProperties(ebook,ebookResp);
+//            ebookRespList.add(ebookResp);
+//
+//            //对象的复制
+//            EbookResp resp = CopyUtil.copy(ebook, EbookResp.class);
+//        }
+//        System.out.println(ebookRespList);
 
+//        列表的复制
+        List<EbookResp> respList = CopyUtil.copyList(ebookList, EbookResp.class);
         return ebookRespList;
     }
 }
