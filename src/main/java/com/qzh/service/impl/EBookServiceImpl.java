@@ -33,7 +33,10 @@ public class EBookServiceImpl implements EBookService {
     public List<EbookResp> likeNameList(EbookReq ebookReq) {
         EbookExample ebookExample = new EbookExample();//创建示例
         EbookExample.Criteria criteria = ebookExample.createCriteria();//创建where条件
-        criteria.andNameLike("%" + ebookReq.getName() + "%");//添加模糊查询条件
+
+//        if (!ObjectUtils.isEmpty(ebookReq.getName())){//如果前端不传条件 默认为不加条件 查询所有
+            criteria.andNameLike("%" + ebookReq.getName() + "%");//添加模糊查询条件
+//        }
 
         List<Ebook> ebookList = ebookMapper.selectByExample(ebookExample);//根据条件查询所有的ebook
 
