@@ -44,8 +44,9 @@ public class EBookController {
     public CommonResp likeNameList(EbookReq ebookReq){
         CommonResp<List<EbookResp>> resp = new CommonResp<>();
         List<EbookResp> respList = eBookService.likeNameList(ebookReq);
+        System.out.println(respList);
         resp.setContent(respList);
-
+        System.out.println(resp);
         return resp;
     }
 

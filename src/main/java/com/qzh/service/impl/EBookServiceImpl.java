@@ -54,6 +54,7 @@ public class EBookServiceImpl implements EBookService {
 
 //        列表的复制
         List<EbookResp> respList = CopyUtil.copyList(ebookList, EbookResp.class);
-        return ebookRespList;
+
+        return respList;
     }
 }

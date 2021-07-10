@@ -1,4 +1,4 @@
-GET http://localhost:8080/ebook/likeServlet/list?name=Vue
+GET http://localhost:80/ebook/likeServlet/list?name=vue
 #Accept: application/json
 
 ###
