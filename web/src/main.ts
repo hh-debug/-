@@ -4,8 +4,11 @@ import router from './router'
 import store from './store'
 import Antd from 'ant-design-vue'
 import 'ant-design-vue/dist/antd.css';
+import Axios from "axios";
 
-createApp(App).use(store).use(router).use(Antd).mount('#app');
+Axios.defaults.baseURL = process.env.VUE_APP_SERVER;
+
+    createApp(App).use(store).use(router).use(Antd).mount('#app');
 
 console.log('环境:',process.env.Node_ENV)
 console.log('服务端:',process.env.VUE_APP_SERVER)
