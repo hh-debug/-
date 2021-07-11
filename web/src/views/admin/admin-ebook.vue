@@ -1,4 +1,5 @@
 <template>
+  <a-layout>
   <a-layout-content
       :style="{ background: '#fff', padding: '24px', margin: 0, minHeight: '280px' }"
   >
@@ -15,7 +16,7 @@
       </template>
       <template v-slot:action="{text,record}">
         <a-space size="small">
-          <a-button type="primary">
+          <a-button type="primary" @click="edit">
             编辑
           </a-button>
           <a-button type="danger">
@@ -26,6 +27,16 @@
 
     </a-table>
   </a-layout-content>
+  </a-layout>
+
+  <a-modal
+    title="电子书表单"
+    v-model:visible="moduleVisible"
+    :confirm-loading="moduleLoading"
+    @ok="handleModalOk"
+    >
+    <p>test</p>
+  </a-modal>
 
 </template>
 <script lang="ts">
@@ -109,6 +120,22 @@ export default defineComponent({
       });
     };
 
+    // 表单
+    const moduleVisible = ref(false);
+    const moduleLoading = ref(false);
+    const handleModalOk = () => {
+      moduleLoading.value = true;
+      setTimeout(() => {
+        moduleVisible.value = false;
+        moduleLoading.value = true;
+
+      },2000)
+    };
+
+    //编辑
+    const edit = () => {
+      moduleVisible.value = true;
+    }
 
     onMounted(
         () => {
@@ -124,7 +151,12 @@ export default defineComponent({
       pagination,
       columns,
       loading,
-      handleTableChange
+      handleTableChange,
+
+      edit,
+      moduleVisible,
+      moduleLoading,
+      handleModalOk
     }
 
   }
