@@ -160,18 +160,19 @@ export default defineComponent({
       moduleLoading.value = true;
 
       Axios.post("/ebook/save",ebook.value).then((response) => {
+        moduleLoading.value = false;
         const data = response.data;
 
         if (data.success){
           moduleVisible.value = false;
-          moduleLoading.value = false;
 
           //重新加载列表
           handleQuery({
             page: pagination.value.current,
             size: pagination.value.pageSize
           });
-
+        }else {
+          message.error(data.message)
         }
 
       });

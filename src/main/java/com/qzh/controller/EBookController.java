@@ -68,7 +68,7 @@ public class EBookController {
 
     //新增或修改数据
     @PostMapping ("/save")
-    public CommonResp save(@RequestBody EbookSaveReq ebookSaveReq){
+    public CommonResp save(@RequestBody @Valid EbookSaveReq ebookSaveReq){
 
         CommonResp commonResp = new CommonResp<>();
         eBookService.save(ebookSaveReq);

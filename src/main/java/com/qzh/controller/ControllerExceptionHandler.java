@@ -28,6 +28,7 @@ public class ControllerExceptionHandler {
         LOG.warn("参数校验失败：{}", e.getBindingResult().getAllErrors().get(0).getDefaultMessage());
         commonResp.setSuccess(false);
         commonResp.setMessage(e.getBindingResult().getAllErrors().get(0).getDefaultMessage());
+        System.out.println(commonResp.getMessage());
         return commonResp;
     }
 
