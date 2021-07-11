@@ -21,4 +21,6 @@ public interface EBookService {
     public List<EbookQueryResp> likeNameList(EbookQueryReq ebookQueryReq);
 
     void save(EbookSaveReq ebookSaveReq);
+
+    void delete(long id);
 }

@@ -8,9 +8,7 @@ import com.qzh.resp.EbookQueryResp;
 import com.qzh.resp.PageResp;
 import com.qzh.service.impl.EBookServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -34,6 +32,7 @@ public class EBookController {
 
 //    规范后端开发 为了前端能够统一处理逻辑 需要后端统一的返回值
 
+    //分页查询全部
     @RequestMapping("/list")
     public CommonResp list(PageReq pageReq){
 
@@ -44,6 +43,7 @@ public class EBookController {
         return commonResp;
     }
 
+    //查询全部
     @RequestMapping("/all")
     public CommonResp all(){
 
@@ -54,6 +54,7 @@ public class EBookController {
         return commonResp;
     }
 
+    //模糊查询
     @RequestMapping("/likeServlet/list")
     public CommonResp likeNameList(EbookQueryReq ebookQueryReq){
         CommonResp<List<EbookQueryResp>> resp = new CommonResp<>();
@@ -64,11 +65,21 @@ public class EBookController {
         return resp;
     }
 
-    @RequestMapping("/save")
+    //新增或修改数据
+    @PostMapping ("/save")
     public CommonResp save(@RequestBody EbookSaveReq ebookSaveReq){
 
         CommonResp commonResp = new CommonResp<>();
         eBookService.save(ebookSaveReq);
+        return commonResp;
+    }
+
+    //删除数据
+    @PostMapping ("/delete/{id}")
+    public CommonResp delete(@PathVariable long id){
+
+        CommonResp commonResp = new CommonResp<>();
+        eBookService.delete(id);
         return commonResp;
     }
 

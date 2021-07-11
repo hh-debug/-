@@ -17,6 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
 
+import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,7 +29,7 @@ import java.util.List;
 @Service
 public class EBookServiceImpl implements EBookService {
 
-    @Autowired
+    @Resource
     private EbookMapper ebookMapper;
 
     @Autowired
@@ -104,5 +105,10 @@ public class EBookServiceImpl implements EBookService {
         }else {
             ebookMapper.updateByPrimaryKey(ebook);
         }
+    }
+
+    @Override
+    public void delete(long id) {
+        ebookMapper.deleteByPrimaryKey(id);
     }
 }
