@@ -1,5 +1,6 @@
 package com.qzh.service.impl;
 
+import com.github.pagehelper.PageHelper;
 import com.qzh.domain.Ebook;
 import com.qzh.domain.EbookExample;
 import com.qzh.mapper.EbookMapper;
@@ -26,6 +27,7 @@ public class EBookServiceImpl implements EBookService {
 
     @Override
     public List<Ebook> list() {
+        PageHelper.startPage(1, 3);
         return ebookMapper.selectByExample(null);
     }
 
