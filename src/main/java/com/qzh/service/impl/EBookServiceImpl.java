@@ -12,6 +12,7 @@ import com.qzh.resp.EbookQueryResp;
 import com.qzh.resp.PageResp;
 import com.qzh.service.EBookService;
 import com.qzh.util.CopyUtil;
+import com.qzh.util.SnowFlake;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
@@ -29,6 +30,9 @@ public class EBookServiceImpl implements EBookService {
 
     @Autowired
     private EbookMapper ebookMapper;
+
+    @Autowired
+    private SnowFlake snowFlake;
 
     @Override
     public PageResp<EbookQueryResp> list(PageReq pageReq) {
@@ -93,6 +97,8 @@ public class EBookServiceImpl implements EBookService {
     public void save(EbookSaveReq ebookSaveReq) {
         Ebook ebook = CopyUtil.copy(ebookSaveReq, Ebook.class);
         if (ObjectUtils.isEmpty(ebookSaveReq.getId())) {
+            long id = snowFlake.nextId();
+            ebook.setId(id);
             //新增
             ebookMapper.insert(ebook);
         }else {
