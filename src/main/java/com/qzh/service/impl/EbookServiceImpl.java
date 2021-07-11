@@ -9,7 +9,7 @@ import com.qzh.req.EbookQueryReq;
 import com.qzh.req.EbookSaveReq;
 import com.qzh.resp.EbookQueryResp;
 import com.qzh.resp.PageResp;
-import com.qzh.service.EBookService;
+import com.qzh.service.EbookService;
 import com.qzh.util.CopyUtil;
 import com.qzh.util.SnowFlake;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +26,7 @@ import java.util.List;
  * @date:2021/7/913:37
  */
 @Service
-public class EBookServiceImpl implements EBookService {
+public class EbookServiceImpl implements EbookService {
 
     @Resource
     private EbookMapper ebookMapper;

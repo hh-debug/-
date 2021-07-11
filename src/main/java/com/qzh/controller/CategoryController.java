@@ -1,11 +1,11 @@
 package com.qzh.controller;
 
-import com.qzh.req.EbookQueryReq;
-import com.qzh.req.EbookSaveReq;
+import com.qzh.req.CategoryQueryReq;
+import com.qzh.req.CategorySaveReq;
 import com.qzh.resp.CommonResp;
-import com.qzh.resp.EbookQueryResp;
+import com.qzh.resp.CategoryQueryResp;
 import com.qzh.resp.PageResp;
-import com.qzh.service.impl.EbookServiceImpl;
+import com.qzh.service.impl.CategoryServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,26 +18,26 @@ import java.util.List;
  * @date:2021/7/910:38
  */
 @RestController
-@RequestMapping("/ebook")
-public class EBookController {
+@RequestMapping("/category")
+public class CategoryController {
 
     //测试mybatis集成自动生成插件
     @Autowired
-    private EbookServiceImpl eBookService;
+    private CategoryServiceImpl categoryService;
 
 //    @RequestMapping("/list")
-//    public List<Ebook> hello(){
-//        return eBookService.list();
+//    public List<Category> hello(){
+//        return categoryService.list();
 //    }
 
 //    规范后端开发 为了前端能够统一处理逻辑 需要后端统一的返回值
 
     //分页查询全部
     @GetMapping("/list")
-    public CommonResp list(@Valid EbookQueryReq ebookQueryReq){
+    public CommonResp list(@Valid CategoryQueryReq categoryQueryReq){
 
-        CommonResp<PageResp<EbookQueryResp>> commonResp = new CommonResp<>();
-        PageResp<EbookQueryResp> list = eBookService.list(ebookQueryReq);
+        CommonResp<PageResp<CategoryQueryResp>> commonResp = new CommonResp<>();
+        PageResp<CategoryQueryResp> list = categoryService.list(categoryQueryReq);
         commonResp.setContent(list);
 
         return commonResp;
@@ -47,8 +47,8 @@ public class EBookController {
     @RequestMapping("/all")
     public CommonResp all(){
 
-        CommonResp<List<EbookQueryResp>> commonResp = new CommonResp<>();
-        List<EbookQueryResp> list = eBookService.list();
+        CommonResp<List<CategoryQueryResp>> commonResp = new CommonResp<>();
+        List<CategoryQueryResp> list = categoryService.list();
         commonResp.setContent(list);
 
         return commonResp;
@@ -56,9 +56,9 @@ public class EBookController {
 
     //模糊查询
     @RequestMapping("/likeServlet/list")
-    public CommonResp likeNameList(EbookQueryReq ebookQueryReq){
-        CommonResp<List<EbookQueryResp>> resp = new CommonResp<>();
-        List<EbookQueryResp> respList = eBookService.likeNameList(ebookQueryReq);
+    public CommonResp likeNameList(CategoryQueryReq categoryQueryReq){
+        CommonResp<List<CategoryQueryResp>> resp = new CommonResp<>();
+        List<CategoryQueryResp> respList = categoryService.likeNameList(categoryQueryReq);
         System.out.println(respList);
         resp.setContent(respList);
         System.out.println(resp);
@@ -67,10 +67,10 @@ public class EBookController {
 
     //新增或修改数据
     @PostMapping ("/save")
-    public CommonResp save(@RequestBody @Valid EbookSaveReq ebookSaveReq){
+    public CommonResp save(@RequestBody @Valid CategorySaveReq categorySaveReq){
 
         CommonResp commonResp = new CommonResp<>();
-        eBookService.save(ebookSaveReq);
+        categoryService.save(categorySaveReq);
         return commonResp;
     }
 
@@ -79,7 +79,7 @@ public class EBookController {
     public CommonResp delete(@PathVariable long id){
 
         CommonResp commonResp = new CommonResp<>();
-        eBookService.delete(id);
+        categoryService.delete(id);
         return commonResp;
     }
 

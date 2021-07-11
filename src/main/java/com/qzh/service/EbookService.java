@@ -12,7 +12,7 @@ import java.util.List;
  * @ClassName:EBookService
  * @date:2021/7/913:37
  */
-public interface EBookService {
+public interface EbookService {
     public PageResp<EbookQueryResp> list(EbookQueryReq ebookQueryReq);
 
     public List<EbookQueryResp> list();
