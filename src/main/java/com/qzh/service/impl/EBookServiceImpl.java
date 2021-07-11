@@ -45,6 +45,17 @@ public class EBookServiceImpl implements EBookService {
     }
 
     @Override
+    public List<EbookResp> list() {
+
+        List<Ebook> ebooks = ebookMapper.selectByExample(null);
+
+        //        列表的复制
+        List<EbookResp> respList = CopyUtil.copyList(ebooks, EbookResp.class);
+        return respList;
+    }
+
+
+    @Override
     public List<EbookResp> likeNameList(EbookReq ebookReq) {
         EbookExample ebookExample = new EbookExample();//创建示例
         EbookExample.Criteria criteria = ebookExample.createCriteria();//创建where条件

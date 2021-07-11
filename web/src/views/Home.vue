@@ -117,7 +117,7 @@ export default defineComponent({
     onMounted(
         () => {
           console.log("onMounted112221");
-          Axios.get("/ebook/list").then(
+          Axios.get("/ebook/all").then(
               function (response) {
                 const data = response.data;
                 ebooks.value = data.content;

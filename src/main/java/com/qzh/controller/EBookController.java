@@ -34,8 +34,19 @@ public class EBookController {
 
     @RequestMapping("/list")
     public CommonResp list(PageReq pageReq){
+
         CommonResp<PageResp<EbookResp>> commonResp = new CommonResp<>();
         PageResp<EbookResp> list = eBookService.list(pageReq);
+        commonResp.setContent(list);
+
+        return commonResp;
+    }
+
+    @RequestMapping("/all")
+    public CommonResp all(){
+
+        CommonResp<List<EbookResp>> commonResp = new CommonResp<>();
+        List<EbookResp> list = eBookService.list();
         commonResp.setContent(list);
 
         return commonResp;

@@ -15,5 +15,7 @@ import java.util.List;
 public interface EBookService {
     public PageResp<EbookResp> list(PageReq pageReq);
 
+    public List<EbookResp> list();
+
     public List<EbookResp> likeNameList(EbookReq ebookReq);
 }
