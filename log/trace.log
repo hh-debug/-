@@ -2589,3 +2589,581 @@ java.sql.SQLIntegrityConstraintViolationException: Column 'doc_count' cannot be 
 2021-07-11 19:24:36.491 INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener :63   [32m                  [0;39m Condition evaluation unchanged
 2021-07-11 19:24:36.492 INFO  com.qzh.WikiApplication                           :20   [32m                  [0;39m 启动成功!
 2021-07-11 19:24:36.492 INFO  com.qzh.WikiApplication                           :21   [32m                  [0;39m 地址:	http://localhost:80
+2021-07-11 19:29:31.778 INFO  o.a.c.c.ContainerBase.[Tomcat-13].[localhost].[/] :173  [32m                  [0;39m Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-11 19:29:31.779 INFO  org.springframework.web.servlet.DispatcherServlet :525  [32m                  [0;39m Initializing Servlet 'dispatcherServlet'
+2021-07-11 19:29:31.779 INFO  org.springframework.web.servlet.DispatcherServlet :547  [32m                  [0;39m Completed initialization in 0 ms
+2021-07-11 19:29:31.784 INFO  com.qzh.aspect.LogAspect                          :48   [32m                  [0;39m ------------- aop开始 -------------
+2021-07-11 19:29:31.784 INFO  com.qzh.aspect.LogAspect                          :49   [32m                  [0;39m 请求地址: http://localhost/ebook/list GET
+2021-07-11 19:29:31.784 INFO  com.qzh.aspect.LogAspect                          :50   [32m                  [0;39m 类名方法: com.qzh.controller.EBookController.list
+2021-07-11 19:29:31.784 INFO  com.qzh.aspect.LogAspect                          :51   [32m                  [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-07-11 19:29:31.785 INFO  com.qzh.aspect.LogAspect                          :72   [32m                  [0;39m 请求参数: [{"page":1,"size":3}]
+2021-07-11 19:29:31.789 INFO  com.zaxxer.hikari.HikariDataSource                :110  [32m                  [0;39m HikariPool-10 - Starting...
+2021-07-11 19:29:31.792 INFO  com.zaxxer.hikari.HikariDataSource                :123  [32m                  [0;39m HikariPool-10 - Start completed.
+2021-07-11 19:29:31.793 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==>  Preparing: SELECT count(0) FROM ebook
+2021-07-11 19:29:31.793 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==> Parameters: 
+2021-07-11 19:29:31.800 TRACE com.qzh.mapper.EbookMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==    Columns: count(0)
+2021-07-11 19:29:31.801 TRACE com.qzh.mapper.EbookMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==        Row: 6
+2021-07-11 19:29:31.801 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m <==      Total: 1
+2021-07-11 19:29:31.802 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m ==>  Preparing: select id, `name`, category1_id, category2_id, description, cover, doc_count, view_count, vote_count from ebook LIMIT ?
+2021-07-11 19:29:31.803 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m ==> Parameters: 3(Integer)
+2021-07-11 19:29:31.803 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==    Columns: id, name, category1_id, category2_id, description, cover, doc_count, view_count, vote_count
+2021-07-11 19:29:31.803 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 1, Spring Boot 入门教程, 1, 2, 零基础入门 Java 开发，企业级应用开发最佳首选框架, /image/cover1.png, 0, 0, 0
+2021-07-11 19:29:31.804 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 2, Vue 入门教程, 1, 1, 零基础入门 Vue 开发，企业级应用开发最佳首选框架, /image/cover2.png, 4, 5, 0
+2021-07-11 19:29:31.804 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 3, Python 入门教程, null, null, 零基础入门 Python 开发，企业级应用开发最佳首选框架, null, 0, 0, 0
+2021-07-11 19:29:31.804 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m <==      Total: 3
+2021-07-11 19:29:31.811 INFO  com.qzh.aspect.LogAspect                          :84   [32m                  [0;39m 返回结果: {"content":{"list":[{"category1Id":1,"category2Id":2,"cover":"/image/cover1.png","description":"零基础入门 Java 开发，企业级应用开发最佳首选框架","docCount":0,"id":1,"name":"Spring Boot 入门教程","viewCount":0,"voteCount":0},{"category1Id":1,"category2Id":1,"cover":"/image/cover2.png","description":"零基础入门 Vue 开发，企业级应用开发最佳首选框架","docCount":4,"id":2,"name":"Vue 入门教程","viewCount":5,"voteCount":0},{"description":"零基础入门 Python 开发，企业级应用开发最佳首选框架","docCount":0,"id":3,"name":"Python 入门教程","viewCount":0,"voteCount":0}],"total":6},"success":true}
+2021-07-11 19:29:31.811 INFO  com.qzh.aspect.LogAspect                          :85   [32m                  [0;39m ------------- 结束 耗时：28 ms -------------
+2021-07-11 19:31:16.394 INFO  com.qzh.aspect.LogAspect                          :48   [32m                  [0;39m ------------- aop开始 -------------
+2021-07-11 19:31:16.394 INFO  com.qzh.aspect.LogAspect                          :49   [32m                  [0;39m 请求地址: http://localhost/ebook/list GET
+2021-07-11 19:31:16.394 INFO  com.qzh.aspect.LogAspect                          :50   [32m                  [0;39m 类名方法: com.qzh.controller.EBookController.list
+2021-07-11 19:31:16.394 INFO  com.qzh.aspect.LogAspect                          :51   [32m                  [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-07-11 19:31:16.394 INFO  com.qzh.aspect.LogAspect                          :72   [32m                  [0;39m 请求参数: [{"page":1,"size":3}]
+2021-07-11 19:31:16.395 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==>  Preparing: SELECT count(0) FROM ebook
+2021-07-11 19:31:16.396 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==> Parameters: 
+2021-07-11 19:31:16.396 TRACE com.qzh.mapper.EbookMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==    Columns: count(0)
+2021-07-11 19:31:16.396 TRACE com.qzh.mapper.EbookMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==        Row: 6
+2021-07-11 19:31:16.396 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m <==      Total: 1
+2021-07-11 19:31:16.397 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m ==>  Preparing: select id, `name`, category1_id, category2_id, description, cover, doc_count, view_count, vote_count from ebook LIMIT ?
+2021-07-11 19:31:16.397 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m ==> Parameters: 3(Integer)
+2021-07-11 19:31:16.397 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==    Columns: id, name, category1_id, category2_id, description, cover, doc_count, view_count, vote_count
+2021-07-11 19:31:16.397 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 1, Spring Boot 入门教程, 1, 2, 零基础入门 Java 开发，企业级应用开发最佳首选框架, /image/cover1.png, 0, 0, 0
+2021-07-11 19:31:16.398 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 2, Vue 入门教程, 1, 1, 零基础入门 Vue 开发，企业级应用开发最佳首选框架, /image/cover2.png, 4, 5, 0
+2021-07-11 19:31:16.398 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 3, Python 入门教程, null, null, 零基础入门 Python 开发，企业级应用开发最佳首选框架, null, 0, 0, 0
+2021-07-11 19:31:16.398 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m <==      Total: 3
+2021-07-11 19:31:16.398 INFO  com.qzh.aspect.LogAspect                          :84   [32m                  [0;39m 返回结果: {"content":{"list":[{"category1Id":1,"category2Id":2,"cover":"/image/cover1.png","description":"零基础入门 Java 开发，企业级应用开发最佳首选框架","docCount":0,"id":1,"name":"Spring Boot 入门教程","viewCount":0,"voteCount":0},{"category1Id":1,"category2Id":1,"cover":"/image/cover2.png","description":"零基础入门 Vue 开发，企业级应用开发最佳首选框架","docCount":4,"id":2,"name":"Vue 入门教程","viewCount":5,"voteCount":0},{"description":"零基础入门 Python 开发，企业级应用开发最佳首选框架","docCount":0,"id":3,"name":"Python 入门教程","viewCount":0,"voteCount":0}],"total":6},"success":true}
+2021-07-11 19:31:16.398 INFO  com.qzh.aspect.LogAspect                          :85   [32m                  [0;39m ------------- 结束 耗时：4 ms -------------
+2021-07-11 19:31:17.924 INFO  com.qzh.aspect.LogAspect                          :48   [32m                  [0;39m ------------- aop开始 -------------
+2021-07-11 19:31:17.924 INFO  com.qzh.aspect.LogAspect                          :49   [32m                  [0;39m 请求地址: http://localhost/ebook/list GET
+2021-07-11 19:31:17.924 INFO  com.qzh.aspect.LogAspect                          :50   [32m                  [0;39m 类名方法: com.qzh.controller.EBookController.list
+2021-07-11 19:31:17.924 INFO  com.qzh.aspect.LogAspect                          :51   [32m                  [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-07-11 19:31:17.924 INFO  com.qzh.aspect.LogAspect                          :72   [32m                  [0;39m 请求参数: [{"page":2,"size":3}]
+2021-07-11 19:31:17.925 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==>  Preparing: SELECT count(0) FROM ebook
+2021-07-11 19:31:17.926 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==> Parameters: 
+2021-07-11 19:31:17.926 TRACE com.qzh.mapper.EbookMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==    Columns: count(0)
+2021-07-11 19:31:17.926 TRACE com.qzh.mapper.EbookMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==        Row: 6
+2021-07-11 19:31:17.927 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m <==      Total: 1
+2021-07-11 19:31:17.927 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m ==>  Preparing: select id, `name`, category1_id, category2_id, description, cover, doc_count, view_count, vote_count from ebook LIMIT ?, ?
+2021-07-11 19:31:17.928 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m ==> Parameters: 3(Long), 3(Integer)
+2021-07-11 19:31:17.929 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==    Columns: id, name, category1_id, category2_id, description, cover, doc_count, view_count, vote_count
+2021-07-11 19:31:17.929 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 4, Mysql 入门教程, 2, 3, 零基础入门 Mysql 开发，企业级应用开发最佳首选框架, null, 0, 0, 0
+2021-07-11 19:31:17.929 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 5, Oracle 入门教程, null, null, 零基础入门 Oracle 开发，企业级应用开发最佳首选框架, null, 0, 0, 0
+2021-07-11 19:31:17.930 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 69383914942238720, asda, 2, 3, null, /image/cover1.png, null, null, null
+2021-07-11 19:31:17.930 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m <==      Total: 3
+2021-07-11 19:31:17.930 INFO  com.qzh.aspect.LogAspect                          :84   [32m                  [0;39m 返回结果: {"content":{"list":[{"category1Id":2,"category2Id":3,"description":"零基础入门 Mysql 开发，企业级应用开发最佳首选框架","docCount":0,"id":4,"name":"Mysql 入门教程","viewCount":0,"voteCount":0},{"description":"零基础入门 Oracle 开发，企业级应用开发最佳首选框架","docCount":0,"id":5,"name":"Oracle 入门教程","viewCount":0,"voteCount":0},{"category1Id":2,"category2Id":3,"cover":"/image/cover1.png","id":69383914942238720,"name":"asda"}],"total":6},"success":true}
+2021-07-11 19:31:17.931 INFO  com.qzh.aspect.LogAspect                          :85   [32m                  [0;39m ------------- 结束 耗时：7 ms -------------
+2021-07-11 19:31:37.378 INFO  com.qzh.aspect.LogAspect                          :48   [32m                  [0;39m ------------- aop开始 -------------
+2021-07-11 19:31:37.378 INFO  com.qzh.aspect.LogAspect                          :49   [32m                  [0;39m 请求地址: http://localhost/ebook/list GET
+2021-07-11 19:31:37.378 INFO  com.qzh.aspect.LogAspect                          :50   [32m                  [0;39m 类名方法: com.qzh.controller.EBookController.list
+2021-07-11 19:31:37.378 INFO  com.qzh.aspect.LogAspect                          :51   [32m                  [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-07-11 19:31:37.379 INFO  com.qzh.aspect.LogAspect                          :72   [32m                  [0;39m 请求参数: [{"page":1,"size":3}]
+2021-07-11 19:31:37.379 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==>  Preparing: SELECT count(0) FROM ebook
+2021-07-11 19:31:37.380 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==> Parameters: 
+2021-07-11 19:31:37.380 TRACE com.qzh.mapper.EbookMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==    Columns: count(0)
+2021-07-11 19:31:37.381 TRACE com.qzh.mapper.EbookMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==        Row: 6
+2021-07-11 19:31:37.381 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m <==      Total: 1
+2021-07-11 19:31:37.381 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m ==>  Preparing: select id, `name`, category1_id, category2_id, description, cover, doc_count, view_count, vote_count from ebook LIMIT ?
+2021-07-11 19:31:37.381 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m ==> Parameters: 3(Integer)
+2021-07-11 19:31:37.382 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==    Columns: id, name, category1_id, category2_id, description, cover, doc_count, view_count, vote_count
+2021-07-11 19:31:37.382 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 1, Spring Boot 入门教程, 1, 2, 零基础入门 Java 开发，企业级应用开发最佳首选框架, /image/cover1.png, 0, 0, 0
+2021-07-11 19:31:37.383 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 2, Vue 入门教程, 1, 1, 零基础入门 Vue 开发，企业级应用开发最佳首选框架, /image/cover2.png, 4, 5, 0
+2021-07-11 19:31:37.383 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 3, Python 入门教程, null, null, 零基础入门 Python 开发，企业级应用开发最佳首选框架, null, 0, 0, 0
+2021-07-11 19:31:37.383 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m <==      Total: 3
+2021-07-11 19:31:37.383 INFO  com.qzh.aspect.LogAspect                          :84   [32m                  [0;39m 返回结果: {"content":{"list":[{"category1Id":1,"category2Id":2,"cover":"/image/cover1.png","description":"零基础入门 Java 开发，企业级应用开发最佳首选框架","docCount":0,"id":1,"name":"Spring Boot 入门教程","viewCount":0,"voteCount":0},{"category1Id":1,"category2Id":1,"cover":"/image/cover2.png","description":"零基础入门 Vue 开发，企业级应用开发最佳首选框架","docCount":4,"id":2,"name":"Vue 入门教程","viewCount":5,"voteCount":0},{"description":"零基础入门 Python 开发，企业级应用开发最佳首选框架","docCount":0,"id":3,"name":"Python 入门教程","viewCount":0,"voteCount":0}],"total":6},"success":true}
+2021-07-11 19:31:37.384 INFO  com.qzh.aspect.LogAspect                          :85   [32m                  [0;39m ------------- 结束 耗时：6 ms -------------
+2021-07-11 19:31:39.291 INFO  com.qzh.aspect.LogAspect                          :48   [32m                  [0;39m ------------- aop开始 -------------
+2021-07-11 19:31:39.291 INFO  com.qzh.aspect.LogAspect                          :49   [32m                  [0;39m 请求地址: http://localhost/ebook/list GET
+2021-07-11 19:31:39.291 INFO  com.qzh.aspect.LogAspect                          :50   [32m                  [0;39m 类名方法: com.qzh.controller.EBookController.list
+2021-07-11 19:31:39.292 INFO  com.qzh.aspect.LogAspect                          :51   [32m                  [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-07-11 19:31:39.292 INFO  com.qzh.aspect.LogAspect                          :72   [32m                  [0;39m 请求参数: [{"page":2,"size":3}]
+2021-07-11 19:31:39.293 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==>  Preparing: SELECT count(0) FROM ebook
+2021-07-11 19:31:39.293 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==> Parameters: 
+2021-07-11 19:31:39.294 TRACE com.qzh.mapper.EbookMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==    Columns: count(0)
+2021-07-11 19:31:39.294 TRACE com.qzh.mapper.EbookMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==        Row: 6
+2021-07-11 19:31:39.295 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m <==      Total: 1
+2021-07-11 19:31:39.295 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m ==>  Preparing: select id, `name`, category1_id, category2_id, description, cover, doc_count, view_count, vote_count from ebook LIMIT ?, ?
+2021-07-11 19:31:39.295 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m ==> Parameters: 3(Long), 3(Integer)
+2021-07-11 19:31:39.296 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==    Columns: id, name, category1_id, category2_id, description, cover, doc_count, view_count, vote_count
+2021-07-11 19:31:39.296 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 4, Mysql 入门教程, 2, 3, 零基础入门 Mysql 开发，企业级应用开发最佳首选框架, null, 0, 0, 0
+2021-07-11 19:31:39.296 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 5, Oracle 入门教程, null, null, 零基础入门 Oracle 开发，企业级应用开发最佳首选框架, null, 0, 0, 0
+2021-07-11 19:31:39.297 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 69383914942238720, asda, 2, 3, null, /image/cover1.png, null, null, null
+2021-07-11 19:31:39.297 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m <==      Total: 3
+2021-07-11 19:31:39.297 INFO  com.qzh.aspect.LogAspect                          :84   [32m                  [0;39m 返回结果: {"content":{"list":[{"category1Id":2,"category2Id":3,"description":"零基础入门 Mysql 开发，企业级应用开发最佳首选框架","docCount":0,"id":4,"name":"Mysql 入门教程","viewCount":0,"voteCount":0},{"description":"零基础入门 Oracle 开发，企业级应用开发最佳首选框架","docCount":0,"id":5,"name":"Oracle 入门教程","viewCount":0,"voteCount":0},{"category1Id":2,"category2Id":3,"cover":"/image/cover1.png","id":69383914942238720,"name":"asda"}],"total":6},"success":true}
+2021-07-11 19:31:39.298 INFO  com.qzh.aspect.LogAspect                          :85   [32m                  [0;39m ------------- 结束 耗时：7 ms -------------
+2021-07-11 19:31:41.668 INFO  com.qzh.aspect.LogAspect                          :48   [32m                  [0;39m ------------- aop开始 -------------
+2021-07-11 19:31:41.668 INFO  com.qzh.aspect.LogAspect                          :49   [32m                  [0;39m 请求地址: http://localhost/ebook/delete/69383914942238720 POST
+2021-07-11 19:31:41.669 INFO  com.qzh.aspect.LogAspect                          :50   [32m                  [0;39m 类名方法: com.qzh.controller.EBookController.delete
+2021-07-11 19:31:41.669 INFO  com.qzh.aspect.LogAspect                          :51   [32m                  [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-07-11 19:31:41.669 INFO  com.qzh.aspect.LogAspect                          :72   [32m                  [0;39m 请求参数: [69383914942238720]
+2021-07-11 19:31:41.669 DEBUG com.qzh.mapper.EbookMapper.deleteByPrimaryKey     :137  [32m                  [0;39m ==>  Preparing: delete from ebook where id = ?
+2021-07-11 19:31:41.670 DEBUG com.qzh.mapper.EbookMapper.deleteByPrimaryKey     :137  [32m                  [0;39m ==> Parameters: 69383914942238720(Long)
+2021-07-11 19:31:41.676 DEBUG com.qzh.mapper.EbookMapper.deleteByPrimaryKey     :137  [32m                  [0;39m <==    Updates: 1
+2021-07-11 19:31:41.676 INFO  com.qzh.aspect.LogAspect                          :84   [32m                  [0;39m 返回结果: {"success":true}
+2021-07-11 19:31:41.677 INFO  com.qzh.aspect.LogAspect                          :85   [32m                  [0;39m ------------- 结束 耗时：9 ms -------------
+2021-07-11 19:31:41.706 INFO  com.qzh.aspect.LogAspect                          :48   [32m                  [0;39m ------------- aop开始 -------------
+2021-07-11 19:31:41.706 INFO  com.qzh.aspect.LogAspect                          :49   [32m                  [0;39m 请求地址: http://localhost/ebook/list GET
+2021-07-11 19:31:41.706 INFO  com.qzh.aspect.LogAspect                          :50   [32m                  [0;39m 类名方法: com.qzh.controller.EBookController.list
+2021-07-11 19:31:41.706 INFO  com.qzh.aspect.LogAspect                          :51   [32m                  [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-07-11 19:31:41.706 INFO  com.qzh.aspect.LogAspect                          :72   [32m                  [0;39m 请求参数: [{"page":2,"size":3}]
+2021-07-11 19:31:41.707 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==>  Preparing: SELECT count(0) FROM ebook
+2021-07-11 19:31:41.708 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==> Parameters: 
+2021-07-11 19:31:41.709 TRACE com.qzh.mapper.EbookMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==    Columns: count(0)
+2021-07-11 19:31:41.709 TRACE com.qzh.mapper.EbookMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==        Row: 5
+2021-07-11 19:31:41.709 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m <==      Total: 1
+2021-07-11 19:31:41.709 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m ==>  Preparing: select id, `name`, category1_id, category2_id, description, cover, doc_count, view_count, vote_count from ebook LIMIT ?, ?
+2021-07-11 19:31:41.710 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m ==> Parameters: 3(Long), 3(Integer)
+2021-07-11 19:31:41.710 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==    Columns: id, name, category1_id, category2_id, description, cover, doc_count, view_count, vote_count
+2021-07-11 19:31:41.710 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 4, Mysql 入门教程, 2, 3, 零基础入门 Mysql 开发，企业级应用开发最佳首选框架, null, 0, 0, 0
+2021-07-11 19:31:41.711 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 5, Oracle 入门教程, null, null, 零基础入门 Oracle 开发，企业级应用开发最佳首选框架, null, 0, 0, 0
+2021-07-11 19:31:41.711 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m <==      Total: 2
+2021-07-11 19:31:41.714 INFO  com.qzh.aspect.LogAspect                          :84   [32m                  [0;39m 返回结果: {"content":{"list":[{"category1Id":2,"category2Id":3,"description":"零基础入门 Mysql 开发，企业级应用开发最佳首选框架","docCount":0,"id":4,"name":"Mysql 入门教程","viewCount":0,"voteCount":0},{"description":"零基础入门 Oracle 开发，企业级应用开发最佳首选框架","docCount":0,"id":5,"name":"Oracle 入门教程","viewCount":0,"voteCount":0}],"total":5},"success":true}
+2021-07-11 19:31:41.715 INFO  com.qzh.aspect.LogAspect                          :85   [32m                  [0;39m ------------- 结束 耗时：9 ms -------------
+2021-07-11 19:43:41.744 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :218  [32m                  [0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+2021-07-11 19:43:41.745 INFO  com.zaxxer.hikari.HikariDataSource                :350  [32m                  [0;39m HikariPool-10 - Shutdown initiated...
+2021-07-11 19:43:41.748 INFO  com.zaxxer.hikari.HikariDataSource                :352  [32m                  [0;39m HikariPool-10 - Shutdown completed.
+2021-07-11 19:43:41.858 INFO  com.qzh.WikiApplication                           :55   [32m                  [0;39m Starting WikiApplication using Java 1.8.0_221 on DESKTOP-4A6N60R with PID 13544 (E:\IdeaProject\wiki\target\classes started by hho in E:\IdeaProject\wiki)
+2021-07-11 19:43:41.858 INFO  com.qzh.WikiApplication                           :675  [32m                  [0;39m No active profile set, falling back to default profiles: default
+2021-07-11 19:43:42.003 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :108  [32m                  [0;39m Tomcat initialized with port(s): 80 (http)
+2021-07-11 19:43:42.003 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Initializing ProtocolHandler ["http-nio-80"]
+2021-07-11 19:43:42.003 INFO  org.apache.catalina.core.StandardService          :173  [32m                  [0;39m Starting service [Tomcat]
+2021-07-11 19:43:42.003 INFO  org.apache.catalina.core.StandardEngine           :173  [32m                  [0;39m Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-07-11 19:43:42.015 INFO  o.a.c.c.ContainerBase.[Tomcat-13].[localhost].[/] :173  [32m                  [0;39m Initializing Spring embedded WebApplicationContext
+2021-07-11 19:43:42.015 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext    :289  [32m                  [0;39m Root WebApplicationContext: initialization completed in 155 ms
+2021-07-11 19:43:42.125 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :181  [32m                  [0;39m Initializing ExecutorService 'applicationTaskExecutor'
+2021-07-11 19:43:42.219 INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer    :58   [32m                  [0;39m LiveReload server is running on port 35729
+2021-07-11 19:43:42.224 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Starting ProtocolHandler ["http-nio-80"]
+2021-07-11 19:43:42.225 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :220  [32m                  [0;39m Tomcat started on port(s): 80 (http) with context path ''
+2021-07-11 19:43:42.227 INFO  com.qzh.WikiApplication                           :61   [32m                  [0;39m Started WikiApplication in 0.385 seconds (JVM running for 16696.692)
+2021-07-11 19:43:42.228 INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener :63   [32m                  [0;39m Condition evaluation unchanged
+2021-07-11 19:43:42.228 INFO  com.qzh.WikiApplication                           :20   [32m                  [0;39m 启动成功!
+2021-07-11 19:43:42.228 INFO  com.qzh.WikiApplication                           :21   [32m                  [0;39m 地址:	http://localhost:80
+2021-07-11 19:43:43.741 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :218  [32m                  [0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+2021-07-11 19:43:43.817 INFO  com.qzh.WikiApplication                           :55   [32m                  [0;39m Starting WikiApplication using Java 1.8.0_221 on DESKTOP-4A6N60R with PID 13544 (E:\IdeaProject\wiki\target\classes started by hho in E:\IdeaProject\wiki)
+2021-07-11 19:43:43.818 INFO  com.qzh.WikiApplication                           :675  [32m                  [0;39m No active profile set, falling back to default profiles: default
+2021-07-11 19:43:43.933 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :108  [32m                  [0;39m Tomcat initialized with port(s): 80 (http)
+2021-07-11 19:43:43.934 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Initializing ProtocolHandler ["http-nio-80"]
+2021-07-11 19:43:43.934 INFO  org.apache.catalina.core.StandardService          :173  [32m                  [0;39m Starting service [Tomcat]
+2021-07-11 19:43:43.934 INFO  org.apache.catalina.core.StandardEngine           :173  [32m                  [0;39m Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-07-11 19:43:43.943 INFO  o.a.c.c.ContainerBase.[Tomcat-13].[localhost].[/] :173  [32m                  [0;39m Initializing Spring embedded WebApplicationContext
+2021-07-11 19:43:43.944 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext    :289  [32m                  [0;39m Root WebApplicationContext: initialization completed in 125 ms
+2021-07-11 19:43:44.036 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :181  [32m                  [0;39m Initializing ExecutorService 'applicationTaskExecutor'
+2021-07-11 19:43:44.123 INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer    :58   [32m                  [0;39m LiveReload server is running on port 35729
+2021-07-11 19:43:44.127 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Starting ProtocolHandler ["http-nio-80"]
+2021-07-11 19:43:44.129 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :220  [32m                  [0;39m Tomcat started on port(s): 80 (http) with context path ''
+2021-07-11 19:43:44.131 INFO  com.qzh.WikiApplication                           :61   [32m                  [0;39m Started WikiApplication in 0.326 seconds (JVM running for 16698.595)
+2021-07-11 19:43:44.131 INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener :63   [32m                  [0;39m Condition evaluation unchanged
+2021-07-11 19:43:44.132 INFO  com.qzh.WikiApplication                           :20   [32m                  [0;39m 启动成功!
+2021-07-11 19:43:44.132 INFO  com.qzh.WikiApplication                           :21   [32m                  [0;39m 地址:	http://localhost:80
+2021-07-11 19:44:04.065 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :218  [32m                  [0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+2021-07-11 19:44:04.134 INFO  com.qzh.WikiApplication                           :55   [32m                  [0;39m Starting WikiApplication using Java 1.8.0_221 on DESKTOP-4A6N60R with PID 13544 (E:\IdeaProject\wiki\target\classes started by hho in E:\IdeaProject\wiki)
+2021-07-11 19:44:04.134 INFO  com.qzh.WikiApplication                           :675  [32m                  [0;39m No active profile set, falling back to default profiles: default
+2021-07-11 19:44:04.264 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :108  [32m                  [0;39m Tomcat initialized with port(s): 80 (http)
+2021-07-11 19:44:04.264 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Initializing ProtocolHandler ["http-nio-80"]
+2021-07-11 19:44:04.265 INFO  org.apache.catalina.core.StandardService          :173  [32m                  [0;39m Starting service [Tomcat]
+2021-07-11 19:44:04.265 INFO  org.apache.catalina.core.StandardEngine           :173  [32m                  [0;39m Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-07-11 19:44:04.274 INFO  o.a.c.c.ContainerBase.[Tomcat-13].[localhost].[/] :173  [32m                  [0;39m Initializing Spring embedded WebApplicationContext
+2021-07-11 19:44:04.274 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext    :289  [32m                  [0;39m Root WebApplicationContext: initialization completed in 139 ms
+2021-07-11 19:44:04.364 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :181  [32m                  [0;39m Initializing ExecutorService 'applicationTaskExecutor'
+2021-07-11 19:44:04.448 INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer    :58   [32m                  [0;39m LiveReload server is running on port 35729
+2021-07-11 19:44:04.453 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Starting ProtocolHandler ["http-nio-80"]
+2021-07-11 19:44:04.458 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :220  [32m                  [0;39m Tomcat started on port(s): 80 (http) with context path ''
+2021-07-11 19:44:04.460 INFO  com.qzh.WikiApplication                           :61   [32m                  [0;39m Started WikiApplication in 0.341 seconds (JVM running for 16718.924)
+2021-07-11 19:44:04.460 INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener :63   [32m                  [0;39m Condition evaluation unchanged
+2021-07-11 19:44:04.460 INFO  com.qzh.WikiApplication                           :20   [32m                  [0;39m 启动成功!
+2021-07-11 19:44:04.460 INFO  com.qzh.WikiApplication                           :21   [32m                  [0;39m 地址:	http://localhost:80
+2021-07-11 19:45:10.749 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :218  [32m                  [0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+2021-07-11 19:45:10.827 INFO  com.qzh.WikiApplication                           :55   [32m                  [0;39m Starting WikiApplication using Java 1.8.0_221 on DESKTOP-4A6N60R with PID 13544 (E:\IdeaProject\wiki\target\classes started by hho in E:\IdeaProject\wiki)
+2021-07-11 19:45:10.827 INFO  com.qzh.WikiApplication                           :675  [32m                  [0;39m No active profile set, falling back to default profiles: default
+2021-07-11 19:45:10.968 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :108  [32m                  [0;39m Tomcat initialized with port(s): 80 (http)
+2021-07-11 19:45:10.968 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Initializing ProtocolHandler ["http-nio-80"]
+2021-07-11 19:45:10.968 INFO  org.apache.catalina.core.StandardService          :173  [32m                  [0;39m Starting service [Tomcat]
+2021-07-11 19:45:10.968 INFO  org.apache.catalina.core.StandardEngine           :173  [32m                  [0;39m Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-07-11 19:45:10.981 INFO  o.a.c.c.ContainerBase.[Tomcat-13].[localhost].[/] :173  [32m                  [0;39m Initializing Spring embedded WebApplicationContext
+2021-07-11 19:45:10.981 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext    :289  [32m                  [0;39m Root WebApplicationContext: initialization completed in 153 ms
+2021-07-11 19:45:11.077 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :181  [32m                  [0;39m Initializing ExecutorService 'applicationTaskExecutor'
+2021-07-11 19:45:11.163 INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer    :58   [32m                  [0;39m LiveReload server is running on port 35729
+2021-07-11 19:45:11.170 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Starting ProtocolHandler ["http-nio-80"]
+2021-07-11 19:45:11.171 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :220  [32m                  [0;39m Tomcat started on port(s): 80 (http) with context path ''
+2021-07-11 19:45:11.173 INFO  com.qzh.WikiApplication                           :61   [32m                  [0;39m Started WikiApplication in 0.362 seconds (JVM running for 16785.638)
+2021-07-11 19:45:11.173 INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener :63   [32m                  [0;39m Condition evaluation unchanged
+2021-07-11 19:45:11.174 INFO  com.qzh.WikiApplication                           :20   [32m                  [0;39m 启动成功!
+2021-07-11 19:45:11.174 INFO  com.qzh.WikiApplication                           :21   [32m                  [0;39m 地址:	http://localhost:80
+2021-07-11 19:45:22.279 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :218  [32m                  [0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+2021-07-11 19:45:22.356 INFO  com.qzh.WikiApplication                           :55   [32m                  [0;39m Starting WikiApplication using Java 1.8.0_221 on DESKTOP-4A6N60R with PID 13544 (E:\IdeaProject\wiki\target\classes started by hho in E:\IdeaProject\wiki)
+2021-07-11 19:45:22.356 INFO  com.qzh.WikiApplication                           :675  [32m                  [0;39m No active profile set, falling back to default profiles: default
+2021-07-11 19:45:22.487 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :108  [32m                  [0;39m Tomcat initialized with port(s): 80 (http)
+2021-07-11 19:45:22.487 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Initializing ProtocolHandler ["http-nio-80"]
+2021-07-11 19:45:22.487 INFO  org.apache.catalina.core.StandardService          :173  [32m                  [0;39m Starting service [Tomcat]
+2021-07-11 19:45:22.487 INFO  org.apache.catalina.core.StandardEngine           :173  [32m                  [0;39m Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-07-11 19:45:22.497 INFO  o.a.c.c.ContainerBase.[Tomcat-13].[localhost].[/] :173  [32m                  [0;39m Initializing Spring embedded WebApplicationContext
+2021-07-11 19:45:22.497 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext    :289  [32m                  [0;39m Root WebApplicationContext: initialization completed in 140 ms
+2021-07-11 19:45:22.599 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :181  [32m                  [0;39m Initializing ExecutorService 'applicationTaskExecutor'
+2021-07-11 19:45:22.696 INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer    :58   [32m                  [0;39m LiveReload server is running on port 35729
+2021-07-11 19:45:22.702 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Starting ProtocolHandler ["http-nio-80"]
+2021-07-11 19:45:22.703 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :220  [32m                  [0;39m Tomcat started on port(s): 80 (http) with context path ''
+2021-07-11 19:45:22.705 INFO  com.qzh.WikiApplication                           :61   [32m                  [0;39m Started WikiApplication in 0.366 seconds (JVM running for 16797.17)
+2021-07-11 19:45:22.706 INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener :63   [32m                  [0;39m Condition evaluation unchanged
+2021-07-11 19:45:22.706 INFO  com.qzh.WikiApplication                           :20   [32m                  [0;39m 启动成功!
+2021-07-11 19:45:22.706 INFO  com.qzh.WikiApplication                           :21   [32m                  [0;39m 地址:	http://localhost:80
+2021-07-11 19:50:13.482 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :218  [32m                  [0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+2021-07-11 19:50:13.570 INFO  com.qzh.WikiApplication                           :55   [32m                  [0;39m Starting WikiApplication using Java 1.8.0_221 on DESKTOP-4A6N60R with PID 13544 (E:\IdeaProject\wiki\target\classes started by hho in E:\IdeaProject\wiki)
+2021-07-11 19:50:13.570 INFO  com.qzh.WikiApplication                           :675  [32m                  [0;39m No active profile set, falling back to default profiles: default
+2021-07-11 19:50:13.715 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :108  [32m                  [0;39m Tomcat initialized with port(s): 80 (http)
+2021-07-11 19:50:13.715 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Initializing ProtocolHandler ["http-nio-80"]
+2021-07-11 19:50:13.715 INFO  org.apache.catalina.core.StandardService          :173  [32m                  [0;39m Starting service [Tomcat]
+2021-07-11 19:50:13.715 INFO  org.apache.catalina.core.StandardEngine           :173  [32m                  [0;39m Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-07-11 19:50:13.726 INFO  o.a.c.c.ContainerBase.[Tomcat-13].[localhost].[/] :173  [32m                  [0;39m Initializing Spring embedded WebApplicationContext
+2021-07-11 19:50:13.726 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext    :289  [32m                  [0;39m Root WebApplicationContext: initialization completed in 155 ms
+2021-07-11 19:50:13.821 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :181  [32m                  [0;39m Initializing ExecutorService 'applicationTaskExecutor'
+2021-07-11 19:50:13.916 INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer    :58   [32m                  [0;39m LiveReload server is running on port 35729
+2021-07-11 19:50:13.921 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Starting ProtocolHandler ["http-nio-80"]
+2021-07-11 19:50:13.922 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :220  [32m                  [0;39m Tomcat started on port(s): 80 (http) with context path ''
+2021-07-11 19:50:13.924 INFO  com.qzh.WikiApplication                           :61   [32m                  [0;39m Started WikiApplication in 0.367 seconds (JVM running for 17088.388)
+2021-07-11 19:50:13.925 INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener :63   [32m                  [0;39m Condition evaluation unchanged
+2021-07-11 19:50:13.925 INFO  com.qzh.WikiApplication                           :20   [32m                  [0;39m 启动成功!
+2021-07-11 19:50:13.925 INFO  com.qzh.WikiApplication                           :21   [32m                  [0;39m 地址:	http://localhost:80
+2021-07-11 19:53:03.805 INFO  o.a.c.c.ContainerBase.[Tomcat-13].[localhost].[/] :173  [32m                  [0;39m Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-11 19:53:03.806 INFO  org.springframework.web.servlet.DispatcherServlet :525  [32m                  [0;39m Initializing Servlet 'dispatcherServlet'
+2021-07-11 19:53:03.808 INFO  org.springframework.web.servlet.DispatcherServlet :547  [32m                  [0;39m Completed initialization in 1 ms
+2021-07-11 19:53:03.812 INFO  com.qzh.aspect.LogAspect                          :48   [32m                  [0;39m ------------- aop开始 -------------
+2021-07-11 19:53:03.813 INFO  com.qzh.aspect.LogAspect                          :49   [32m                  [0;39m 请求地址: http://localhost/ebook/list GET
+2021-07-11 19:53:03.813 INFO  com.qzh.aspect.LogAspect                          :50   [32m                  [0;39m 类名方法: com.qzh.controller.EBookController.list
+2021-07-11 19:53:03.813 INFO  com.qzh.aspect.LogAspect                          :51   [32m                  [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-07-11 19:53:03.814 INFO  com.qzh.aspect.LogAspect                          :72   [32m                  [0;39m 请求参数: [{"page":1,"size":3}]
+2021-07-11 19:53:03.816 INFO  com.zaxxer.hikari.HikariDataSource                :110  [32m                  [0;39m HikariPool-11 - Starting...
+2021-07-11 19:53:03.818 INFO  com.zaxxer.hikari.HikariDataSource                :123  [32m                  [0;39m HikariPool-11 - Start completed.
+2021-07-11 19:53:03.819 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==>  Preparing: SELECT count(0) FROM ebook
+2021-07-11 19:53:03.819 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==> Parameters: 
+2021-07-11 19:53:03.821 TRACE com.qzh.mapper.EbookMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==    Columns: count(0)
+2021-07-11 19:53:03.821 TRACE com.qzh.mapper.EbookMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==        Row: 5
+2021-07-11 19:53:03.822 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m <==      Total: 1
+2021-07-11 19:53:03.822 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m ==>  Preparing: select id, `name`, category1_id, category2_id, description, cover, doc_count, view_count, vote_count from ebook LIMIT ?
+2021-07-11 19:53:03.823 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m ==> Parameters: 3(Integer)
+2021-07-11 19:53:03.823 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==    Columns: id, name, category1_id, category2_id, description, cover, doc_count, view_count, vote_count
+2021-07-11 19:53:03.823 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 1, Spring Boot 入门教程, 1, 2, 零基础入门 Java 开发，企业级应用开发最佳首选框架, /image/cover1.png, 0, 0, 0
+2021-07-11 19:53:03.824 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 2, Vue 入门教程, 1, 1, 零基础入门 Vue 开发，企业级应用开发最佳首选框架, /image/cover2.png, 4, 5, 0
+2021-07-11 19:53:03.824 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 3, Python 入门教程, null, null, 零基础入门 Python 开发，企业级应用开发最佳首选框架, null, 0, 0, 0
+2021-07-11 19:53:03.824 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m <==      Total: 3
+2021-07-11 19:53:03.831 INFO  com.qzh.aspect.LogAspect                          :84   [32m                  [0;39m 返回结果: {"content":{"list":[{"category1Id":1,"category2Id":2,"cover":"/image/cover1.png","description":"零基础入门 Java 开发，企业级应用开发最佳首选框架","docCount":0,"id":1,"name":"Spring Boot 入门教程","viewCount":0,"voteCount":0},{"category1Id":1,"category2Id":1,"cover":"/image/cover2.png","description":"零基础入门 Vue 开发，企业级应用开发最佳首选框架","docCount":4,"id":2,"name":"Vue 入门教程","viewCount":5,"voteCount":0},{"description":"零基础入门 Python 开发，企业级应用开发最佳首选框架","docCount":0,"id":3,"name":"Python 入门教程","viewCount":0,"voteCount":0}],"total":5},"success":true}
+2021-07-11 19:53:03.831 INFO  com.qzh.aspect.LogAspect                          :85   [32m                  [0;39m ------------- 结束 耗时：19 ms -------------
+2021-07-11 19:53:33.100 INFO  com.qzh.aspect.LogAspect                          :48   [32m                  [0;39m ------------- aop开始 -------------
+2021-07-11 19:53:33.100 INFO  com.qzh.aspect.LogAspect                          :49   [32m                  [0;39m 请求地址: http://localhost/ebook/list GET
+2021-07-11 19:53:33.100 INFO  com.qzh.aspect.LogAspect                          :50   [32m                  [0;39m 类名方法: com.qzh.controller.EBookController.list
+2021-07-11 19:53:33.100 INFO  com.qzh.aspect.LogAspect                          :51   [32m                  [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-07-11 19:53:33.100 INFO  com.qzh.aspect.LogAspect                          :72   [32m                  [0;39m 请求参数: [{"page":1,"size":2000}]
+2021-07-11 19:53:33.102 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==>  Preparing: SELECT count(0) FROM ebook
+2021-07-11 19:53:33.102 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==> Parameters: 
+2021-07-11 19:53:33.103 TRACE com.qzh.mapper.EbookMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==    Columns: count(0)
+2021-07-11 19:53:33.103 TRACE com.qzh.mapper.EbookMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==        Row: 5
+2021-07-11 19:53:33.103 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m <==      Total: 1
+2021-07-11 19:53:33.104 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m ==>  Preparing: select id, `name`, category1_id, category2_id, description, cover, doc_count, view_count, vote_count from ebook LIMIT ?
+2021-07-11 19:53:33.104 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m ==> Parameters: 2000(Integer)
+2021-07-11 19:53:33.104 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==    Columns: id, name, category1_id, category2_id, description, cover, doc_count, view_count, vote_count
+2021-07-11 19:53:33.105 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 1, Spring Boot 入门教程, 1, 2, 零基础入门 Java 开发，企业级应用开发最佳首选框架, /image/cover1.png, 0, 0, 0
+2021-07-11 19:53:33.105 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 2, Vue 入门教程, 1, 1, 零基础入门 Vue 开发，企业级应用开发最佳首选框架, /image/cover2.png, 4, 5, 0
+2021-07-11 19:53:33.105 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 3, Python 入门教程, null, null, 零基础入门 Python 开发，企业级应用开发最佳首选框架, null, 0, 0, 0
+2021-07-11 19:53:33.105 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 4, Mysql 入门教程, 2, 3, 零基础入门 Mysql 开发，企业级应用开发最佳首选框架, null, 0, 0, 0
+2021-07-11 19:53:33.105 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 5, Oracle 入门教程, null, null, 零基础入门 Oracle 开发，企业级应用开发最佳首选框架, null, 0, 0, 0
+2021-07-11 19:53:33.106 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m <==      Total: 5
+2021-07-11 19:53:33.106 INFO  com.qzh.aspect.LogAspect                          :84   [32m                  [0;39m 返回结果: {"content":{"list":[{"category1Id":1,"category2Id":2,"cover":"/image/cover1.png","description":"零基础入门 Java 开发，企业级应用开发最佳首选框架","docCount":0,"id":1,"name":"Spring Boot 入门教程","viewCount":0,"voteCount":0},{"category1Id":1,"category2Id":1,"cover":"/image/cover2.png","description":"零基础入门 Vue 开发，企业级应用开发最佳首选框架","docCount":4,"id":2,"name":"Vue 入门教程","viewCount":5,"voteCount":0},{"description":"零基础入门 Python 开发，企业级应用开发最佳首选框架","docCount":0,"id":3,"name":"Python 入门教程","viewCount":0,"voteCount":0},{"category1Id":2,"category2Id":3,"description":"零基础入门 Mysql 开发，企业级应用开发最佳首选框架","docCount":0,"id":4,"name":"Mysql 入门教程","viewCount":0,"voteCount":0},{"description":"零基础入门 Oracle 开发，企业级应用开发最佳首选框架","docCount":0,"id":5,"name":"Oracle 入门教程","viewCount":0,"voteCount":0}],"total":5},"success":true}
+2021-07-11 19:53:33.106 INFO  com.qzh.aspect.LogAspect                          :85   [32m                  [0;39m ------------- 结束 耗时：6 ms -------------
+2021-07-11 19:54:07.187 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :218  [32m                  [0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+2021-07-11 19:54:07.188 INFO  com.zaxxer.hikari.HikariDataSource                :350  [32m                  [0;39m HikariPool-11 - Shutdown initiated...
+2021-07-11 19:54:07.190 INFO  com.zaxxer.hikari.HikariDataSource                :352  [32m                  [0;39m HikariPool-11 - Shutdown completed.
+2021-07-11 19:54:07.289 INFO  com.qzh.WikiApplication                           :55   [32m                  [0;39m Starting WikiApplication using Java 1.8.0_221 on DESKTOP-4A6N60R with PID 13544 (E:\IdeaProject\wiki\target\classes started by hho in E:\IdeaProject\wiki)
+2021-07-11 19:54:07.289 INFO  com.qzh.WikiApplication                           :675  [32m                  [0;39m No active profile set, falling back to default profiles: default
+2021-07-11 19:54:07.428 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :108  [32m                  [0;39m Tomcat initialized with port(s): 80 (http)
+2021-07-11 19:54:07.428 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Initializing ProtocolHandler ["http-nio-80"]
+2021-07-11 19:54:07.429 INFO  org.apache.catalina.core.StandardService          :173  [32m                  [0;39m Starting service [Tomcat]
+2021-07-11 19:54:07.429 INFO  org.apache.catalina.core.StandardEngine           :173  [32m                  [0;39m Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-07-11 19:54:07.466 INFO  o.a.c.c.ContainerBase.[Tomcat-13].[localhost].[/] :173  [32m                  [0;39m Initializing Spring embedded WebApplicationContext
+2021-07-11 19:54:07.466 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext    :289  [32m                  [0;39m Root WebApplicationContext: initialization completed in 175 ms
+2021-07-11 19:54:07.563 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :181  [32m                  [0;39m Initializing ExecutorService 'applicationTaskExecutor'
+2021-07-11 19:54:07.653 INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer    :58   [32m                  [0;39m LiveReload server is running on port 35729
+2021-07-11 19:54:07.658 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Starting ProtocolHandler ["http-nio-80"]
+2021-07-11 19:54:07.660 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :220  [32m                  [0;39m Tomcat started on port(s): 80 (http) with context path ''
+2021-07-11 19:54:07.662 INFO  com.qzh.WikiApplication                           :61   [32m                  [0;39m Started WikiApplication in 0.386 seconds (JVM running for 17322.126)
+2021-07-11 19:54:07.662 INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener :63   [32m                  [0;39m Condition evaluation unchanged
+2021-07-11 19:54:07.662 INFO  com.qzh.WikiApplication                           :20   [32m                  [0;39m 启动成功!
+2021-07-11 19:54:07.663 INFO  com.qzh.WikiApplication                           :21   [32m                  [0;39m 地址:	http://localhost:80
+2021-07-11 19:54:17.769 INFO  o.a.c.c.ContainerBase.[Tomcat-13].[localhost].[/] :173  [32m                  [0;39m Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-11 19:54:17.770 INFO  org.springframework.web.servlet.DispatcherServlet :525  [32m                  [0;39m Initializing Servlet 'dispatcherServlet'
+2021-07-11 19:54:17.770 INFO  org.springframework.web.servlet.DispatcherServlet :547  [32m                  [0;39m Completed initialization in 0 ms
+2021-07-11 19:54:17.775 INFO  com.qzh.aspect.LogAspect                          :48   [32m                  [0;39m ------------- aop开始 -------------
+2021-07-11 19:54:17.776 INFO  com.qzh.aspect.LogAspect                          :49   [32m                  [0;39m 请求地址: http://localhost/ebook/list GET
+2021-07-11 19:54:17.776 INFO  com.qzh.aspect.LogAspect                          :50   [32m                  [0;39m 类名方法: com.qzh.controller.EBookController.list
+2021-07-11 19:54:17.776 INFO  com.qzh.aspect.LogAspect                          :51   [32m                  [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-07-11 19:54:17.777 INFO  com.qzh.aspect.LogAspect                          :72   [32m                  [0;39m 请求参数: [{"page":1,"size":3000}]
+2021-07-11 19:54:17.783 INFO  com.zaxxer.hikari.HikariDataSource                :110  [32m                  [0;39m HikariPool-12 - Starting...
+2021-07-11 19:54:17.787 INFO  com.zaxxer.hikari.HikariDataSource                :123  [32m                  [0;39m HikariPool-12 - Start completed.
+2021-07-11 19:54:17.788 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==>  Preparing: SELECT count(0) FROM ebook
+2021-07-11 19:54:17.788 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==> Parameters: 
+2021-07-11 19:54:17.790 TRACE com.qzh.mapper.EbookMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==    Columns: count(0)
+2021-07-11 19:54:17.790 TRACE com.qzh.mapper.EbookMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==        Row: 5
+2021-07-11 19:54:17.790 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m <==      Total: 1
+2021-07-11 19:54:17.790 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m ==>  Preparing: select id, `name`, category1_id, category2_id, description, cover, doc_count, view_count, vote_count from ebook LIMIT ?
+2021-07-11 19:54:17.791 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m ==> Parameters: 3000(Integer)
+2021-07-11 19:54:17.791 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==    Columns: id, name, category1_id, category2_id, description, cover, doc_count, view_count, vote_count
+2021-07-11 19:54:17.791 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 1, Spring Boot 入门教程, 1, 2, 零基础入门 Java 开发，企业级应用开发最佳首选框架, /image/cover1.png, 0, 0, 0
+2021-07-11 19:54:17.792 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 2, Vue 入门教程, 1, 1, 零基础入门 Vue 开发，企业级应用开发最佳首选框架, /image/cover2.png, 4, 5, 0
+2021-07-11 19:54:17.792 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 3, Python 入门教程, null, null, 零基础入门 Python 开发，企业级应用开发最佳首选框架, null, 0, 0, 0
+2021-07-11 19:54:17.792 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 4, Mysql 入门教程, 2, 3, 零基础入门 Mysql 开发，企业级应用开发最佳首选框架, null, 0, 0, 0
+2021-07-11 19:54:17.792 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 5, Oracle 入门教程, null, null, 零基础入门 Oracle 开发，企业级应用开发最佳首选框架, null, 0, 0, 0
+2021-07-11 19:54:17.792 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m <==      Total: 5
+2021-07-11 19:54:17.801 INFO  com.qzh.aspect.LogAspect                          :84   [32m                  [0;39m 返回结果: {"content":{"list":[{"category1Id":1,"category2Id":2,"cover":"/image/cover1.png","description":"零基础入门 Java 开发，企业级应用开发最佳首选框架","docCount":0,"id":1,"name":"Spring Boot 入门教程","viewCount":0,"voteCount":0},{"category1Id":1,"category2Id":1,"cover":"/image/cover2.png","description":"零基础入门 Vue 开发，企业级应用开发最佳首选框架","docCount":4,"id":2,"name":"Vue 入门教程","viewCount":5,"voteCount":0},{"description":"零基础入门 Python 开发，企业级应用开发最佳首选框架","docCount":0,"id":3,"name":"Python 入门教程","viewCount":0,"voteCount":0},{"category1Id":2,"category2Id":3,"description":"零基础入门 Mysql 开发，企业级应用开发最佳首选框架","docCount":0,"id":4,"name":"Mysql 入门教程","viewCount":0,"voteCount":0},{"description":"零基础入门 Oracle 开发，企业级应用开发最佳首选框架","docCount":0,"id":5,"name":"Oracle 入门教程","viewCount":0,"voteCount":0}],"total":5},"success":true}
+2021-07-11 19:54:17.802 INFO  com.qzh.aspect.LogAspect                          :85   [32m                  [0;39m ------------- 结束 耗时：27 ms -------------
+2021-07-11 19:54:58.630 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :218  [32m                  [0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+2021-07-11 19:54:58.631 INFO  com.zaxxer.hikari.HikariDataSource                :350  [32m                  [0;39m HikariPool-12 - Shutdown initiated...
+2021-07-11 19:54:58.633 INFO  com.zaxxer.hikari.HikariDataSource                :352  [32m                  [0;39m HikariPool-12 - Shutdown completed.
+2021-07-11 19:54:58.738 INFO  com.qzh.WikiApplication                           :55   [32m                  [0;39m Starting WikiApplication using Java 1.8.0_221 on DESKTOP-4A6N60R with PID 13544 (E:\IdeaProject\wiki\target\classes started by hho in E:\IdeaProject\wiki)
+2021-07-11 19:54:58.738 INFO  com.qzh.WikiApplication                           :675  [32m                  [0;39m No active profile set, falling back to default profiles: default
+2021-07-11 19:54:58.895 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :108  [32m                  [0;39m Tomcat initialized with port(s): 80 (http)
+2021-07-11 19:54:58.895 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Initializing ProtocolHandler ["http-nio-80"]
+2021-07-11 19:54:58.895 INFO  org.apache.catalina.core.StandardService          :173  [32m                  [0;39m Starting service [Tomcat]
+2021-07-11 19:54:58.895 INFO  org.apache.catalina.core.StandardEngine           :173  [32m                  [0;39m Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-07-11 19:54:58.907 INFO  o.a.c.c.ContainerBase.[Tomcat-13].[localhost].[/] :173  [32m                  [0;39m Initializing Spring embedded WebApplicationContext
+2021-07-11 19:54:58.907 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext    :289  [32m                  [0;39m Root WebApplicationContext: initialization completed in 167 ms
+2021-07-11 19:54:59.008 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :181  [32m                  [0;39m Initializing ExecutorService 'applicationTaskExecutor'
+2021-07-11 19:54:59.094 INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer    :58   [32m                  [0;39m LiveReload server is running on port 35729
+2021-07-11 19:54:59.099 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Starting ProtocolHandler ["http-nio-80"]
+2021-07-11 19:54:59.100 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :220  [32m                  [0;39m Tomcat started on port(s): 80 (http) with context path ''
+2021-07-11 19:54:59.102 INFO  com.qzh.WikiApplication                           :61   [32m                  [0;39m Started WikiApplication in 0.378 seconds (JVM running for 17373.567)
+2021-07-11 19:54:59.103 INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener :63   [32m                  [0;39m Condition evaluation unchanged
+2021-07-11 19:54:59.103 INFO  com.qzh.WikiApplication                           :20   [32m                  [0;39m 启动成功!
+2021-07-11 19:54:59.103 INFO  com.qzh.WikiApplication                           :21   [32m                  [0;39m 地址:	http://localhost:80
+2021-07-11 19:55:04.079 INFO  o.a.c.c.ContainerBase.[Tomcat-13].[localhost].[/] :173  [32m                  [0;39m Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-11 19:55:04.080 INFO  org.springframework.web.servlet.DispatcherServlet :525  [32m                  [0;39m Initializing Servlet 'dispatcherServlet'
+2021-07-11 19:55:04.080 INFO  org.springframework.web.servlet.DispatcherServlet :547  [32m                  [0;39m Completed initialization in 0 ms
+2021-07-11 19:55:04.084 INFO  com.qzh.aspect.LogAspect                          :48   [32m                  [0;39m ------------- aop开始 -------------
+2021-07-11 19:55:04.084 INFO  com.qzh.aspect.LogAspect                          :49   [32m                  [0;39m 请求地址: http://localhost/ebook/list GET
+2021-07-11 19:55:04.085 INFO  com.qzh.aspect.LogAspect                          :50   [32m                  [0;39m 类名方法: com.qzh.controller.EBookController.list
+2021-07-11 19:55:04.085 INFO  com.qzh.aspect.LogAspect                          :51   [32m                  [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-07-11 19:55:04.085 INFO  com.qzh.aspect.LogAspect                          :72   [32m                  [0;39m 请求参数: [{"page":1,"size":3}]
+2021-07-11 19:55:04.087 INFO  com.zaxxer.hikari.HikariDataSource                :110  [32m                  [0;39m HikariPool-13 - Starting...
+2021-07-11 19:55:04.090 INFO  com.zaxxer.hikari.HikariDataSource                :123  [32m                  [0;39m HikariPool-13 - Start completed.
+2021-07-11 19:55:04.090 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==>  Preparing: SELECT count(0) FROM ebook
+2021-07-11 19:55:04.090 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==> Parameters: 
+2021-07-11 19:55:04.092 TRACE com.qzh.mapper.EbookMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==    Columns: count(0)
+2021-07-11 19:55:04.092 TRACE com.qzh.mapper.EbookMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==        Row: 5
+2021-07-11 19:55:04.092 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m <==      Total: 1
+2021-07-11 19:55:04.092 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m ==>  Preparing: select id, `name`, category1_id, category2_id, description, cover, doc_count, view_count, vote_count from ebook LIMIT ?
+2021-07-11 19:55:04.093 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m ==> Parameters: 3(Integer)
+2021-07-11 19:55:04.093 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==    Columns: id, name, category1_id, category2_id, description, cover, doc_count, view_count, vote_count
+2021-07-11 19:55:04.093 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 1, Spring Boot 入门教程, 1, 2, 零基础入门 Java 开发，企业级应用开发最佳首选框架, /image/cover1.png, 0, 0, 0
+2021-07-11 19:55:04.094 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 2, Vue 入门教程, 1, 1, 零基础入门 Vue 开发，企业级应用开发最佳首选框架, /image/cover2.png, 4, 5, 0
+2021-07-11 19:55:04.094 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 3, Python 入门教程, null, null, 零基础入门 Python 开发，企业级应用开发最佳首选框架, null, 0, 0, 0
+2021-07-11 19:55:04.094 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m <==      Total: 3
+2021-07-11 19:55:04.099 INFO  com.qzh.aspect.LogAspect                          :84   [32m                  [0;39m 返回结果: {"content":{"list":[{"category1Id":1,"category2Id":2,"cover":"/image/cover1.png","description":"零基础入门 Java 开发，企业级应用开发最佳首选框架","docCount":0,"id":1,"name":"Spring Boot 入门教程","viewCount":0,"voteCount":0},{"category1Id":1,"category2Id":1,"cover":"/image/cover2.png","description":"零基础入门 Vue 开发，企业级应用开发最佳首选框架","docCount":4,"id":2,"name":"Vue 入门教程","viewCount":5,"voteCount":0},{"description":"零基础入门 Python 开发，企业级应用开发最佳首选框架","docCount":0,"id":3,"name":"Python 入门教程","viewCount":0,"voteCount":0}],"total":5},"success":true}
+2021-07-11 19:55:04.100 INFO  com.qzh.aspect.LogAspect                          :85   [32m                  [0;39m ------------- 结束 耗时：16 ms -------------
+2021-07-11 19:55:15.181 INFO  com.qzh.aspect.LogAspect                          :48   [32m                  [0;39m ------------- aop开始 -------------
+2021-07-11 19:55:15.182 INFO  com.qzh.aspect.LogAspect                          :49   [32m                  [0;39m 请求地址: http://localhost/ebook/list GET
+2021-07-11 19:55:15.182 INFO  com.qzh.aspect.LogAspect                          :50   [32m                  [0;39m 类名方法: com.qzh.controller.EBookController.list
+2021-07-11 19:55:15.182 INFO  com.qzh.aspect.LogAspect                          :51   [32m                  [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-07-11 19:55:15.182 INFO  com.qzh.aspect.LogAspect                          :72   [32m                  [0;39m 请求参数: [{"page":1,"size":3000}]
+2021-07-11 19:55:15.183 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==>  Preparing: SELECT count(0) FROM ebook
+2021-07-11 19:55:15.183 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==> Parameters: 
+2021-07-11 19:55:15.184 TRACE com.qzh.mapper.EbookMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==    Columns: count(0)
+2021-07-11 19:55:15.184 TRACE com.qzh.mapper.EbookMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==        Row: 5
+2021-07-11 19:55:15.184 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m <==      Total: 1
+2021-07-11 19:55:15.185 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m ==>  Preparing: select id, `name`, category1_id, category2_id, description, cover, doc_count, view_count, vote_count from ebook LIMIT ?
+2021-07-11 19:55:15.185 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m ==> Parameters: 3000(Integer)
+2021-07-11 19:55:15.185 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==    Columns: id, name, category1_id, category2_id, description, cover, doc_count, view_count, vote_count
+2021-07-11 19:55:15.185 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 1, Spring Boot 入门教程, 1, 2, 零基础入门 Java 开发，企业级应用开发最佳首选框架, /image/cover1.png, 0, 0, 0
+2021-07-11 19:55:15.185 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 2, Vue 入门教程, 1, 1, 零基础入门 Vue 开发，企业级应用开发最佳首选框架, /image/cover2.png, 4, 5, 0
+2021-07-11 19:55:15.186 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 3, Python 入门教程, null, null, 零基础入门 Python 开发，企业级应用开发最佳首选框架, null, 0, 0, 0
+2021-07-11 19:55:15.186 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 4, Mysql 入门教程, 2, 3, 零基础入门 Mysql 开发，企业级应用开发最佳首选框架, null, 0, 0, 0
+2021-07-11 19:55:15.186 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 5, Oracle 入门教程, null, null, 零基础入门 Oracle 开发，企业级应用开发最佳首选框架, null, 0, 0, 0
+2021-07-11 19:55:15.186 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m <==      Total: 5
+2021-07-11 19:55:15.186 INFO  com.qzh.aspect.LogAspect                          :84   [32m                  [0;39m 返回结果: {"content":{"list":[{"category1Id":1,"category2Id":2,"cover":"/image/cover1.png","description":"零基础入门 Java 开发，企业级应用开发最佳首选框架","docCount":0,"id":1,"name":"Spring Boot 入门教程","viewCount":0,"voteCount":0},{"category1Id":1,"category2Id":1,"cover":"/image/cover2.png","description":"零基础入门 Vue 开发，企业级应用开发最佳首选框架","docCount":4,"id":2,"name":"Vue 入门教程","viewCount":5,"voteCount":0},{"description":"零基础入门 Python 开发，企业级应用开发最佳首选框架","docCount":0,"id":3,"name":"Python 入门教程","viewCount":0,"voteCount":0},{"category1Id":2,"category2Id":3,"description":"零基础入门 Mysql 开发，企业级应用开发最佳首选框架","docCount":0,"id":4,"name":"Mysql 入门教程","viewCount":0,"voteCount":0},{"description":"零基础入门 Oracle 开发，企业级应用开发最佳首选框架","docCount":0,"id":5,"name":"Oracle 入门教程","viewCount":0,"voteCount":0}],"total":5},"success":true}
+2021-07-11 19:55:15.187 INFO  com.qzh.aspect.LogAspect                          :85   [32m                  [0;39m ------------- 结束 耗时：6 ms -------------
+2021-07-11 19:58:11.125 INFO  com.qzh.aspect.LogAspect                          :48   [32m                  [0;39m ------------- aop开始 -------------
+2021-07-11 19:58:11.125 INFO  com.qzh.aspect.LogAspect                          :49   [32m                  [0;39m 请求地址: http://localhost/ebook/list GET
+2021-07-11 19:58:11.125 INFO  com.qzh.aspect.LogAspect                          :50   [32m                  [0;39m 类名方法: com.qzh.controller.EBookController.list
+2021-07-11 19:58:11.125 INFO  com.qzh.aspect.LogAspect                          :51   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-07-11 19:58:11.125 INFO  com.qzh.aspect.LogAspect                          :72   [32m                  [0;39m 请求参数: [{"page":1,"size":3000}]
+2021-07-11 19:58:11.126 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==>  Preparing: SELECT count(0) FROM ebook
+2021-07-11 19:58:11.126 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==> Parameters: 
+2021-07-11 19:58:11.126 TRACE com.qzh.mapper.EbookMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==    Columns: count(0)
+2021-07-11 19:58:11.127 TRACE com.qzh.mapper.EbookMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==        Row: 5
+2021-07-11 19:58:11.127 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m <==      Total: 1
+2021-07-11 19:58:11.127 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m ==>  Preparing: select id, `name`, category1_id, category2_id, description, cover, doc_count, view_count, vote_count from ebook LIMIT ?
+2021-07-11 19:58:11.127 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m ==> Parameters: 3000(Integer)
+2021-07-11 19:58:11.127 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==    Columns: id, name, category1_id, category2_id, description, cover, doc_count, view_count, vote_count
+2021-07-11 19:58:11.128 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 1, Spring Boot 入门教程, 1, 2, 零基础入门 Java 开发，企业级应用开发最佳首选框架, /image/cover1.png, 0, 0, 0
+2021-07-11 19:58:11.128 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 2, Vue 入门教程, 1, 1, 零基础入门 Vue 开发，企业级应用开发最佳首选框架, /image/cover2.png, 4, 5, 0
+2021-07-11 19:58:11.128 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 3, Python 入门教程, null, null, 零基础入门 Python 开发，企业级应用开发最佳首选框架, null, 0, 0, 0
+2021-07-11 19:58:11.128 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 4, Mysql 入门教程, 2, 3, 零基础入门 Mysql 开发，企业级应用开发最佳首选框架, null, 0, 0, 0
+2021-07-11 19:58:11.128 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 5, Oracle 入门教程, null, null, 零基础入门 Oracle 开发，企业级应用开发最佳首选框架, null, 0, 0, 0
+2021-07-11 19:58:11.128 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m <==      Total: 5
+2021-07-11 19:58:11.129 INFO  com.qzh.aspect.LogAspect                          :84   [32m                  [0;39m 返回结果: {"content":{"list":[{"category1Id":1,"category2Id":2,"cover":"/image/cover1.png","description":"零基础入门 Java 开发，企业级应用开发最佳首选框架","docCount":0,"id":1,"name":"Spring Boot 入门教程","viewCount":0,"voteCount":0},{"category1Id":1,"category2Id":1,"cover":"/image/cover2.png","description":"零基础入门 Vue 开发，企业级应用开发最佳首选框架","docCount":4,"id":2,"name":"Vue 入门教程","viewCount":5,"voteCount":0},{"description":"零基础入门 Python 开发，企业级应用开发最佳首选框架","docCount":0,"id":3,"name":"Python 入门教程","viewCount":0,"voteCount":0},{"category1Id":2,"category2Id":3,"description":"零基础入门 Mysql 开发，企业级应用开发最佳首选框架","docCount":0,"id":4,"name":"Mysql 入门教程","viewCount":0,"voteCount":0},{"description":"零基础入门 Oracle 开发，企业级应用开发最佳首选框架","docCount":0,"id":5,"name":"Oracle 入门教程","viewCount":0,"voteCount":0}],"total":5},"success":true}
+2021-07-11 19:58:11.129 INFO  com.qzh.aspect.LogAspect                          :85   [32m                  [0;39m ------------- 结束 耗时：4 ms -------------
+2021-07-11 19:59:01.381 INFO  com.qzh.aspect.LogAspect                          :48   [32m                  [0;39m ------------- aop开始 -------------
+2021-07-11 19:59:01.381 INFO  com.qzh.aspect.LogAspect                          :49   [32m                  [0;39m 请求地址: http://localhost/ebook/list GET
+2021-07-11 19:59:01.382 INFO  com.qzh.aspect.LogAspect                          :50   [32m                  [0;39m 类名方法: com.qzh.controller.EBookController.list
+2021-07-11 19:59:01.382 INFO  com.qzh.aspect.LogAspect                          :51   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-07-11 19:59:01.382 INFO  com.qzh.aspect.LogAspect                          :72   [32m                  [0;39m 请求参数: [{"page":1,"size":3000}]
+2021-07-11 19:59:01.383 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==>  Preparing: SELECT count(0) FROM ebook
+2021-07-11 19:59:01.383 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==> Parameters: 
+2021-07-11 19:59:01.383 TRACE com.qzh.mapper.EbookMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==    Columns: count(0)
+2021-07-11 19:59:01.384 TRACE com.qzh.mapper.EbookMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==        Row: 5
+2021-07-11 19:59:01.384 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m <==      Total: 1
+2021-07-11 19:59:01.384 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m ==>  Preparing: select id, `name`, category1_id, category2_id, description, cover, doc_count, view_count, vote_count from ebook LIMIT ?
+2021-07-11 19:59:01.384 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m ==> Parameters: 3000(Integer)
+2021-07-11 19:59:01.384 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==    Columns: id, name, category1_id, category2_id, description, cover, doc_count, view_count, vote_count
+2021-07-11 19:59:01.384 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 1, Spring Boot 入门教程, 1, 2, 零基础入门 Java 开发，企业级应用开发最佳首选框架, /image/cover1.png, 0, 0, 0
+2021-07-11 19:59:01.385 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 2, Vue 入门教程, 1, 1, 零基础入门 Vue 开发，企业级应用开发最佳首选框架, /image/cover2.png, 4, 5, 0
+2021-07-11 19:59:01.385 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 3, Python 入门教程, null, null, 零基础入门 Python 开发，企业级应用开发最佳首选框架, null, 0, 0, 0
+2021-07-11 19:59:01.386 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 4, Mysql 入门教程, 2, 3, 零基础入门 Mysql 开发，企业级应用开发最佳首选框架, null, 0, 0, 0
+2021-07-11 19:59:01.386 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 5, Oracle 入门教程, null, null, 零基础入门 Oracle 开发，企业级应用开发最佳首选框架, null, 0, 0, 0
+2021-07-11 19:59:01.386 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m <==      Total: 5
+2021-07-11 19:59:01.389 INFO  com.qzh.aspect.LogAspect                          :84   [32m                  [0;39m 返回结果: {"content":{"list":[{"category1Id":1,"category2Id":2,"cover":"/image/cover1.png","description":"零基础入门 Java 开发，企业级应用开发最佳首选框架","docCount":0,"id":1,"name":"Spring Boot 入门教程","viewCount":0,"voteCount":0},{"category1Id":1,"category2Id":1,"cover":"/image/cover2.png","description":"零基础入门 Vue 开发，企业级应用开发最佳首选框架","docCount":4,"id":2,"name":"Vue 入门教程","viewCount":5,"voteCount":0},{"description":"零基础入门 Python 开发，企业级应用开发最佳首选框架","docCount":0,"id":3,"name":"Python 入门教程","viewCount":0,"voteCount":0},{"category1Id":2,"category2Id":3,"description":"零基础入门 Mysql 开发，企业级应用开发最佳首选框架","docCount":0,"id":4,"name":"Mysql 入门教程","viewCount":0,"voteCount":0},{"description":"零基础入门 Oracle 开发，企业级应用开发最佳首选框架","docCount":0,"id":5,"name":"Oracle 入门教程","viewCount":0,"voteCount":0}],"total":5},"success":true}
+2021-07-11 19:59:01.389 INFO  com.qzh.aspect.LogAspect                          :85   [32m                  [0;39m ------------- 结束 耗时：8 ms -------------
+2021-07-11 20:00:12.322 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :218  [32m                  [0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+2021-07-11 20:00:12.322 INFO  com.zaxxer.hikari.HikariDataSource                :350  [32m                  [0;39m HikariPool-13 - Shutdown initiated...
+2021-07-11 20:00:12.324 INFO  com.zaxxer.hikari.HikariDataSource                :352  [32m                  [0;39m HikariPool-13 - Shutdown completed.
+2021-07-11 20:00:12.415 INFO  com.qzh.WikiApplication                           :55   [32m                  [0;39m Starting WikiApplication using Java 1.8.0_221 on DESKTOP-4A6N60R with PID 13544 (E:\IdeaProject\wiki\target\classes started by hho in E:\IdeaProject\wiki)
+2021-07-11 20:00:12.415 INFO  com.qzh.WikiApplication                           :675  [32m                  [0;39m No active profile set, falling back to default profiles: default
+2021-07-11 20:00:12.555 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :108  [32m                  [0;39m Tomcat initialized with port(s): 80 (http)
+2021-07-11 20:00:12.556 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Initializing ProtocolHandler ["http-nio-80"]
+2021-07-11 20:00:12.556 INFO  org.apache.catalina.core.StandardService          :173  [32m                  [0;39m Starting service [Tomcat]
+2021-07-11 20:00:12.556 INFO  org.apache.catalina.core.StandardEngine           :173  [32m                  [0;39m Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-07-11 20:00:12.565 INFO  o.a.c.c.ContainerBase.[Tomcat-13].[localhost].[/] :173  [32m                  [0;39m Initializing Spring embedded WebApplicationContext
+2021-07-11 20:00:12.565 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext    :289  [32m                  [0;39m Root WebApplicationContext: initialization completed in 149 ms
+2021-07-11 20:00:12.657 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :181  [32m                  [0;39m Initializing ExecutorService 'applicationTaskExecutor'
+2021-07-11 20:00:12.743 INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer    :58   [32m                  [0;39m LiveReload server is running on port 35729
+2021-07-11 20:00:12.748 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Starting ProtocolHandler ["http-nio-80"]
+2021-07-11 20:00:12.749 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :220  [32m                  [0;39m Tomcat started on port(s): 80 (http) with context path ''
+2021-07-11 20:00:12.751 INFO  com.qzh.WikiApplication                           :61   [32m                  [0;39m Started WikiApplication in 0.35 seconds (JVM running for 17687.216)
+2021-07-11 20:00:12.752 INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener :63   [32m                  [0;39m Condition evaluation unchanged
+2021-07-11 20:00:12.752 INFO  com.qzh.WikiApplication                           :20   [32m                  [0;39m 启动成功!
+2021-07-11 20:00:12.752 INFO  com.qzh.WikiApplication                           :21   [32m                  [0;39m 地址:	http://localhost:80
+2021-07-11 20:00:18.066 INFO  o.a.c.c.ContainerBase.[Tomcat-13].[localhost].[/] :173  [32m                  [0;39m Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-11 20:00:18.067 INFO  org.springframework.web.servlet.DispatcherServlet :525  [32m                  [0;39m Initializing Servlet 'dispatcherServlet'
+2021-07-11 20:00:18.067 INFO  org.springframework.web.servlet.DispatcherServlet :547  [32m                  [0;39m Completed initialization in 0 ms
+2021-07-11 20:00:18.070 INFO  com.qzh.aspect.LogAspect                          :48   [32m                  [0;39m ------------- aop开始 -------------
+2021-07-11 20:00:18.071 INFO  com.qzh.aspect.LogAspect                          :49   [32m                  [0;39m 请求地址: http://localhost/ebook/list GET
+2021-07-11 20:00:18.071 INFO  com.qzh.aspect.LogAspect                          :50   [32m                  [0;39m 类名方法: com.qzh.controller.EBookController.list
+2021-07-11 20:00:18.071 INFO  com.qzh.aspect.LogAspect                          :51   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-07-11 20:00:18.071 INFO  com.qzh.aspect.LogAspect                          :72   [32m                  [0;39m 请求参数: [{"page":1,"size":3000}]
+2021-07-11 20:00:18.073 INFO  com.zaxxer.hikari.HikariDataSource                :110  [32m                  [0;39m HikariPool-14 - Starting...
+2021-07-11 20:00:18.076 INFO  com.zaxxer.hikari.HikariDataSource                :123  [32m                  [0;39m HikariPool-14 - Start completed.
+2021-07-11 20:00:18.076 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==>  Preparing: SELECT count(0) FROM ebook
+2021-07-11 20:00:18.076 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==> Parameters: 
+2021-07-11 20:00:18.078 TRACE com.qzh.mapper.EbookMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==    Columns: count(0)
+2021-07-11 20:00:18.078 TRACE com.qzh.mapper.EbookMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==        Row: 5
+2021-07-11 20:00:18.078 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m <==      Total: 1
+2021-07-11 20:00:18.079 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m ==>  Preparing: select id, `name`, category1_id, category2_id, description, cover, doc_count, view_count, vote_count from ebook LIMIT ?
+2021-07-11 20:00:18.079 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m ==> Parameters: 3000(Integer)
+2021-07-11 20:00:18.079 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==    Columns: id, name, category1_id, category2_id, description, cover, doc_count, view_count, vote_count
+2021-07-11 20:00:18.079 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 1, Spring Boot 入门教程, 1, 2, 零基础入门 Java 开发，企业级应用开发最佳首选框架, /image/cover1.png, 0, 0, 0
+2021-07-11 20:00:18.079 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 2, Vue 入门教程, 1, 1, 零基础入门 Vue 开发，企业级应用开发最佳首选框架, /image/cover2.png, 4, 5, 0
+2021-07-11 20:00:18.080 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 3, Python 入门教程, null, null, 零基础入门 Python 开发，企业级应用开发最佳首选框架, null, 0, 0, 0
+2021-07-11 20:00:18.080 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 4, Mysql 入门教程, 2, 3, 零基础入门 Mysql 开发，企业级应用开发最佳首选框架, null, 0, 0, 0
+2021-07-11 20:00:18.080 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 5, Oracle 入门教程, null, null, 零基础入门 Oracle 开发，企业级应用开发最佳首选框架, null, 0, 0, 0
+2021-07-11 20:00:18.080 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m <==      Total: 5
+2021-07-11 20:00:18.084 INFO  com.qzh.aspect.LogAspect                          :84   [32m                  [0;39m 返回结果: {"content":{"list":[{"category1Id":1,"category2Id":2,"cover":"/image/cover1.png","description":"零基础入门 Java 开发，企业级应用开发最佳首选框架","docCount":0,"id":1,"name":"Spring Boot 入门教程","viewCount":0,"voteCount":0},{"category1Id":1,"category2Id":1,"cover":"/image/cover2.png","description":"零基础入门 Vue 开发，企业级应用开发最佳首选框架","docCount":4,"id":2,"name":"Vue 入门教程","viewCount":5,"voteCount":0},{"description":"零基础入门 Python 开发，企业级应用开发最佳首选框架","docCount":0,"id":3,"name":"Python 入门教程","viewCount":0,"voteCount":0},{"category1Id":2,"category2Id":3,"description":"零基础入门 Mysql 开发，企业级应用开发最佳首选框架","docCount":0,"id":4,"name":"Mysql 入门教程","viewCount":0,"voteCount":0},{"description":"零基础入门 Oracle 开发，企业级应用开发最佳首选框架","docCount":0,"id":5,"name":"Oracle 入门教程","viewCount":0,"voteCount":0}],"total":5},"success":true}
+2021-07-11 20:00:18.084 INFO  com.qzh.aspect.LogAspect                          :85   [32m                  [0;39m ------------- 结束 耗时：14 ms -------------
+2021-07-11 20:01:14.941 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :218  [32m                  [0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+2021-07-11 20:01:14.942 INFO  com.zaxxer.hikari.HikariDataSource                :350  [32m                  [0;39m HikariPool-14 - Shutdown initiated...
+2021-07-11 20:01:14.943 INFO  com.zaxxer.hikari.HikariDataSource                :352  [32m                  [0;39m HikariPool-14 - Shutdown completed.
+2021-07-11 20:01:15.025 INFO  com.qzh.WikiApplication                           :55   [32m                  [0;39m Starting WikiApplication using Java 1.8.0_221 on DESKTOP-4A6N60R with PID 13544 (E:\IdeaProject\wiki\target\classes started by hho in E:\IdeaProject\wiki)
+2021-07-11 20:01:15.026 INFO  com.qzh.WikiApplication                           :675  [32m                  [0;39m No active profile set, falling back to default profiles: default
+2021-07-11 20:01:15.162 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :108  [32m                  [0;39m Tomcat initialized with port(s): 80 (http)
+2021-07-11 20:01:15.162 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Initializing ProtocolHandler ["http-nio-80"]
+2021-07-11 20:01:15.162 INFO  org.apache.catalina.core.StandardService          :173  [32m                  [0;39m Starting service [Tomcat]
+2021-07-11 20:01:15.162 INFO  org.apache.catalina.core.StandardEngine           :173  [32m                  [0;39m Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-07-11 20:01:15.171 INFO  o.a.c.c.ContainerBase.[Tomcat-13].[localhost].[/] :173  [32m                  [0;39m Initializing Spring embedded WebApplicationContext
+2021-07-11 20:01:15.171 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext    :289  [32m                  [0;39m Root WebApplicationContext: initialization completed in 144 ms
+2021-07-11 20:01:15.264 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :181  [32m                  [0;39m Initializing ExecutorService 'applicationTaskExecutor'
+2021-07-11 20:01:15.351 INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer    :58   [32m                  [0;39m LiveReload server is running on port 35729
+2021-07-11 20:01:15.355 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Starting ProtocolHandler ["http-nio-80"]
+2021-07-11 20:01:15.357 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :220  [32m                  [0;39m Tomcat started on port(s): 80 (http) with context path ''
+2021-07-11 20:01:15.359 INFO  com.qzh.WikiApplication                           :61   [32m                  [0;39m Started WikiApplication in 0.347 seconds (JVM running for 17749.824)
+2021-07-11 20:01:15.360 INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener :63   [32m                  [0;39m Condition evaluation unchanged
+2021-07-11 20:01:15.360 INFO  com.qzh.WikiApplication                           :20   [32m                  [0;39m 启动成功!
+2021-07-11 20:01:15.360 INFO  com.qzh.WikiApplication                           :21   [32m                  [0;39m 地址:	http://localhost:80
+2021-07-11 20:06:04.052 INFO  o.a.c.c.ContainerBase.[Tomcat-13].[localhost].[/] :173  [32m                  [0;39m Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-11 20:06:04.052 INFO  org.springframework.web.servlet.DispatcherServlet :525  [32m                  [0;39m Initializing Servlet 'dispatcherServlet'
+2021-07-11 20:06:04.053 INFO  org.springframework.web.servlet.DispatcherServlet :547  [32m                  [0;39m Completed initialization in 1 ms
+2021-07-11 20:06:04.056 INFO  com.qzh.aspect.LogAspect                          :48   [32m                  [0;39m ------------- aop开始 -------------
+2021-07-11 20:06:04.056 INFO  com.qzh.aspect.LogAspect                          :49   [32m                  [0;39m 请求地址: http://localhost/ebook/list GET
+2021-07-11 20:06:04.056 INFO  com.qzh.aspect.LogAspect                          :50   [32m                  [0;39m 类名方法: com.qzh.controller.EBookController.list
+2021-07-11 20:06:04.056 INFO  com.qzh.aspect.LogAspect                          :51   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-07-11 20:06:04.057 INFO  com.qzh.aspect.LogAspect                          :72   [32m                  [0;39m 请求参数: [{"page":1,"size":3000}]
+2021-07-11 20:06:04.059 INFO  com.zaxxer.hikari.HikariDataSource                :110  [32m                  [0;39m HikariPool-15 - Starting...
+2021-07-11 20:06:04.061 INFO  com.zaxxer.hikari.HikariDataSource                :123  [32m                  [0;39m HikariPool-15 - Start completed.
+2021-07-11 20:06:04.062 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==>  Preparing: SELECT count(0) FROM ebook
+2021-07-11 20:06:04.062 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==> Parameters: 
+2021-07-11 20:06:04.063 TRACE com.qzh.mapper.EbookMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==    Columns: count(0)
+2021-07-11 20:06:04.063 TRACE com.qzh.mapper.EbookMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==        Row: 5
+2021-07-11 20:06:04.063 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m <==      Total: 1
+2021-07-11 20:06:04.064 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m ==>  Preparing: select id, `name`, category1_id, category2_id, description, cover, doc_count, view_count, vote_count from ebook LIMIT ?
+2021-07-11 20:06:04.064 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m ==> Parameters: 3000(Integer)
+2021-07-11 20:06:04.064 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==    Columns: id, name, category1_id, category2_id, description, cover, doc_count, view_count, vote_count
+2021-07-11 20:06:04.064 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 1, Spring Boot 入门教程, 1, 2, 零基础入门 Java 开发，企业级应用开发最佳首选框架, /image/cover1.png, 0, 0, 0
+2021-07-11 20:06:04.065 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 2, Vue 入门教程, 1, 1, 零基础入门 Vue 开发，企业级应用开发最佳首选框架, /image/cover2.png, 4, 5, 0
+2021-07-11 20:06:04.065 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 3, Python 入门教程, null, null, 零基础入门 Python 开发，企业级应用开发最佳首选框架, null, 0, 0, 0
+2021-07-11 20:06:04.065 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 4, Mysql 入门教程, 2, 3, 零基础入门 Mysql 开发，企业级应用开发最佳首选框架, null, 0, 0, 0
+2021-07-11 20:06:04.065 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 5, Oracle 入门教程, null, null, 零基础入门 Oracle 开发，企业级应用开发最佳首选框架, null, 0, 0, 0
+2021-07-11 20:06:04.065 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m <==      Total: 5
+2021-07-11 20:06:04.069 INFO  com.qzh.aspect.LogAspect                          :84   [32m                  [0;39m 返回结果: {"content":{"list":[{"category1Id":1,"category2Id":2,"cover":"/image/cover1.png","description":"零基础入门 Java 开发，企业级应用开发最佳首选框架","docCount":0,"id":1,"name":"Spring Boot 入门教程","viewCount":0,"voteCount":0},{"category1Id":1,"category2Id":1,"cover":"/image/cover2.png","description":"零基础入门 Vue 开发，企业级应用开发最佳首选框架","docCount":4,"id":2,"name":"Vue 入门教程","viewCount":5,"voteCount":0},{"description":"零基础入门 Python 开发，企业级应用开发最佳首选框架","docCount":0,"id":3,"name":"Python 入门教程","viewCount":0,"voteCount":0},{"category1Id":2,"category2Id":3,"description":"零基础入门 Mysql 开发，企业级应用开发最佳首选框架","docCount":0,"id":4,"name":"Mysql 入门教程","viewCount":0,"voteCount":0},{"description":"零基础入门 Oracle 开发，企业级应用开发最佳首选框架","docCount":0,"id":5,"name":"Oracle 入门教程","viewCount":0,"voteCount":0}],"total":5},"success":true}
+2021-07-11 20:06:04.069 INFO  com.qzh.aspect.LogAspect                          :85   [32m                  [0;39m ------------- 结束 耗时：13 ms -------------
+2021-07-11 20:06:13.105 INFO  com.qzh.aspect.LogAspect                          :48   [32m                  [0;39m ------------- aop开始 -------------
+2021-07-11 20:06:13.106 INFO  com.qzh.aspect.LogAspect                          :49   [32m                  [0;39m 请求地址: http://localhost/ebook/list GET
+2021-07-11 20:06:13.106 INFO  com.qzh.aspect.LogAspect                          :50   [32m                  [0;39m 类名方法: com.qzh.controller.EBookController.list
+2021-07-11 20:06:13.106 INFO  com.qzh.aspect.LogAspect                          :51   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-07-11 20:06:13.106 INFO  com.qzh.aspect.LogAspect                          :72   [32m                  [0;39m 请求参数: [{"page":1,"size":0}]
+2021-07-11 20:06:13.107 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==>  Preparing: SELECT count(0) FROM ebook
+2021-07-11 20:06:13.107 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==> Parameters: 
+2021-07-11 20:06:13.108 TRACE com.qzh.mapper.EbookMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==    Columns: count(0)
+2021-07-11 20:06:13.108 TRACE com.qzh.mapper.EbookMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==        Row: 5
+2021-07-11 20:06:13.108 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m <==      Total: 1
+2021-07-11 20:06:13.108 INFO  com.qzh.aspect.LogAspect                          :84   [32m                  [0;39m 返回结果: {"content":{"list":[],"total":5},"success":true}
+2021-07-11 20:06:13.108 INFO  com.qzh.aspect.LogAspect                          :85   [32m                  [0;39m ------------- 结束 耗时：3 ms -------------
+2021-07-11 20:06:56.750 INFO  com.qzh.WikiApplication                           :55   [32m                  [0;39m Starting WikiApplication using Java 1.8.0_221 on DESKTOP-4A6N60R with PID 10852 (E:\IdeaProject\wiki\target\classes started by hho in E:\IdeaProject\wiki)
+2021-07-11 20:06:56.751 INFO  org.hibernate.validator.internal.util.Version     :21   [32m                  [0;39m HV000001: Hibernate Validator 6.1.7.Final
+2021-07-11 20:06:56.752 INFO  com.qzh.WikiApplication                           :675  [32m                  [0;39m No active profile set, falling back to default profiles: default
+2021-07-11 20:06:56.781 INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor :255  [32m                  [0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-11 20:06:56.782 INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor :255  [32m                  [0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-11 20:06:57.509 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :108  [32m                  [0;39m Tomcat initialized with port(s): 80 (http)
+2021-07-11 20:06:57.515 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Initializing ProtocolHandler ["http-nio-80"]
+2021-07-11 20:06:57.515 INFO  org.apache.catalina.core.StandardService          :173  [32m                  [0;39m Starting service [Tomcat]
+2021-07-11 20:06:57.515 INFO  org.apache.catalina.core.StandardEngine           :173  [32m                  [0;39m Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-07-11 20:06:57.561 INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] :173  [32m                  [0;39m Initializing Spring embedded WebApplicationContext
+2021-07-11 20:06:57.562 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext    :289  [32m                  [0;39m Root WebApplicationContext: initialization completed in 780 ms
+2021-07-11 20:06:57.895 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :181  [32m                  [0;39m Initializing ExecutorService 'applicationTaskExecutor'
+2021-07-11 20:06:58.100 INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer    :58   [32m                  [0;39m LiveReload server is running on port 35729
+2021-07-11 20:06:58.115 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Starting ProtocolHandler ["http-nio-80"]
+2021-07-11 20:06:58.127 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :220  [32m                  [0;39m Tomcat started on port(s): 80 (http) with context path ''
+2021-07-11 20:06:58.134 INFO  com.qzh.WikiApplication                           :61   [32m                  [0;39m Started WikiApplication in 1.677 seconds (JVM running for 2.163)
+2021-07-11 20:06:58.136 INFO  com.qzh.WikiApplication                           :20   [32m                  [0;39m 启动成功!
+2021-07-11 20:06:58.136 INFO  com.qzh.WikiApplication                           :21   [32m                  [0;39m 地址:	http://localhost:80
+2021-07-11 20:07:02.941 INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] :173  [32m                  [0;39m Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-11 20:07:02.941 INFO  org.springframework.web.servlet.DispatcherServlet :525  [32m                  [0;39m Initializing Servlet 'dispatcherServlet'
+2021-07-11 20:07:02.942 INFO  org.springframework.web.servlet.DispatcherServlet :547  [32m                  [0;39m Completed initialization in 1 ms
+2021-07-11 20:07:03.015 WARN  com.qzh.controller.ControllerExceptionHandler     :28   [32m                  [0;39m 参数校验失败：每页条数不能超过一千
+2021-07-11 20:07:03.050 WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver   :207  [32m                  [0;39m Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'pageReq' on field 'size': rejected value [3000]; codes [Max.pageReq.size,Max.size,Max.int,Max]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [pageReq.size,size]; arguments []; default message [size],1000]; default message [每页条数不能超过一千]]
+2021-07-11 20:07:10.413 WARN  com.qzh.controller.ControllerExceptionHandler     :28   [32m                  [0;39m 参数校验失败：每页条数不能超过一千
+2021-07-11 20:07:10.415 WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver   :207  [32m                  [0;39m Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'pageReq' on field 'size': rejected value [3000]; codes [Max.pageReq.size,Max.size,Max.int,Max]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [pageReq.size,size]; arguments []; default message [size],1000]; default message [每页条数不能超过一千]]
+2021-07-11 20:07:31.784 INFO  com.qzh.aspect.LogAspect                          :48   [32m                  [0;39m ------------- aop开始 -------------
+2021-07-11 20:07:31.785 INFO  com.qzh.aspect.LogAspect                          :49   [32m                  [0;39m 请求地址: http://localhost/ebook/list GET
+2021-07-11 20:07:31.786 INFO  com.qzh.aspect.LogAspect                          :50   [32m                  [0;39m 类名方法: com.qzh.controller.EBookController.list
+2021-07-11 20:07:31.786 INFO  com.qzh.aspect.LogAspect                          :51   [32m                  [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-07-11 20:07:31.842 INFO  com.qzh.aspect.LogAspect                          :72   [32m                  [0;39m 请求参数: [{"page":1,"size":3}]
+2021-07-11 20:07:31.874 INFO  com.zaxxer.hikari.HikariDataSource                :110  [32m                  [0;39m HikariPool-1 - Starting...
+2021-07-11 20:07:32.044 INFO  com.zaxxer.hikari.HikariDataSource                :123  [32m                  [0;39m HikariPool-1 - Start completed.
+2021-07-11 20:07:32.084 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==>  Preparing: SELECT count(0) FROM ebook
+2021-07-11 20:07:32.101 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==> Parameters: 
+2021-07-11 20:07:32.121 TRACE com.qzh.mapper.EbookMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==    Columns: count(0)
+2021-07-11 20:07:32.121 TRACE com.qzh.mapper.EbookMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==        Row: 5
+2021-07-11 20:07:32.123 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m <==      Total: 1
+2021-07-11 20:07:32.125 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m ==>  Preparing: select id, `name`, category1_id, category2_id, description, cover, doc_count, view_count, vote_count from ebook LIMIT ?
+2021-07-11 20:07:32.125 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m ==> Parameters: 3(Integer)
+2021-07-11 20:07:32.126 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==    Columns: id, name, category1_id, category2_id, description, cover, doc_count, view_count, vote_count
+2021-07-11 20:07:32.127 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 1, Spring Boot 入门教程, 1, 2, 零基础入门 Java 开发，企业级应用开发最佳首选框架, /image/cover1.png, 0, 0, 0
+2021-07-11 20:07:32.127 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 2, Vue 入门教程, 1, 1, 零基础入门 Vue 开发，企业级应用开发最佳首选框架, /image/cover2.png, 4, 5, 0
+2021-07-11 20:07:32.128 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 3, Python 入门教程, null, null, 零基础入门 Python 开发，企业级应用开发最佳首选框架, null, 0, 0, 0
+2021-07-11 20:07:32.128 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m <==      Total: 3
+2021-07-11 20:07:32.147 INFO  com.qzh.aspect.LogAspect                          :84   [32m                  [0;39m 返回结果: {"content":{"list":[{"category1Id":1,"category2Id":2,"cover":"/image/cover1.png","description":"零基础入门 Java 开发，企业级应用开发最佳首选框架","docCount":0,"id":1,"name":"Spring Boot 入门教程","viewCount":0,"voteCount":0},{"category1Id":1,"category2Id":1,"cover":"/image/cover2.png","description":"零基础入门 Vue 开发，企业级应用开发最佳首选框架","docCount":4,"id":2,"name":"Vue 入门教程","viewCount":5,"voteCount":0},{"description":"零基础入门 Python 开发，企业级应用开发最佳首选框架","docCount":0,"id":3,"name":"Python 入门教程","viewCount":0,"voteCount":0}],"total":5},"success":true}
+2021-07-11 20:07:32.147 INFO  com.qzh.aspect.LogAspect                          :85   [32m                  [0;39m ------------- 结束 耗时：364 ms -------------

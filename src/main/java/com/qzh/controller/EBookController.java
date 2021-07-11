@@ -10,6 +10,7 @@ import com.qzh.service.impl.EBookServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 /**
@@ -33,8 +34,8 @@ public class EBookController {
 //    规范后端开发 为了前端能够统一处理逻辑 需要后端统一的返回值
 
     //分页查询全部
-    @RequestMapping("/list")
-    public CommonResp list(PageReq pageReq){
+    @GetMapping("/list")
+    public CommonResp list(@Valid PageReq pageReq){
 
         CommonResp<PageResp<EbookQueryResp>> commonResp = new CommonResp<>();
         PageResp<EbookQueryResp> list = eBookService.list(pageReq);
