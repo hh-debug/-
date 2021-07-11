@@ -142,11 +142,24 @@ export default defineComponent({
     const moduleLoading = ref(false);
     const handleModalOk = () => {
       moduleLoading.value = true;
-      setTimeout(() => {
-        moduleVisible.value = false;
-        moduleLoading.value = true;
 
-      },2000)
+      Axios.post("/ebook/save",ebook.value).then((response) => {
+        const data = response.data;
+
+        if (data.success){
+          moduleVisible.value = false;
+          moduleLoading.value = false;
+
+          //重新加载列表
+          handleQuery({
+            page: pagination.value.current,
+            size: pagination.value.pageSize
+          });
+
+        }
+
+      });
+
     };
 
     //编辑

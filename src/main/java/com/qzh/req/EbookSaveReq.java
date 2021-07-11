@@ -1,6 +1,6 @@
-package com.qzh.resp;
+package com.qzh.req;
 
-public class EbookResp {
+public class EbookSaveReq {
     private Long id;
 
     private String name;

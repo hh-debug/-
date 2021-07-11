@@ -1,12 +1,14 @@
 package com.qzh.controller;
 
-import com.qzh.req.EbookReq;
+import com.qzh.req.EbookQueryReq;
+import com.qzh.req.EbookSaveReq;
 import com.qzh.req.PageReq;
 import com.qzh.resp.CommonResp;
-import com.qzh.resp.EbookResp;
+import com.qzh.resp.EbookQueryResp;
 import com.qzh.resp.PageResp;
 import com.qzh.service.impl.EBookServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -35,8 +37,8 @@ public class EBookController {
     @RequestMapping("/list")
     public CommonResp list(PageReq pageReq){
 
-        CommonResp<PageResp<EbookResp>> commonResp = new CommonResp<>();
-        PageResp<EbookResp> list = eBookService.list(pageReq);
+        CommonResp<PageResp<EbookQueryResp>> commonResp = new CommonResp<>();
+        PageResp<EbookQueryResp> list = eBookService.list(pageReq);
         commonResp.setContent(list);
 
         return commonResp;
@@ -45,21 +47,29 @@ public class EBookController {
     @RequestMapping("/all")
     public CommonResp all(){
 
-        CommonResp<List<EbookResp>> commonResp = new CommonResp<>();
-        List<EbookResp> list = eBookService.list();
+        CommonResp<List<EbookQueryResp>> commonResp = new CommonResp<>();
+        List<EbookQueryResp> list = eBookService.list();
         commonResp.setContent(list);
 
         return commonResp;
     }
 
     @RequestMapping("/likeServlet/list")
-    public CommonResp likeNameList(EbookReq ebookReq){
-        CommonResp<List<EbookResp>> resp = new CommonResp<>();
-        List<EbookResp> respList = eBookService.likeNameList(ebookReq);
+    public CommonResp likeNameList(EbookQueryReq ebookQueryReq){
+        CommonResp<List<EbookQueryResp>> resp = new CommonResp<>();
+        List<EbookQueryResp> respList = eBookService.likeNameList(ebookQueryReq);
         System.out.println(respList);
         resp.setContent(respList);
         System.out.println(resp);
         return resp;
+    }
+
+    @RequestMapping("/save")
+    public CommonResp save(@RequestBody EbookSaveReq ebookSaveReq){
+
+        CommonResp commonResp = new CommonResp<>();
+        eBookService.save(ebookSaveReq);
+        return commonResp;
     }
 
 }
