@@ -1,11 +1,14 @@
 package com.qzh.service.impl;
 
 import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.qzh.domain.Ebook;
 import com.qzh.domain.EbookExample;
 import com.qzh.mapper.EbookMapper;
 import com.qzh.req.EbookReq;
+import com.qzh.req.PageReq;
 import com.qzh.resp.EbookResp;
+import com.qzh.resp.PageResp;
 import com.qzh.service.EBookService;
 import com.qzh.util.CopyUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,9 +29,19 @@ public class EBookServiceImpl implements EBookService {
     private EbookMapper ebookMapper;
 
     @Override
-    public List<Ebook> list() {
-        PageHelper.startPage(1, 3);
-        return ebookMapper.selectByExample(null);
+    public PageResp<EbookResp> list(PageReq pageReq) {
+        PageHelper.startPage(pageReq.getPage(), pageReq.getSize());
+        List<Ebook> ebooks = ebookMapper.selectByExample(null);
+        PageInfo<Ebook> pageInfo = new PageInfo<>(ebooks);
+        //        列表的复制
+        List<EbookResp> respList = CopyUtil.copyList(ebooks, EbookResp.class);
+
+
+
+        PageResp<EbookResp> pageResp = new PageResp();
+        pageResp.setTotal(pageInfo.getTotal());
+        pageResp.setList(respList);
+        return pageResp;
     }
 
     @Override

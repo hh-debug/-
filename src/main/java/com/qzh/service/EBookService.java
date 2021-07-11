@@ -1,8 +1,9 @@
 package com.qzh.service;
 
-import com.qzh.domain.Ebook;
 import com.qzh.req.EbookReq;
+import com.qzh.req.PageReq;
 import com.qzh.resp.EbookResp;
+import com.qzh.resp.PageResp;
 
 import java.util.List;
 
@@ -12,7 +13,7 @@ import java.util.List;
  * @date:2021/7/913:37
  */
 public interface EBookService {
-    public List<Ebook> list();
+    public PageResp<EbookResp> list(PageReq pageReq);
 
     public List<EbookResp> likeNameList(EbookReq ebookReq);
 }

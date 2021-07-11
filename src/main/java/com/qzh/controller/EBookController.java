@@ -1,9 +1,10 @@
 package com.qzh.controller;
 
-import com.qzh.domain.Ebook;
 import com.qzh.req.EbookReq;
-import com.qzh.resp.EbookResp;
+import com.qzh.req.PageReq;
 import com.qzh.resp.CommonResp;
+import com.qzh.resp.EbookResp;
+import com.qzh.resp.PageResp;
 import com.qzh.service.impl.EBookServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,9 +33,9 @@ public class EBookController {
 //    规范后端开发 为了前端能够统一处理逻辑 需要后端统一的返回值
 
     @RequestMapping("/list")
-    public CommonResp list(){
-        CommonResp<List<Ebook>> commonResp = new CommonResp<>();
-        List<Ebook> list = eBookService.list();
+    public CommonResp list(PageReq pageReq){
+        CommonResp<PageResp<EbookResp>> commonResp = new CommonResp<>();
+        PageResp<EbookResp> list = eBookService.list(pageReq);
         commonResp.setContent(list);
 
         return commonResp;
