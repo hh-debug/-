@@ -7,7 +7,6 @@ import com.qzh.domain.EbookExample;
 import com.qzh.mapper.EbookMapper;
 import com.qzh.req.EbookQueryReq;
 import com.qzh.req.EbookSaveReq;
-import com.qzh.req.PageReq;
 import com.qzh.resp.EbookQueryResp;
 import com.qzh.resp.PageResp;
 import com.qzh.service.EBookService;
@@ -36,9 +35,19 @@ public class EBookServiceImpl implements EBookService {
     private SnowFlake snowFlake;
 
     @Override
-    public PageResp<EbookQueryResp> list(PageReq pageReq) {
-        PageHelper.startPage(pageReq.getPage(), pageReq.getSize());
-        List<Ebook> ebooks = ebookMapper.selectByExample(null);
+    public PageResp<EbookQueryResp> list(EbookQueryReq ebookQueryReq) {
+
+        EbookExample ebookExample = new EbookExample();//创建示例
+        EbookExample.Criteria criteria = ebookExample.createCriteria();//创建where条件
+        System.out.println("前端传递的名称"+ebookQueryReq.getName());
+
+        if (!ObjectUtils.isEmpty(ebookQueryReq.getName())){//如果前端不传条件 默认为不加条件 查询所有
+            System.out.println("前端加了条件 进入if");
+        criteria.andNameLike("%" + ebookQueryReq.getName() + "%");//添加模糊查询条件
+        }
+
+        PageHelper.startPage(ebookQueryReq.getPage(), ebookQueryReq.getSize());
+        List<Ebook> ebooks = ebookMapper.selectByExample(ebookExample);
         PageInfo<Ebook> pageInfo = new PageInfo<>(ebooks);
         //        列表的复制
         List<EbookQueryResp> respList = CopyUtil.copyList(ebooks, EbookQueryResp.class);
@@ -53,6 +62,8 @@ public class EBookServiceImpl implements EBookService {
 
     @Override
     public List<EbookQueryResp> list() {
+
+
 
         List<Ebook> ebooks = ebookMapper.selectByExample(null);
 

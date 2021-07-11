@@ -2,7 +2,6 @@ package com.qzh.service;
 
 import com.qzh.req.EbookQueryReq;
 import com.qzh.req.EbookSaveReq;
-import com.qzh.req.PageReq;
 import com.qzh.resp.EbookQueryResp;
 import com.qzh.resp.PageResp;
 
@@ -14,7 +13,7 @@ import java.util.List;
  * @date:2021/7/913:37
  */
 public interface EBookService {
-    public PageResp<EbookQueryResp> list(PageReq pageReq);
+    public PageResp<EbookQueryResp> list(EbookQueryReq ebookQueryReq);
 
     public List<EbookQueryResp> list();
 

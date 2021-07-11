@@ -2,7 +2,6 @@ package com.qzh.controller;
 
 import com.qzh.req.EbookQueryReq;
 import com.qzh.req.EbookSaveReq;
-import com.qzh.req.PageReq;
 import com.qzh.resp.CommonResp;
 import com.qzh.resp.EbookQueryResp;
 import com.qzh.resp.PageResp;
@@ -35,10 +34,10 @@ public class EBookController {
 
     //分页查询全部
     @GetMapping("/list")
-    public CommonResp list(@Valid PageReq pageReq){
+    public CommonResp list(@Valid EbookQueryReq ebookQueryReq){
 
         CommonResp<PageResp<EbookQueryResp>> commonResp = new CommonResp<>();
-        PageResp<EbookQueryResp> list = eBookService.list(pageReq);
+        PageResp<EbookQueryResp> list = eBookService.list(ebookQueryReq);
         commonResp.setContent(list);
 
         return commonResp;

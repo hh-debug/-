@@ -31,5 +31,13 @@
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^7.0.0-0",
     "typescript": "~3.9.3"
+  },
+  "rules": {
+    "generator-star-spacing": "off",
+    "no-tabs":"off",
+    "no-unused-vars":"off",
+    "no-console":"off",
+    "no-irregular-whitespace":"off",
+    "no-debugger": "off"
   }
 }
