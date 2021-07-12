@@ -63,9 +63,10 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     public List<CategoryQueryResp> list() {
 
+        CategoryExample categoryExample = new CategoryExample();
+        categoryExample.setOrderByClause("sort asc");
 
-
-        List<Category> categorys = categoryMapper.selectByExample(null);
+        List<Category> categorys = categoryMapper.selectByExample(categoryExample);
 
         //        列表的复制
         List<CategoryQueryResp> respList = CopyUtil.copyList(categorys, CategoryQueryResp.class);
@@ -76,6 +77,7 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     public List<CategoryQueryResp> likeNameList(CategoryQueryReq categoryQueryReq) {
         CategoryExample categoryExample = new CategoryExample();//创建示例
+        categoryExample.setOrderByClause("sort asc");
         CategoryExample.Criteria criteria = categoryExample.createCriteria();//创建where条件
 
 //        if (!ObjectUtils.isEmpty(categoryReq.getName())){//如果前端不传条件 默认为不加条件 查询所有
