@@ -44,7 +44,11 @@ public class EbookServiceImpl implements EbookService {
         if (!ObjectUtils.isEmpty(ebookQueryReq.getName())){//如果前端不传条件 默认为不加条件 查询所有
             System.out.println("前端加了条件 进入if");
         criteria.andNameLike("%" + ebookQueryReq.getName() + "%");//添加模糊查询条件
+        }if (!ObjectUtils.isEmpty(ebookQueryReq.getCategoryId2())){//如果前端不传条件 默认为不加条件 查询所有
+            System.out.println("前端加了二级分类条件 进入if");
+            criteria.andCategory2IdEqualTo(ebookQueryReq.getCategoryId2());//添加模糊查询条件
         }
+
 
         PageHelper.startPage(ebookQueryReq.getPage(), ebookQueryReq.getSize());
         List<Ebook> ebooks = ebookMapper.selectByExample(ebookExample);

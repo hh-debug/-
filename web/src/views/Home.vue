@@ -117,18 +117,37 @@ export default defineComponent({
       });
     };
     const isShowWelcome = ref(true);
+
+    let categoryId2 = 0;
+
+    const ebooks = ref();
+    const handleQueryEbook = () => {
+      Axios.get("/ebook/list", {
+        params: {
+          page: 1,
+          size: 1000,
+          categoryId2: categoryId2
+        }
+      }).then((response) => {
+        const data = response.data;
+        ebooks.value = data.content.list;
+        // ebooks1.books = data.content;
+      });
+    };
+
     const handleClick = (value: any) => {
       console.log("menu click" + value)
 
       if (value.key === 'welcome') {
         isShowWelcome.value = true;
       }else {
+        categoryId2 = value.key;
         isShowWelcome.value = false;
+        handleQueryEbook();
       }
 
     };
     console.log("setup...");
-    const ebooks = ref();
 
 
 
@@ -136,13 +155,6 @@ export default defineComponent({
         () => {
           handleQueryCategory();
           console.log("onMounted112221");
-          Axios.get("/ebook/all").then(
-              function (response) {
-                const data = response.data;
-                ebooks.value = data.content;
-                console.log(response);
-              }
-          );
         }
     );
 
