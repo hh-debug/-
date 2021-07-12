@@ -6,12 +6,11 @@
           v-model:selectedKeys="selectedKeys2"
           v-model:openKeys="openKeys"
           :style="{ height: '100%', borderRight: 0 }"
+          @click="handleClick"
       >
         <a-menu-item key="welcome">
-          <router-link :to="'/'">
             <MailOutlined />
             <span>欢迎</span>
-          </router-link>
         </a-menu-item>
         <a-sub-menu v-for="item in level1" :key="item.id">
           <template v-slot:title>
@@ -32,7 +31,10 @@
       <a-layout-content
           :style="{ background: '#fff', padding: '24px', margin: 0, minHeight: '280px' }"
       >
-        <a-list item-layout="vertical" size="large" :grid="{ gutter: 20, column: 4 }" :data-source="ebooks">
+        <div class="welcome" v-show="isShowWelcome">
+          <h3>我的知识库</h3>
+        </div>
+        <a-list v-show="!isShowWelcome" item-layout="vertical" size="large" :grid="{ gutter: 20, column: 4 }" :data-source="ebooks">
 
           <template #renderItem="{ item }">
             <a-list-item key="item.name">
@@ -114,12 +116,21 @@ export default defineComponent({
         }
       });
     };
+    const isShowWelcome = ref(true);
+    const handleClick = (value: any) => {
+      console.log("menu click" + value)
 
-    const handleClick = () => {
-      console.log("menu click")
+      if (value.key === 'welcome') {
+        isShowWelcome.value = true;
+      }else {
+        isShowWelcome.value = false;
+      }
+
     };
     console.log("setup...");
     const ebooks = ref();
+
+
 
     onMounted(
         () => {
@@ -148,6 +159,7 @@ export default defineComponent({
       actions,
       handleClick,
       level1,
+      isShowWelcome
     }
 
   }
