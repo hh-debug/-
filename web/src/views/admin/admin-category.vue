@@ -19,7 +19,7 @@
       </a-form-item>
     </a-form>
     <a-table :columns="columns"
-             :data-source="categorys"
+             :data-source="level1"
              :row-key="record => record.id"
              :loading="loading"
              :pagination="false"
@@ -84,6 +84,7 @@
         param.value = {};
         const categorys = ref();
         const loading = ref(false);
+        const level1 = ref();
         const columns = [
           {
             title: '名称',
@@ -114,6 +115,11 @@
             if (data.success) {
 
               categorys.value = data.content;
+              console.log("原始数组1:" + categorys.value);
+
+              level1.value = [];
+              level1.value = Tool.array2Tree(categorys.value, 0);
+              console.log("树形结构:" + level1.value);
 
             } else {
               message.error(data.message)
@@ -174,7 +180,8 @@
 
         return {
           param,
-          categorys,
+          // categorys,
+          level1,
           columns,
           loading,
 
