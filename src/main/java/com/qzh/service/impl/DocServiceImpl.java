@@ -126,7 +126,12 @@ public class DocServiceImpl implements DocService {
     }
 
     @Override
-    public void delete(long id) {
-        docMapper.deleteByPrimaryKey(id);
+    public void delete(List<String> idsStr) {
+        DocExample docExample = new DocExample();
+        DocExample.Criteria criteria = docExample.createCriteria();
+        criteria.andIdIn(idsStr);
+
+        docMapper.deleteByExample(docExample);
+//        docMapper.deleteByPrimaryKey(id);
     }
 }
