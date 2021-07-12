@@ -2904,3 +2904,555 @@
 2021-07-12 17:09:01.873 INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener :63   [32m                  [0;39m Condition evaluation unchanged
 2021-07-12 17:09:01.874 INFO  com.qzh.WikiApplication                           :20   [32m                  [0;39m 启动成功!
 2021-07-12 17:09:01.874 INFO  com.qzh.WikiApplication                           :21   [32m                  [0;39m 地址:	http://localhost:80
+2021-07-12 17:18:47.037 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :218  [32m                  [0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+2021-07-12 17:18:47.145 INFO  com.qzh.WikiApplication                           :55   [32m                  [0;39m Starting WikiApplication using Java 1.8.0_221 on DESKTOP-4A6N60R with PID 10096 (E:\IdeaProject\wiki\target\classes started by hho in E:\IdeaProject\wiki)
+2021-07-12 17:18:47.146 INFO  com.qzh.WikiApplication                           :675  [32m                  [0;39m No active profile set, falling back to default profiles: default
+2021-07-12 17:18:47.304 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :108  [32m                  [0;39m Tomcat initialized with port(s): 80 (http)
+2021-07-12 17:18:47.304 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Initializing ProtocolHandler ["http-nio-80"]
+2021-07-12 17:18:47.305 INFO  org.apache.catalina.core.StandardService          :173  [32m                  [0;39m Starting service [Tomcat]
+2021-07-12 17:18:47.305 INFO  org.apache.catalina.core.StandardEngine           :173  [32m                  [0;39m Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-07-12 17:18:47.314 INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] :173  [32m                  [0;39m Initializing Spring embedded WebApplicationContext
+2021-07-12 17:18:47.314 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext    :289  [32m                  [0;39m Root WebApplicationContext: initialization completed in 166 ms
+2021-07-12 17:18:47.435 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :181  [32m                  [0;39m Initializing ExecutorService 'applicationTaskExecutor'
+2021-07-12 17:18:47.527 INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer    :58   [32m                  [0;39m LiveReload server is running on port 35729
+2021-07-12 17:18:47.533 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Starting ProtocolHandler ["http-nio-80"]
+2021-07-12 17:18:47.534 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :220  [32m                  [0;39m Tomcat started on port(s): 80 (http) with context path ''
+2021-07-12 17:18:47.536 INFO  com.qzh.WikiApplication                           :61   [32m                  [0;39m Started WikiApplication in 0.409 seconds (JVM running for 13216.411)
+2021-07-12 17:18:47.537 INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener :63   [32m                  [0;39m Condition evaluation unchanged
+2021-07-12 17:18:47.537 INFO  com.qzh.WikiApplication                           :20   [32m                  [0;39m 启动成功!
+2021-07-12 17:18:47.537 INFO  com.qzh.WikiApplication                           :21   [32m                  [0;39m 地址:	http://localhost:80
+2021-07-12 17:22:11.811 INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] :173  [32m                  [0;39m Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-12 17:22:11.811 INFO  org.springframework.web.servlet.DispatcherServlet :525  [32m                  [0;39m Initializing Servlet 'dispatcherServlet'
+2021-07-12 17:22:11.812 INFO  org.springframework.web.servlet.DispatcherServlet :547  [32m                  [0;39m Completed initialization in 1 ms
+2021-07-12 17:22:11.814 INFO  com.qzh.aspect.LogAspect                          :48   [32m                  [0;39m ------------- aop开始 -------------
+2021-07-12 17:22:11.814 INFO  com.qzh.aspect.LogAspect                          :49   [32m                  [0;39m 请求地址: http://localhost/category/all GET
+2021-07-12 17:22:11.814 INFO  com.qzh.aspect.LogAspect                          :50   [32m                  [0;39m 类名方法: com.qzh.controller.CategoryController.all
+2021-07-12 17:22:11.814 INFO  com.qzh.aspect.LogAspect                          :51   [32m                  [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-07-12 17:22:11.814 INFO  com.qzh.aspect.LogAspect                          :72   [32m                  [0;39m 请求参数: []
+2021-07-12 17:22:11.818 INFO  com.zaxxer.hikari.HikariDataSource                :110  [32m                  [0;39m HikariPool-5 - Starting...
+2021-07-12 17:22:11.821 INFO  com.zaxxer.hikari.HikariDataSource                :123  [32m                  [0;39m HikariPool-5 - Start completed.
+2021-07-12 17:22:11.821 DEBUG com.qzh.mapper.CategoryMapper.selectByExample     :137  [32m                  [0;39m ==>  Preparing: select id, parent, `name`, sort from category order by sort asc
+2021-07-12 17:22:11.822 DEBUG com.qzh.mapper.CategoryMapper.selectByExample     :137  [32m                  [0;39m ==> Parameters: 
+2021-07-12 17:22:11.822 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==    Columns: id, parent, name, sort
+2021-07-12 17:22:11.822 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 100, 0, 前端开发, 100
+2021-07-12 17:22:11.822 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 101, 100, Vue, 101
+2021-07-12 17:22:11.823 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 102, 100, HTML & CSS, 102
+2021-07-12 17:22:11.823 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 200, 0, Java, 200
+2021-07-12 17:22:11.823 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 201, 200, 基础应用, 201
+2021-07-12 17:22:11.823 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 202, 200, 框架应用, 202
+2021-07-12 17:22:11.823 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 300, 0, Python, 300
+2021-07-12 17:22:11.824 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 301, 300, 基础应用, 301
+2021-07-12 17:22:11.824 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 302, 300, 进阶方向应用, 302
+2021-07-12 17:22:11.824 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 400, 0, 数据库, 400
+2021-07-12 17:22:11.824 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 401, 400, MySQL, 401
+2021-07-12 17:22:11.824 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 500, 0, 其它, 500
+2021-07-12 17:22:11.824 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 501, 500, 服务器, 501
+2021-07-12 17:22:11.824 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 502, 500, 开发工具, 502
+2021-07-12 17:22:11.824 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 503, 500, 热门服务端语言, 503
+2021-07-12 17:22:11.824 DEBUG com.qzh.mapper.CategoryMapper.selectByExample     :137  [32m                  [0;39m <==      Total: 15
+2021-07-12 17:22:11.829 INFO  com.qzh.aspect.LogAspect                          :84   [32m                  [0;39m 返回结果: {"content":[{"id":100,"name":"前端开发","parent":0,"sort":100},{"id":101,"name":"Vue","parent":100,"sort":101},{"id":102,"name":"HTML & CSS","parent":100,"sort":102},{"id":200,"name":"Java","parent":0,"sort":200},{"id":201,"name":"基础应用","parent":200,"sort":201},{"id":202,"name":"框架应用","parent":200,"sort":202},{"id":300,"name":"Python","parent":0,"sort":300},{"id":301,"name":"基础应用","parent":300,"sort":301},{"id":302,"name":"进阶方向应用","parent":300,"sort":302},{"id":400,"name":"数据库","parent":0,"sort":400},{"id":401,"name":"MySQL","parent":400,"sort":401},{"id":500,"name":"其它","parent":0,"sort":500},{"id":501,"name":"服务器","parent":500,"sort":501},{"id":502,"name":"开发工具","parent":500,"sort":502},{"id":503,"name":"热门服务端语言","parent":500,"sort":503}],"success":true}
+2021-07-12 17:22:11.830 INFO  com.qzh.aspect.LogAspect                          :85   [32m                  [0;39m ------------- 结束 耗时：17 ms -------------
+2021-07-12 17:22:43.365 INFO  com.qzh.aspect.LogAspect                          :48   [32m                  [0;39m ------------- aop开始 -------------
+2021-07-12 17:22:43.365 INFO  com.qzh.aspect.LogAspect                          :49   [32m                  [0;39m 请求地址: http://localhost/category/all GET
+2021-07-12 17:22:43.365 INFO  com.qzh.aspect.LogAspect                          :50   [32m                  [0;39m 类名方法: com.qzh.controller.CategoryController.all
+2021-07-12 17:22:43.366 INFO  com.qzh.aspect.LogAspect                          :51   [32m                  [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-07-12 17:22:43.366 INFO  com.qzh.aspect.LogAspect                          :72   [32m                  [0;39m 请求参数: []
+2021-07-12 17:22:43.367 DEBUG com.qzh.mapper.CategoryMapper.selectByExample     :137  [32m                  [0;39m ==>  Preparing: select id, parent, `name`, sort from category order by sort asc
+2021-07-12 17:22:43.367 DEBUG com.qzh.mapper.CategoryMapper.selectByExample     :137  [32m                  [0;39m ==> Parameters: 
+2021-07-12 17:22:43.368 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==    Columns: id, parent, name, sort
+2021-07-12 17:22:43.368 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 100, 0, 前端开发, 100
+2021-07-12 17:22:43.370 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 101, 100, Vue, 101
+2021-07-12 17:22:43.370 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 102, 100, HTML & CSS, 102
+2021-07-12 17:22:43.370 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 200, 0, Java, 200
+2021-07-12 17:22:43.370 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 201, 200, 基础应用, 201
+2021-07-12 17:22:43.370 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 202, 200, 框架应用, 202
+2021-07-12 17:22:43.370 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 300, 0, Python, 300
+2021-07-12 17:22:43.371 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 301, 300, 基础应用, 301
+2021-07-12 17:22:43.371 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 302, 300, 进阶方向应用, 302
+2021-07-12 17:22:43.371 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 400, 0, 数据库, 400
+2021-07-12 17:22:43.371 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 401, 400, MySQL, 401
+2021-07-12 17:22:43.371 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 500, 0, 其它, 500
+2021-07-12 17:22:43.371 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 501, 500, 服务器, 501
+2021-07-12 17:22:43.371 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 502, 500, 开发工具, 502
+2021-07-12 17:22:43.371 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 503, 500, 热门服务端语言, 503
+2021-07-12 17:22:43.371 DEBUG com.qzh.mapper.CategoryMapper.selectByExample     :137  [32m                  [0;39m <==      Total: 15
+2021-07-12 17:22:43.373 INFO  com.qzh.aspect.LogAspect                          :84   [32m                  [0;39m 返回结果: {"content":[{"id":100,"name":"前端开发","parent":0,"sort":100},{"id":101,"name":"Vue","parent":100,"sort":101},{"id":102,"name":"HTML & CSS","parent":100,"sort":102},{"id":200,"name":"Java","parent":0,"sort":200},{"id":201,"name":"基础应用","parent":200,"sort":201},{"id":202,"name":"框架应用","parent":200,"sort":202},{"id":300,"name":"Python","parent":0,"sort":300},{"id":301,"name":"基础应用","parent":300,"sort":301},{"id":302,"name":"进阶方向应用","parent":300,"sort":302},{"id":400,"name":"数据库","parent":0,"sort":400},{"id":401,"name":"MySQL","parent":400,"sort":401},{"id":500,"name":"其它","parent":0,"sort":500},{"id":501,"name":"服务器","parent":500,"sort":501},{"id":502,"name":"开发工具","parent":500,"sort":502},{"id":503,"name":"热门服务端语言","parent":500,"sort":503}],"success":true}
+2021-07-12 17:22:43.373 INFO  com.qzh.aspect.LogAspect                          :85   [32m                  [0;39m ------------- 结束 耗时：8 ms -------------
+2021-07-12 17:26:51.164 INFO  com.qzh.aspect.LogAspect                          :48   [32m                  [0;39m ------------- aop开始 -------------
+2021-07-12 17:26:51.164 INFO  com.qzh.aspect.LogAspect                          :49   [32m                  [0;39m 请求地址: http://localhost/category/all GET
+2021-07-12 17:26:51.164 INFO  com.qzh.aspect.LogAspect                          :50   [32m                  [0;39m 类名方法: com.qzh.controller.CategoryController.all
+2021-07-12 17:26:51.164 INFO  com.qzh.aspect.LogAspect                          :51   [32m                  [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-07-12 17:26:51.165 INFO  com.qzh.aspect.LogAspect                          :72   [32m                  [0;39m 请求参数: []
+2021-07-12 17:26:51.165 DEBUG com.qzh.mapper.CategoryMapper.selectByExample     :137  [32m                  [0;39m ==>  Preparing: select id, parent, `name`, sort from category order by sort asc
+2021-07-12 17:26:51.165 DEBUG com.qzh.mapper.CategoryMapper.selectByExample     :137  [32m                  [0;39m ==> Parameters: 
+2021-07-12 17:26:51.166 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==    Columns: id, parent, name, sort
+2021-07-12 17:26:51.166 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 100, 0, 前端开发, 100
+2021-07-12 17:26:51.166 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 101, 100, Vue, 101
+2021-07-12 17:26:51.166 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 102, 100, HTML & CSS, 102
+2021-07-12 17:26:51.166 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 200, 0, Java, 200
+2021-07-12 17:26:51.167 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 201, 200, 基础应用, 201
+2021-07-12 17:26:51.167 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 202, 200, 框架应用, 202
+2021-07-12 17:26:51.167 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 300, 0, Python, 300
+2021-07-12 17:26:51.167 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 301, 300, 基础应用, 301
+2021-07-12 17:26:51.167 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 302, 300, 进阶方向应用, 302
+2021-07-12 17:26:51.167 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 400, 0, 数据库, 400
+2021-07-12 17:26:51.167 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 401, 400, MySQL, 401
+2021-07-12 17:26:51.167 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 500, 0, 其它, 500
+2021-07-12 17:26:51.167 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 501, 500, 服务器, 501
+2021-07-12 17:26:51.167 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 502, 500, 开发工具, 502
+2021-07-12 17:26:51.168 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 503, 500, 热门服务端语言, 503
+2021-07-12 17:26:51.168 DEBUG com.qzh.mapper.CategoryMapper.selectByExample     :137  [32m                  [0;39m <==      Total: 15
+2021-07-12 17:26:51.168 INFO  com.qzh.aspect.LogAspect                          :84   [32m                  [0;39m 返回结果: {"content":[{"id":100,"name":"前端开发","parent":0,"sort":100},{"id":101,"name":"Vue","parent":100,"sort":101},{"id":102,"name":"HTML & CSS","parent":100,"sort":102},{"id":200,"name":"Java","parent":0,"sort":200},{"id":201,"name":"基础应用","parent":200,"sort":201},{"id":202,"name":"框架应用","parent":200,"sort":202},{"id":300,"name":"Python","parent":0,"sort":300},{"id":301,"name":"基础应用","parent":300,"sort":301},{"id":302,"name":"进阶方向应用","parent":300,"sort":302},{"id":400,"name":"数据库","parent":0,"sort":400},{"id":401,"name":"MySQL","parent":400,"sort":401},{"id":500,"name":"其它","parent":0,"sort":500},{"id":501,"name":"服务器","parent":500,"sort":501},{"id":502,"name":"开发工具","parent":500,"sort":502},{"id":503,"name":"热门服务端语言","parent":500,"sort":503}],"success":true}
+2021-07-12 17:26:51.168 INFO  com.qzh.aspect.LogAspect                          :85   [32m                  [0;39m ------------- 结束 耗时：4 ms -------------
+2021-07-12 17:26:51.200 INFO  com.qzh.aspect.LogAspect                          :48   [32m                  [0;39m ------------- aop开始 -------------
+2021-07-12 17:26:51.201 INFO  com.qzh.aspect.LogAspect                          :49   [32m                  [0;39m 请求地址: http://localhost/ebook/list GET
+2021-07-12 17:26:51.201 INFO  com.qzh.aspect.LogAspect                          :50   [32m                  [0;39m 类名方法: com.qzh.controller.EBookController.list
+2021-07-12 17:26:51.201 INFO  com.qzh.aspect.LogAspect                          :51   [32m                  [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-07-12 17:26:51.202 INFO  com.qzh.aspect.LogAspect                          :72   [32m                  [0;39m 请求参数: [{"page":1,"size":3}]
+2021-07-12 17:26:51.206 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==>  Preparing: SELECT count(0) FROM ebook
+2021-07-12 17:26:51.206 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==> Parameters: 
+2021-07-12 17:26:51.207 TRACE com.qzh.mapper.EbookMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==    Columns: count(0)
+2021-07-12 17:26:51.207 TRACE com.qzh.mapper.EbookMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==        Row: 5
+2021-07-12 17:26:51.207 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m <==      Total: 1
+2021-07-12 17:26:51.208 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m ==>  Preparing: select id, `name`, category1_id, category2_id, description, cover, doc_count, view_count, vote_count from ebook LIMIT ?
+2021-07-12 17:26:51.208 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m ==> Parameters: 3(Integer)
+2021-07-12 17:26:51.208 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==    Columns: id, name, category1_id, category2_id, description, cover, doc_count, view_count, vote_count
+2021-07-12 17:26:51.208 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 1, Spring Boot 入门教程, 200, 202, 零基础入门 Java 开发，企业级应用开发最佳首选框架, /image/cover1.png, 0, 0, 0
+2021-07-12 17:26:51.209 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 2, Vue 入门教程, 100, 101, 零基础入门 Vue 开发，企业级应用开发最佳首选框架, /image/cover2.png, 4, 5, 0
+2021-07-12 17:26:51.209 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 3, Python 入门教程, 300, 301, 零基础入门 Python 开发，企业级应用开发最佳首选框架, null, 0, 0, 0
+2021-07-12 17:26:51.209 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m <==      Total: 3
+2021-07-12 17:26:51.213 INFO  com.qzh.aspect.LogAspect                          :84   [32m                  [0;39m 返回结果: {"content":{"list":[{"category1Id":200,"category2Id":202,"cover":"/image/cover1.png","description":"零基础入门 Java 开发，企业级应用开发最佳首选框架","docCount":0,"id":1,"name":"Spring Boot 入门教程","viewCount":0,"voteCount":0},{"category1Id":100,"category2Id":101,"cover":"/image/cover2.png","description":"零基础入门 Vue 开发，企业级应用开发最佳首选框架","docCount":4,"id":2,"name":"Vue 入门教程","viewCount":5,"voteCount":0},{"category1Id":300,"category2Id":301,"description":"零基础入门 Python 开发，企业级应用开发最佳首选框架","docCount":0,"id":3,"name":"Python 入门教程","viewCount":0,"voteCount":0}],"total":5},"success":true}
+2021-07-12 17:26:51.213 INFO  com.qzh.aspect.LogAspect                          :85   [32m                  [0;39m ------------- 结束 耗时：13 ms -------------
+2021-07-12 17:26:52.133 INFO  com.qzh.aspect.LogAspect                          :48   [32m                  [0;39m ------------- aop开始 -------------
+2021-07-12 17:26:52.134 INFO  com.qzh.aspect.LogAspect                          :49   [32m                  [0;39m 请求地址: http://localhost/category/all GET
+2021-07-12 17:26:52.134 INFO  com.qzh.aspect.LogAspect                          :50   [32m                  [0;39m 类名方法: com.qzh.controller.CategoryController.all
+2021-07-12 17:26:52.134 INFO  com.qzh.aspect.LogAspect                          :51   [32m                  [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-07-12 17:26:52.134 INFO  com.qzh.aspect.LogAspect                          :72   [32m                  [0;39m 请求参数: []
+2021-07-12 17:26:52.135 DEBUG com.qzh.mapper.CategoryMapper.selectByExample     :137  [32m                  [0;39m ==>  Preparing: select id, parent, `name`, sort from category order by sort asc
+2021-07-12 17:26:52.135 DEBUG com.qzh.mapper.CategoryMapper.selectByExample     :137  [32m                  [0;39m ==> Parameters: 
+2021-07-12 17:26:52.135 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==    Columns: id, parent, name, sort
+2021-07-12 17:26:52.136 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 100, 0, 前端开发, 100
+2021-07-12 17:26:52.136 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 101, 100, Vue, 101
+2021-07-12 17:26:52.136 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 102, 100, HTML & CSS, 102
+2021-07-12 17:26:52.136 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 200, 0, Java, 200
+2021-07-12 17:26:52.136 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 201, 200, 基础应用, 201
+2021-07-12 17:26:52.136 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 202, 200, 框架应用, 202
+2021-07-12 17:26:52.136 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 300, 0, Python, 300
+2021-07-12 17:26:52.136 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 301, 300, 基础应用, 301
+2021-07-12 17:26:52.137 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 302, 300, 进阶方向应用, 302
+2021-07-12 17:26:52.137 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 400, 0, 数据库, 400
+2021-07-12 17:26:52.137 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 401, 400, MySQL, 401
+2021-07-12 17:26:52.137 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 500, 0, 其它, 500
+2021-07-12 17:26:52.137 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 501, 500, 服务器, 501
+2021-07-12 17:26:52.137 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 502, 500, 开发工具, 502
+2021-07-12 17:26:52.137 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 503, 500, 热门服务端语言, 503
+2021-07-12 17:26:52.137 DEBUG com.qzh.mapper.CategoryMapper.selectByExample     :137  [32m                  [0;39m <==      Total: 15
+2021-07-12 17:26:52.138 INFO  com.qzh.aspect.LogAspect                          :84   [32m                  [0;39m 返回结果: {"content":[{"id":100,"name":"前端开发","parent":0,"sort":100},{"id":101,"name":"Vue","parent":100,"sort":101},{"id":102,"name":"HTML & CSS","parent":100,"sort":102},{"id":200,"name":"Java","parent":0,"sort":200},{"id":201,"name":"基础应用","parent":200,"sort":201},{"id":202,"name":"框架应用","parent":200,"sort":202},{"id":300,"name":"Python","parent":0,"sort":300},{"id":301,"name":"基础应用","parent":300,"sort":301},{"id":302,"name":"进阶方向应用","parent":300,"sort":302},{"id":400,"name":"数据库","parent":0,"sort":400},{"id":401,"name":"MySQL","parent":400,"sort":401},{"id":500,"name":"其它","parent":0,"sort":500},{"id":501,"name":"服务器","parent":500,"sort":501},{"id":502,"name":"开发工具","parent":500,"sort":502},{"id":503,"name":"热门服务端语言","parent":500,"sort":503}],"success":true}
+2021-07-12 17:26:52.138 INFO  com.qzh.aspect.LogAspect                          :85   [32m                  [0;39m ------------- 结束 耗时：5 ms -------------
+2021-07-12 17:26:52.628 INFO  com.qzh.aspect.LogAspect                          :48   [32m                  [0;39m ------------- aop开始 -------------
+2021-07-12 17:26:52.629 INFO  com.qzh.aspect.LogAspect                          :49   [32m                  [0;39m 请求地址: http://localhost/category/all GET
+2021-07-12 17:26:52.629 INFO  com.qzh.aspect.LogAspect                          :50   [32m                  [0;39m 类名方法: com.qzh.controller.CategoryController.all
+2021-07-12 17:26:52.629 INFO  com.qzh.aspect.LogAspect                          :51   [32m                  [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-07-12 17:26:52.629 INFO  com.qzh.aspect.LogAspect                          :72   [32m                  [0;39m 请求参数: []
+2021-07-12 17:26:52.629 DEBUG com.qzh.mapper.CategoryMapper.selectByExample     :137  [32m                  [0;39m ==>  Preparing: select id, parent, `name`, sort from category order by sort asc
+2021-07-12 17:26:52.629 DEBUG com.qzh.mapper.CategoryMapper.selectByExample     :137  [32m                  [0;39m ==> Parameters: 
+2021-07-12 17:26:52.630 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==    Columns: id, parent, name, sort
+2021-07-12 17:26:52.630 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 100, 0, 前端开发, 100
+2021-07-12 17:26:52.630 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 101, 100, Vue, 101
+2021-07-12 17:26:52.630 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 102, 100, HTML & CSS, 102
+2021-07-12 17:26:52.630 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 200, 0, Java, 200
+2021-07-12 17:26:52.630 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 201, 200, 基础应用, 201
+2021-07-12 17:26:52.631 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 202, 200, 框架应用, 202
+2021-07-12 17:26:52.631 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 300, 0, Python, 300
+2021-07-12 17:26:52.631 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 301, 300, 基础应用, 301
+2021-07-12 17:26:52.631 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 302, 300, 进阶方向应用, 302
+2021-07-12 17:26:52.631 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 400, 0, 数据库, 400
+2021-07-12 17:26:52.631 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 401, 400, MySQL, 401
+2021-07-12 17:26:52.631 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 500, 0, 其它, 500
+2021-07-12 17:26:52.631 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 501, 500, 服务器, 501
+2021-07-12 17:26:52.631 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 502, 500, 开发工具, 502
+2021-07-12 17:26:52.632 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 503, 500, 热门服务端语言, 503
+2021-07-12 17:26:52.632 DEBUG com.qzh.mapper.CategoryMapper.selectByExample     :137  [32m                  [0;39m <==      Total: 15
+2021-07-12 17:26:52.632 INFO  com.qzh.aspect.LogAspect                          :84   [32m                  [0;39m 返回结果: {"content":[{"id":100,"name":"前端开发","parent":0,"sort":100},{"id":101,"name":"Vue","parent":100,"sort":101},{"id":102,"name":"HTML & CSS","parent":100,"sort":102},{"id":200,"name":"Java","parent":0,"sort":200},{"id":201,"name":"基础应用","parent":200,"sort":201},{"id":202,"name":"框架应用","parent":200,"sort":202},{"id":300,"name":"Python","parent":0,"sort":300},{"id":301,"name":"基础应用","parent":300,"sort":301},{"id":302,"name":"进阶方向应用","parent":300,"sort":302},{"id":400,"name":"数据库","parent":0,"sort":400},{"id":401,"name":"MySQL","parent":400,"sort":401},{"id":500,"name":"其它","parent":0,"sort":500},{"id":501,"name":"服务器","parent":500,"sort":501},{"id":502,"name":"开发工具","parent":500,"sort":502},{"id":503,"name":"热门服务端语言","parent":500,"sort":503}],"success":true}
+2021-07-12 17:26:52.633 INFO  com.qzh.aspect.LogAspect                          :85   [32m                  [0;39m ------------- 结束 耗时：5 ms -------------
+2021-07-12 17:26:52.654 INFO  com.qzh.aspect.LogAspect                          :48   [32m                  [0;39m ------------- aop开始 -------------
+2021-07-12 17:26:52.654 INFO  com.qzh.aspect.LogAspect                          :49   [32m                  [0;39m 请求地址: http://localhost/ebook/list GET
+2021-07-12 17:26:52.655 INFO  com.qzh.aspect.LogAspect                          :50   [32m                  [0;39m 类名方法: com.qzh.controller.EBookController.list
+2021-07-12 17:26:52.655 INFO  com.qzh.aspect.LogAspect                          :51   [32m                  [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-07-12 17:26:52.655 INFO  com.qzh.aspect.LogAspect                          :72   [32m                  [0;39m 请求参数: [{"page":1,"size":3}]
+2021-07-12 17:26:52.655 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==>  Preparing: SELECT count(0) FROM ebook
+2021-07-12 17:26:52.656 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==> Parameters: 
+2021-07-12 17:26:52.656 TRACE com.qzh.mapper.EbookMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==    Columns: count(0)
+2021-07-12 17:26:52.656 TRACE com.qzh.mapper.EbookMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==        Row: 5
+2021-07-12 17:26:52.656 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m <==      Total: 1
+2021-07-12 17:26:52.657 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m ==>  Preparing: select id, `name`, category1_id, category2_id, description, cover, doc_count, view_count, vote_count from ebook LIMIT ?
+2021-07-12 17:26:52.657 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m ==> Parameters: 3(Integer)
+2021-07-12 17:26:52.657 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==    Columns: id, name, category1_id, category2_id, description, cover, doc_count, view_count, vote_count
+2021-07-12 17:26:52.657 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 1, Spring Boot 入门教程, 200, 202, 零基础入门 Java 开发，企业级应用开发最佳首选框架, /image/cover1.png, 0, 0, 0
+2021-07-12 17:26:52.657 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 2, Vue 入门教程, 100, 101, 零基础入门 Vue 开发，企业级应用开发最佳首选框架, /image/cover2.png, 4, 5, 0
+2021-07-12 17:26:52.657 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 3, Python 入门教程, 300, 301, 零基础入门 Python 开发，企业级应用开发最佳首选框架, null, 0, 0, 0
+2021-07-12 17:26:52.658 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m <==      Total: 3
+2021-07-12 17:26:52.658 INFO  com.qzh.aspect.LogAspect                          :84   [32m                  [0;39m 返回结果: {"content":{"list":[{"category1Id":200,"category2Id":202,"cover":"/image/cover1.png","description":"零基础入门 Java 开发，企业级应用开发最佳首选框架","docCount":0,"id":1,"name":"Spring Boot 入门教程","viewCount":0,"voteCount":0},{"category1Id":100,"category2Id":101,"cover":"/image/cover2.png","description":"零基础入门 Vue 开发，企业级应用开发最佳首选框架","docCount":4,"id":2,"name":"Vue 入门教程","viewCount":5,"voteCount":0},{"category1Id":300,"category2Id":301,"description":"零基础入门 Python 开发，企业级应用开发最佳首选框架","docCount":0,"id":3,"name":"Python 入门教程","viewCount":0,"voteCount":0}],"total":5},"success":true}
+2021-07-12 17:26:52.658 INFO  com.qzh.aspect.LogAspect                          :85   [32m                  [0;39m ------------- 结束 耗时：4 ms -------------
+2021-07-12 17:26:55.903 INFO  com.qzh.aspect.LogAspect                          :48   [32m                  [0;39m ------------- aop开始 -------------
+2021-07-12 17:26:55.903 INFO  com.qzh.aspect.LogAspect                          :49   [32m                  [0;39m 请求地址: http://localhost/category/all GET
+2021-07-12 17:26:55.903 INFO  com.qzh.aspect.LogAspect                          :50   [32m                  [0;39m 类名方法: com.qzh.controller.CategoryController.all
+2021-07-12 17:26:55.903 INFO  com.qzh.aspect.LogAspect                          :51   [32m                  [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-07-12 17:26:55.904 INFO  com.qzh.aspect.LogAspect                          :72   [32m                  [0;39m 请求参数: []
+2021-07-12 17:26:55.904 DEBUG com.qzh.mapper.CategoryMapper.selectByExample     :137  [32m                  [0;39m ==>  Preparing: select id, parent, `name`, sort from category order by sort asc
+2021-07-12 17:26:55.904 DEBUG com.qzh.mapper.CategoryMapper.selectByExample     :137  [32m                  [0;39m ==> Parameters: 
+2021-07-12 17:26:55.905 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==    Columns: id, parent, name, sort
+2021-07-12 17:26:55.905 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 100, 0, 前端开发, 100
+2021-07-12 17:26:55.905 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 101, 100, Vue, 101
+2021-07-12 17:26:55.905 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 102, 100, HTML & CSS, 102
+2021-07-12 17:26:55.905 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 200, 0, Java, 200
+2021-07-12 17:26:55.905 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 201, 200, 基础应用, 201
+2021-07-12 17:26:55.906 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 202, 200, 框架应用, 202
+2021-07-12 17:26:55.906 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 300, 0, Python, 300
+2021-07-12 17:26:55.906 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 301, 300, 基础应用, 301
+2021-07-12 17:26:55.906 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 302, 300, 进阶方向应用, 302
+2021-07-12 17:26:55.906 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 400, 0, 数据库, 400
+2021-07-12 17:26:55.906 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 401, 400, MySQL, 401
+2021-07-12 17:26:55.906 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 500, 0, 其它, 500
+2021-07-12 17:26:55.906 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 501, 500, 服务器, 501
+2021-07-12 17:26:55.906 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 502, 500, 开发工具, 502
+2021-07-12 17:26:55.907 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 503, 500, 热门服务端语言, 503
+2021-07-12 17:26:55.907 DEBUG com.qzh.mapper.CategoryMapper.selectByExample     :137  [32m                  [0;39m <==      Total: 15
+2021-07-12 17:26:55.907 INFO  com.qzh.aspect.LogAspect                          :84   [32m                  [0;39m 返回结果: {"content":[{"id":100,"name":"前端开发","parent":0,"sort":100},{"id":101,"name":"Vue","parent":100,"sort":101},{"id":102,"name":"HTML & CSS","parent":100,"sort":102},{"id":200,"name":"Java","parent":0,"sort":200},{"id":201,"name":"基础应用","parent":200,"sort":201},{"id":202,"name":"框架应用","parent":200,"sort":202},{"id":300,"name":"Python","parent":0,"sort":300},{"id":301,"name":"基础应用","parent":300,"sort":301},{"id":302,"name":"进阶方向应用","parent":300,"sort":302},{"id":400,"name":"数据库","parent":0,"sort":400},{"id":401,"name":"MySQL","parent":400,"sort":401},{"id":500,"name":"其它","parent":0,"sort":500},{"id":501,"name":"服务器","parent":500,"sort":501},{"id":502,"name":"开发工具","parent":500,"sort":502},{"id":503,"name":"热门服务端语言","parent":500,"sort":503}],"success":true}
+2021-07-12 17:26:55.907 INFO  com.qzh.aspect.LogAspect                          :85   [32m                  [0;39m ------------- 结束 耗时：4 ms -------------
+2021-07-12 17:26:55.918 INFO  com.qzh.aspect.LogAspect                          :48   [32m                  [0;39m ------------- aop开始 -------------
+2021-07-12 17:26:55.918 INFO  com.qzh.aspect.LogAspect                          :49   [32m                  [0;39m 请求地址: http://localhost/ebook/list GET
+2021-07-12 17:26:55.918 INFO  com.qzh.aspect.LogAspect                          :50   [32m                  [0;39m 类名方法: com.qzh.controller.EBookController.list
+2021-07-12 17:26:55.918 INFO  com.qzh.aspect.LogAspect                          :51   [32m                  [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-07-12 17:26:55.918 INFO  com.qzh.aspect.LogAspect                          :72   [32m                  [0;39m 请求参数: [{"page":1,"size":3}]
+2021-07-12 17:26:55.919 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==>  Preparing: SELECT count(0) FROM ebook
+2021-07-12 17:26:55.919 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==> Parameters: 
+2021-07-12 17:26:55.920 TRACE com.qzh.mapper.EbookMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==    Columns: count(0)
+2021-07-12 17:26:55.920 TRACE com.qzh.mapper.EbookMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==        Row: 5
+2021-07-12 17:26:55.920 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m <==      Total: 1
+2021-07-12 17:26:55.920 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m ==>  Preparing: select id, `name`, category1_id, category2_id, description, cover, doc_count, view_count, vote_count from ebook LIMIT ?
+2021-07-12 17:26:55.921 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m ==> Parameters: 3(Integer)
+2021-07-12 17:26:55.921 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==    Columns: id, name, category1_id, category2_id, description, cover, doc_count, view_count, vote_count
+2021-07-12 17:26:55.921 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 1, Spring Boot 入门教程, 200, 202, 零基础入门 Java 开发，企业级应用开发最佳首选框架, /image/cover1.png, 0, 0, 0
+2021-07-12 17:26:55.921 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 2, Vue 入门教程, 100, 101, 零基础入门 Vue 开发，企业级应用开发最佳首选框架, /image/cover2.png, 4, 5, 0
+2021-07-12 17:26:55.921 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 3, Python 入门教程, 300, 301, 零基础入门 Python 开发，企业级应用开发最佳首选框架, null, 0, 0, 0
+2021-07-12 17:26:55.921 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m <==      Total: 3
+2021-07-12 17:26:55.922 INFO  com.qzh.aspect.LogAspect                          :84   [32m                  [0;39m 返回结果: {"content":{"list":[{"category1Id":200,"category2Id":202,"cover":"/image/cover1.png","description":"零基础入门 Java 开发，企业级应用开发最佳首选框架","docCount":0,"id":1,"name":"Spring Boot 入门教程","viewCount":0,"voteCount":0},{"category1Id":100,"category2Id":101,"cover":"/image/cover2.png","description":"零基础入门 Vue 开发，企业级应用开发最佳首选框架","docCount":4,"id":2,"name":"Vue 入门教程","viewCount":5,"voteCount":0},{"category1Id":300,"category2Id":301,"description":"零基础入门 Python 开发，企业级应用开发最佳首选框架","docCount":0,"id":3,"name":"Python 入门教程","viewCount":0,"voteCount":0}],"total":5},"success":true}
+2021-07-12 17:26:55.922 INFO  com.qzh.aspect.LogAspect                          :85   [32m                  [0;39m ------------- 结束 耗时：4 ms -------------
+2021-07-12 17:28:49.037 INFO  com.qzh.WikiApplication                           :55   [32m                  [0;39m Starting WikiApplication using Java 1.8.0_221 on DESKTOP-4A6N60R with PID 3372 (E:\IdeaProject\wiki\target\classes started by hho in E:\IdeaProject\wiki)
+2021-07-12 17:28:49.037 INFO  org.hibernate.validator.internal.util.Version     :21   [32m                  [0;39m HV000001: Hibernate Validator 6.1.7.Final
+2021-07-12 17:28:49.039 INFO  com.qzh.WikiApplication                           :675  [32m                  [0;39m No active profile set, falling back to default profiles: default
+2021-07-12 17:28:49.067 INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor :255  [32m                  [0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-12 17:28:49.068 INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor :255  [32m                  [0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-12 17:28:49.767 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :108  [32m                  [0;39m Tomcat initialized with port(s): 80 (http)
+2021-07-12 17:28:49.773 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Initializing ProtocolHandler ["http-nio-80"]
+2021-07-12 17:28:49.773 INFO  org.apache.catalina.core.StandardService          :173  [32m                  [0;39m Starting service [Tomcat]
+2021-07-12 17:28:49.774 INFO  org.apache.catalina.core.StandardEngine           :173  [32m                  [0;39m Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-07-12 17:28:49.819 INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] :173  [32m                  [0;39m Initializing Spring embedded WebApplicationContext
+2021-07-12 17:28:49.819 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext    :289  [32m                  [0;39m Root WebApplicationContext: initialization completed in 751 ms
+2021-07-12 17:28:50.177 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :181  [32m                  [0;39m Initializing ExecutorService 'applicationTaskExecutor'
+2021-07-12 17:28:50.378 INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer    :58   [32m                  [0;39m LiveReload server is running on port 35729
+2021-07-12 17:28:50.390 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Starting ProtocolHandler ["http-nio-80"]
+2021-07-12 17:28:50.401 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :220  [32m                  [0;39m Tomcat started on port(s): 80 (http) with context path ''
+2021-07-12 17:28:50.408 INFO  com.qzh.WikiApplication                           :61   [32m                  [0;39m Started WikiApplication in 1.685 seconds (JVM running for 2.173)
+2021-07-12 17:28:50.410 INFO  com.qzh.WikiApplication                           :20   [32m                  [0;39m 启动成功!
+2021-07-12 17:28:50.410 INFO  com.qzh.WikiApplication                           :21   [32m                  [0;39m 地址:	http://localhost:80
+2021-07-12 17:29:06.668 INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] :173  [32m                  [0;39m Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-12 17:29:06.668 INFO  org.springframework.web.servlet.DispatcherServlet :525  [32m                  [0;39m Initializing Servlet 'dispatcherServlet'
+2021-07-12 17:29:06.669 INFO  org.springframework.web.servlet.DispatcherServlet :547  [32m                  [0;39m Completed initialization in 1 ms
+2021-07-12 17:29:06.694 INFO  com.qzh.aspect.LogAspect                          :48   [32m                  [0;39m ------------- aop开始 -------------
+2021-07-12 17:29:06.694 INFO  com.qzh.aspect.LogAspect                          :49   [32m                  [0;39m 请求地址: http://localhost/category/all GET
+2021-07-12 17:29:06.694 INFO  com.qzh.aspect.LogAspect                          :50   [32m                  [0;39m 类名方法: com.qzh.controller.CategoryController.all
+2021-07-12 17:29:06.695 INFO  com.qzh.aspect.LogAspect                          :51   [32m                  [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-07-12 17:29:06.719 INFO  com.qzh.aspect.LogAspect                          :72   [32m                  [0;39m 请求参数: []
+2021-07-12 17:29:06.751 INFO  com.zaxxer.hikari.HikariDataSource                :110  [32m                  [0;39m HikariPool-1 - Starting...
+2021-07-12 17:29:06.858 INFO  com.zaxxer.hikari.HikariDataSource                :123  [32m                  [0;39m HikariPool-1 - Start completed.
+2021-07-12 17:29:06.863 DEBUG com.qzh.mapper.CategoryMapper.selectByExample     :137  [32m                  [0;39m ==>  Preparing: select id, parent, `name`, sort from category order by sort asc
+2021-07-12 17:29:06.877 DEBUG com.qzh.mapper.CategoryMapper.selectByExample     :137  [32m                  [0;39m ==> Parameters: 
+2021-07-12 17:29:06.891 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==    Columns: id, parent, name, sort
+2021-07-12 17:29:06.891 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 100, 0, 前端开发, 100
+2021-07-12 17:29:06.892 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 101, 100, Vue, 101
+2021-07-12 17:29:06.893 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 102, 100, HTML & CSS, 102
+2021-07-12 17:29:06.893 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 200, 0, Java, 200
+2021-07-12 17:29:06.894 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 201, 200, 基础应用, 201
+2021-07-12 17:29:06.894 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 202, 200, 框架应用, 202
+2021-07-12 17:29:06.894 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 300, 0, Python, 300
+2021-07-12 17:29:06.894 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 301, 300, 基础应用, 301
+2021-07-12 17:29:06.895 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 302, 300, 进阶方向应用, 302
+2021-07-12 17:29:06.895 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 400, 0, 数据库, 400
+2021-07-12 17:29:06.895 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 401, 400, MySQL, 401
+2021-07-12 17:29:06.895 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 500, 0, 其它, 500
+2021-07-12 17:29:06.896 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 501, 500, 服务器, 501
+2021-07-12 17:29:06.896 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 502, 500, 开发工具, 502
+2021-07-12 17:29:06.896 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 503, 500, 热门服务端语言, 503
+2021-07-12 17:29:06.897 DEBUG com.qzh.mapper.CategoryMapper.selectByExample     :137  [32m                  [0;39m <==      Total: 15
+2021-07-12 17:29:06.919 INFO  com.qzh.aspect.LogAspect                          :84   [32m                  [0;39m 返回结果: {"content":[{"id":100,"name":"前端开发","parent":0,"sort":100},{"id":101,"name":"Vue","parent":100,"sort":101},{"id":102,"name":"HTML & CSS","parent":100,"sort":102},{"id":200,"name":"Java","parent":0,"sort":200},{"id":201,"name":"基础应用","parent":200,"sort":201},{"id":202,"name":"框架应用","parent":200,"sort":202},{"id":300,"name":"Python","parent":0,"sort":300},{"id":301,"name":"基础应用","parent":300,"sort":301},{"id":302,"name":"进阶方向应用","parent":300,"sort":302},{"id":400,"name":"数据库","parent":0,"sort":400},{"id":401,"name":"MySQL","parent":400,"sort":401},{"id":500,"name":"其它","parent":0,"sort":500},{"id":501,"name":"服务器","parent":500,"sort":501},{"id":502,"name":"开发工具","parent":500,"sort":502},{"id":503,"name":"热门服务端语言","parent":500,"sort":503}],"success":true}
+2021-07-12 17:29:06.919 INFO  com.qzh.aspect.LogAspect                          :85   [32m                  [0;39m ------------- 结束 耗时：226 ms -------------
+2021-07-12 17:29:07.313 INFO  com.qzh.aspect.LogAspect                          :48   [32m                  [0;39m ------------- aop开始 -------------
+2021-07-12 17:29:07.314 INFO  com.qzh.aspect.LogAspect                          :49   [32m                  [0;39m 请求地址: http://localhost/category/all GET
+2021-07-12 17:29:07.314 INFO  com.qzh.aspect.LogAspect                          :50   [32m                  [0;39m 类名方法: com.qzh.controller.CategoryController.all
+2021-07-12 17:29:07.314 INFO  com.qzh.aspect.LogAspect                          :51   [32m                  [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-07-12 17:29:07.314 INFO  com.qzh.aspect.LogAspect                          :72   [32m                  [0;39m 请求参数: []
+2021-07-12 17:29:07.315 DEBUG com.qzh.mapper.CategoryMapper.selectByExample     :137  [32m                  [0;39m ==>  Preparing: select id, parent, `name`, sort from category order by sort asc
+2021-07-12 17:29:07.315 DEBUG com.qzh.mapper.CategoryMapper.selectByExample     :137  [32m                  [0;39m ==> Parameters: 
+2021-07-12 17:29:07.316 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==    Columns: id, parent, name, sort
+2021-07-12 17:29:07.317 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 100, 0, 前端开发, 100
+2021-07-12 17:29:07.318 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 101, 100, Vue, 101
+2021-07-12 17:29:07.319 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 102, 100, HTML & CSS, 102
+2021-07-12 17:29:07.319 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 200, 0, Java, 200
+2021-07-12 17:29:07.320 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 201, 200, 基础应用, 201
+2021-07-12 17:29:07.320 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 202, 200, 框架应用, 202
+2021-07-12 17:29:07.320 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 300, 0, Python, 300
+2021-07-12 17:29:07.320 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 301, 300, 基础应用, 301
+2021-07-12 17:29:07.321 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 302, 300, 进阶方向应用, 302
+2021-07-12 17:29:07.321 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 400, 0, 数据库, 400
+2021-07-12 17:29:07.321 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 401, 400, MySQL, 401
+2021-07-12 17:29:07.321 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 500, 0, 其它, 500
+2021-07-12 17:29:07.322 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 501, 500, 服务器, 501
+2021-07-12 17:29:07.322 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 502, 500, 开发工具, 502
+2021-07-12 17:29:07.322 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 503, 500, 热门服务端语言, 503
+2021-07-12 17:29:07.322 DEBUG com.qzh.mapper.CategoryMapper.selectByExample     :137  [32m                  [0;39m <==      Total: 15
+2021-07-12 17:29:07.324 INFO  com.qzh.aspect.LogAspect                          :84   [32m                  [0;39m 返回结果: {"content":[{"id":100,"name":"前端开发","parent":0,"sort":100},{"id":101,"name":"Vue","parent":100,"sort":101},{"id":102,"name":"HTML & CSS","parent":100,"sort":102},{"id":200,"name":"Java","parent":0,"sort":200},{"id":201,"name":"基础应用","parent":200,"sort":201},{"id":202,"name":"框架应用","parent":200,"sort":202},{"id":300,"name":"Python","parent":0,"sort":300},{"id":301,"name":"基础应用","parent":300,"sort":301},{"id":302,"name":"进阶方向应用","parent":300,"sort":302},{"id":400,"name":"数据库","parent":0,"sort":400},{"id":401,"name":"MySQL","parent":400,"sort":401},{"id":500,"name":"其它","parent":0,"sort":500},{"id":501,"name":"服务器","parent":500,"sort":501},{"id":502,"name":"开发工具","parent":500,"sort":502},{"id":503,"name":"热门服务端语言","parent":500,"sort":503}],"success":true}
+2021-07-12 17:29:07.324 INFO  com.qzh.aspect.LogAspect                          :85   [32m                  [0;39m ------------- 结束 耗时：11 ms -------------
+2021-07-12 17:29:07.385 INFO  com.qzh.aspect.LogAspect                          :48   [32m                  [0;39m ------------- aop开始 -------------
+2021-07-12 17:29:07.385 INFO  com.qzh.aspect.LogAspect                          :49   [32m                  [0;39m 请求地址: http://localhost/ebook/list GET
+2021-07-12 17:29:07.385 INFO  com.qzh.aspect.LogAspect                          :50   [32m                  [0;39m 类名方法: com.qzh.controller.EBookController.list
+2021-07-12 17:29:07.385 INFO  com.qzh.aspect.LogAspect                          :51   [32m                  [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-07-12 17:29:07.387 INFO  com.qzh.aspect.LogAspect                          :72   [32m                  [0;39m 请求参数: [{"page":1,"size":3}]
+2021-07-12 17:29:07.417 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==>  Preparing: SELECT count(0) FROM ebook
+2021-07-12 17:29:07.417 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==> Parameters: 
+2021-07-12 17:29:07.418 TRACE com.qzh.mapper.EbookMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==    Columns: count(0)
+2021-07-12 17:29:07.418 TRACE com.qzh.mapper.EbookMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==        Row: 5
+2021-07-12 17:29:07.419 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m <==      Total: 1
+2021-07-12 17:29:07.420 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m ==>  Preparing: select id, `name`, category1_id, category2_id, description, cover, doc_count, view_count, vote_count from ebook LIMIT ?
+2021-07-12 17:29:07.421 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m ==> Parameters: 3(Integer)
+2021-07-12 17:29:07.422 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==    Columns: id, name, category1_id, category2_id, description, cover, doc_count, view_count, vote_count
+2021-07-12 17:29:07.422 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 1, Spring Boot 入门教程, 200, 202, 零基础入门 Java 开发，企业级应用开发最佳首选框架, /image/cover1.png, 0, 0, 0
+2021-07-12 17:29:07.422 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 2, Vue 入门教程, 100, 101, 零基础入门 Vue 开发，企业级应用开发最佳首选框架, /image/cover2.png, 4, 5, 0
+2021-07-12 17:29:07.423 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 3, Python 入门教程, 300, 301, 零基础入门 Python 开发，企业级应用开发最佳首选框架, null, 0, 0, 0
+2021-07-12 17:29:07.423 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m <==      Total: 3
+2021-07-12 17:29:07.430 INFO  com.qzh.aspect.LogAspect                          :84   [32m                  [0;39m 返回结果: {"content":{"list":[{"category1Id":200,"category2Id":202,"cover":"/image/cover1.png","description":"零基础入门 Java 开发，企业级应用开发最佳首选框架","docCount":0,"id":1,"name":"Spring Boot 入门教程","viewCount":0,"voteCount":0},{"category1Id":100,"category2Id":101,"cover":"/image/cover2.png","description":"零基础入门 Vue 开发，企业级应用开发最佳首选框架","docCount":4,"id":2,"name":"Vue 入门教程","viewCount":5,"voteCount":0},{"category1Id":300,"category2Id":301,"description":"零基础入门 Python 开发，企业级应用开发最佳首选框架","docCount":0,"id":3,"name":"Python 入门教程","viewCount":0,"voteCount":0}],"total":5},"success":true}
+2021-07-12 17:29:07.431 INFO  com.qzh.aspect.LogAspect                          :85   [32m                  [0;39m ------------- 结束 耗时：46 ms -------------
+2021-07-12 17:29:07.877 INFO  com.qzh.aspect.LogAspect                          :48   [32m                  [0;39m ------------- aop开始 -------------
+2021-07-12 17:29:07.877 INFO  com.qzh.aspect.LogAspect                          :49   [32m                  [0;39m 请求地址: http://localhost/category/all GET
+2021-07-12 17:29:07.877 INFO  com.qzh.aspect.LogAspect                          :50   [32m                  [0;39m 类名方法: com.qzh.controller.CategoryController.all
+2021-07-12 17:29:07.877 INFO  com.qzh.aspect.LogAspect                          :51   [32m                  [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-07-12 17:29:07.877 INFO  com.qzh.aspect.LogAspect                          :72   [32m                  [0;39m 请求参数: []
+2021-07-12 17:29:07.878 DEBUG com.qzh.mapper.CategoryMapper.selectByExample     :137  [32m                  [0;39m ==>  Preparing: select id, parent, `name`, sort from category order by sort asc
+2021-07-12 17:29:07.878 DEBUG com.qzh.mapper.CategoryMapper.selectByExample     :137  [32m                  [0;39m ==> Parameters: 
+2021-07-12 17:29:07.879 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==    Columns: id, parent, name, sort
+2021-07-12 17:29:07.879 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 100, 0, 前端开发, 100
+2021-07-12 17:29:07.879 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 101, 100, Vue, 101
+2021-07-12 17:29:07.880 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 102, 100, HTML & CSS, 102
+2021-07-12 17:29:07.880 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 200, 0, Java, 200
+2021-07-12 17:29:07.880 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 201, 200, 基础应用, 201
+2021-07-12 17:29:07.880 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 202, 200, 框架应用, 202
+2021-07-12 17:29:07.880 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 300, 0, Python, 300
+2021-07-12 17:29:07.881 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 301, 300, 基础应用, 301
+2021-07-12 17:29:07.881 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 302, 300, 进阶方向应用, 302
+2021-07-12 17:29:07.881 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 400, 0, 数据库, 400
+2021-07-12 17:29:07.881 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 401, 400, MySQL, 401
+2021-07-12 17:29:07.881 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 500, 0, 其它, 500
+2021-07-12 17:29:07.882 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 501, 500, 服务器, 501
+2021-07-12 17:29:07.882 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 502, 500, 开发工具, 502
+2021-07-12 17:29:07.882 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 503, 500, 热门服务端语言, 503
+2021-07-12 17:29:07.882 DEBUG com.qzh.mapper.CategoryMapper.selectByExample     :137  [32m                  [0;39m <==      Total: 15
+2021-07-12 17:29:07.883 INFO  com.qzh.aspect.LogAspect                          :84   [32m                  [0;39m 返回结果: {"content":[{"id":100,"name":"前端开发","parent":0,"sort":100},{"id":101,"name":"Vue","parent":100,"sort":101},{"id":102,"name":"HTML & CSS","parent":100,"sort":102},{"id":200,"name":"Java","parent":0,"sort":200},{"id":201,"name":"基础应用","parent":200,"sort":201},{"id":202,"name":"框架应用","parent":200,"sort":202},{"id":300,"name":"Python","parent":0,"sort":300},{"id":301,"name":"基础应用","parent":300,"sort":301},{"id":302,"name":"进阶方向应用","parent":300,"sort":302},{"id":400,"name":"数据库","parent":0,"sort":400},{"id":401,"name":"MySQL","parent":400,"sort":401},{"id":500,"name":"其它","parent":0,"sort":500},{"id":501,"name":"服务器","parent":500,"sort":501},{"id":502,"name":"开发工具","parent":500,"sort":502},{"id":503,"name":"热门服务端语言","parent":500,"sort":503}],"success":true}
+2021-07-12 17:29:07.883 INFO  com.qzh.aspect.LogAspect                          :85   [32m                  [0;39m ------------- 结束 耗时：6 ms -------------
+2021-07-12 17:29:08.736 INFO  com.qzh.aspect.LogAspect                          :48   [32m                  [0;39m ------------- aop开始 -------------
+2021-07-12 17:29:08.737 INFO  com.qzh.aspect.LogAspect                          :49   [32m                  [0;39m 请求地址: http://localhost/category/all GET
+2021-07-12 17:29:08.737 INFO  com.qzh.aspect.LogAspect                          :50   [32m                  [0;39m 类名方法: com.qzh.controller.CategoryController.all
+2021-07-12 17:29:08.737 INFO  com.qzh.aspect.LogAspect                          :51   [32m                  [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-07-12 17:29:08.737 INFO  com.qzh.aspect.LogAspect                          :72   [32m                  [0;39m 请求参数: []
+2021-07-12 17:29:08.738 DEBUG com.qzh.mapper.CategoryMapper.selectByExample     :137  [32m                  [0;39m ==>  Preparing: select id, parent, `name`, sort from category order by sort asc
+2021-07-12 17:29:08.738 DEBUG com.qzh.mapper.CategoryMapper.selectByExample     :137  [32m                  [0;39m ==> Parameters: 
+2021-07-12 17:29:08.739 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==    Columns: id, parent, name, sort
+2021-07-12 17:29:08.739 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 100, 0, 前端开发, 100
+2021-07-12 17:29:08.739 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 101, 100, Vue, 101
+2021-07-12 17:29:08.739 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 102, 100, HTML & CSS, 102
+2021-07-12 17:29:08.740 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 200, 0, Java, 200
+2021-07-12 17:29:08.740 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 201, 200, 基础应用, 201
+2021-07-12 17:29:08.740 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 202, 200, 框架应用, 202
+2021-07-12 17:29:08.740 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 300, 0, Python, 300
+2021-07-12 17:29:08.740 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 301, 300, 基础应用, 301
+2021-07-12 17:29:08.740 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 302, 300, 进阶方向应用, 302
+2021-07-12 17:29:08.741 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 400, 0, 数据库, 400
+2021-07-12 17:29:08.741 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 401, 400, MySQL, 401
+2021-07-12 17:29:08.741 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 500, 0, 其它, 500
+2021-07-12 17:29:08.741 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 501, 500, 服务器, 501
+2021-07-12 17:29:08.741 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 502, 500, 开发工具, 502
+2021-07-12 17:29:08.742 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 503, 500, 热门服务端语言, 503
+2021-07-12 17:29:08.742 DEBUG com.qzh.mapper.CategoryMapper.selectByExample     :137  [32m                  [0;39m <==      Total: 15
+2021-07-12 17:29:08.743 INFO  com.qzh.aspect.LogAspect                          :84   [32m                  [0;39m 返回结果: {"content":[{"id":100,"name":"前端开发","parent":0,"sort":100},{"id":101,"name":"Vue","parent":100,"sort":101},{"id":102,"name":"HTML & CSS","parent":100,"sort":102},{"id":200,"name":"Java","parent":0,"sort":200},{"id":201,"name":"基础应用","parent":200,"sort":201},{"id":202,"name":"框架应用","parent":200,"sort":202},{"id":300,"name":"Python","parent":0,"sort":300},{"id":301,"name":"基础应用","parent":300,"sort":301},{"id":302,"name":"进阶方向应用","parent":300,"sort":302},{"id":400,"name":"数据库","parent":0,"sort":400},{"id":401,"name":"MySQL","parent":400,"sort":401},{"id":500,"name":"其它","parent":0,"sort":500},{"id":501,"name":"服务器","parent":500,"sort":501},{"id":502,"name":"开发工具","parent":500,"sort":502},{"id":503,"name":"热门服务端语言","parent":500,"sort":503}],"success":true}
+2021-07-12 17:29:08.743 INFO  com.qzh.aspect.LogAspect                          :85   [32m                  [0;39m ------------- 结束 耗时：7 ms -------------
+2021-07-12 17:29:08.758 INFO  com.qzh.aspect.LogAspect                          :48   [32m                  [0;39m ------------- aop开始 -------------
+2021-07-12 17:29:08.759 INFO  com.qzh.aspect.LogAspect                          :49   [32m                  [0;39m 请求地址: http://localhost/ebook/list GET
+2021-07-12 17:29:08.759 INFO  com.qzh.aspect.LogAspect                          :50   [32m                  [0;39m 类名方法: com.qzh.controller.EBookController.list
+2021-07-12 17:29:08.759 INFO  com.qzh.aspect.LogAspect                          :51   [32m                  [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-07-12 17:29:08.759 INFO  com.qzh.aspect.LogAspect                          :72   [32m                  [0;39m 请求参数: [{"page":1,"size":3}]
+2021-07-12 17:29:08.760 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==>  Preparing: SELECT count(0) FROM ebook
+2021-07-12 17:29:08.760 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==> Parameters: 
+2021-07-12 17:29:08.761 TRACE com.qzh.mapper.EbookMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==    Columns: count(0)
+2021-07-12 17:29:08.761 TRACE com.qzh.mapper.EbookMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==        Row: 5
+2021-07-12 17:29:08.761 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m <==      Total: 1
+2021-07-12 17:29:08.762 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m ==>  Preparing: select id, `name`, category1_id, category2_id, description, cover, doc_count, view_count, vote_count from ebook LIMIT ?
+2021-07-12 17:29:08.762 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m ==> Parameters: 3(Integer)
+2021-07-12 17:29:08.762 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==    Columns: id, name, category1_id, category2_id, description, cover, doc_count, view_count, vote_count
+2021-07-12 17:29:08.762 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 1, Spring Boot 入门教程, 200, 202, 零基础入门 Java 开发，企业级应用开发最佳首选框架, /image/cover1.png, 0, 0, 0
+2021-07-12 17:29:08.763 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 2, Vue 入门教程, 100, 101, 零基础入门 Vue 开发，企业级应用开发最佳首选框架, /image/cover2.png, 4, 5, 0
+2021-07-12 17:29:08.763 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 3, Python 入门教程, 300, 301, 零基础入门 Python 开发，企业级应用开发最佳首选框架, null, 0, 0, 0
+2021-07-12 17:29:08.763 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m <==      Total: 3
+2021-07-12 17:29:08.763 INFO  com.qzh.aspect.LogAspect                          :84   [32m                  [0;39m 返回结果: {"content":{"list":[{"category1Id":200,"category2Id":202,"cover":"/image/cover1.png","description":"零基础入门 Java 开发，企业级应用开发最佳首选框架","docCount":0,"id":1,"name":"Spring Boot 入门教程","viewCount":0,"voteCount":0},{"category1Id":100,"category2Id":101,"cover":"/image/cover2.png","description":"零基础入门 Vue 开发，企业级应用开发最佳首选框架","docCount":4,"id":2,"name":"Vue 入门教程","viewCount":5,"voteCount":0},{"category1Id":300,"category2Id":301,"description":"零基础入门 Python 开发，企业级应用开发最佳首选框架","docCount":0,"id":3,"name":"Python 入门教程","viewCount":0,"voteCount":0}],"total":5},"success":true}
+2021-07-12 17:29:08.764 INFO  com.qzh.aspect.LogAspect                          :85   [32m                  [0;39m ------------- 结束 耗时：6 ms -------------
+2021-07-12 17:29:29.122 INFO  com.qzh.aspect.LogAspect                          :48   [32m                  [0;39m ------------- aop开始 -------------
+2021-07-12 17:29:29.122 INFO  com.qzh.aspect.LogAspect                          :49   [32m                  [0;39m 请求地址: http://localhost/category/all GET
+2021-07-12 17:29:29.122 INFO  com.qzh.aspect.LogAspect                          :50   [32m                  [0;39m 类名方法: com.qzh.controller.CategoryController.all
+2021-07-12 17:29:29.122 INFO  com.qzh.aspect.LogAspect                          :51   [32m                  [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-07-12 17:29:29.122 INFO  com.qzh.aspect.LogAspect                          :72   [32m                  [0;39m 请求参数: []
+2021-07-12 17:29:29.123 DEBUG com.qzh.mapper.CategoryMapper.selectByExample     :137  [32m                  [0;39m ==>  Preparing: select id, parent, `name`, sort from category order by sort asc
+2021-07-12 17:29:29.123 DEBUG com.qzh.mapper.CategoryMapper.selectByExample     :137  [32m                  [0;39m ==> Parameters: 
+2021-07-12 17:29:29.124 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==    Columns: id, parent, name, sort
+2021-07-12 17:29:29.124 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 100, 0, 前端开发, 100
+2021-07-12 17:29:29.125 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 101, 100, Vue, 101
+2021-07-12 17:29:29.125 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 102, 100, HTML & CSS, 102
+2021-07-12 17:29:29.125 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 200, 0, Java, 200
+2021-07-12 17:29:29.125 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 201, 200, 基础应用, 201
+2021-07-12 17:29:29.125 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 202, 200, 框架应用, 202
+2021-07-12 17:29:29.125 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 300, 0, Python, 300
+2021-07-12 17:29:29.126 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 301, 300, 基础应用, 301
+2021-07-12 17:29:29.126 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 302, 300, 进阶方向应用, 302
+2021-07-12 17:29:29.126 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 400, 0, 数据库, 400
+2021-07-12 17:29:29.126 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 401, 400, MySQL, 401
+2021-07-12 17:29:29.126 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 500, 0, 其它, 500
+2021-07-12 17:29:29.126 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 501, 500, 服务器, 501
+2021-07-12 17:29:29.126 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 502, 500, 开发工具, 502
+2021-07-12 17:29:29.127 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 503, 500, 热门服务端语言, 503
+2021-07-12 17:29:29.127 DEBUG com.qzh.mapper.CategoryMapper.selectByExample     :137  [32m                  [0;39m <==      Total: 15
+2021-07-12 17:29:29.127 INFO  com.qzh.aspect.LogAspect                          :84   [32m                  [0;39m 返回结果: {"content":[{"id":100,"name":"前端开发","parent":0,"sort":100},{"id":101,"name":"Vue","parent":100,"sort":101},{"id":102,"name":"HTML & CSS","parent":100,"sort":102},{"id":200,"name":"Java","parent":0,"sort":200},{"id":201,"name":"基础应用","parent":200,"sort":201},{"id":202,"name":"框架应用","parent":200,"sort":202},{"id":300,"name":"Python","parent":0,"sort":300},{"id":301,"name":"基础应用","parent":300,"sort":301},{"id":302,"name":"进阶方向应用","parent":300,"sort":302},{"id":400,"name":"数据库","parent":0,"sort":400},{"id":401,"name":"MySQL","parent":400,"sort":401},{"id":500,"name":"其它","parent":0,"sort":500},{"id":501,"name":"服务器","parent":500,"sort":501},{"id":502,"name":"开发工具","parent":500,"sort":502},{"id":503,"name":"热门服务端语言","parent":500,"sort":503}],"success":true}
+2021-07-12 17:29:29.128 INFO  com.qzh.aspect.LogAspect                          :85   [32m                  [0;39m ------------- 结束 耗时：6 ms -------------
+2021-07-12 17:29:29.138 INFO  com.qzh.aspect.LogAspect                          :48   [32m                  [0;39m ------------- aop开始 -------------
+2021-07-12 17:29:29.139 INFO  com.qzh.aspect.LogAspect                          :49   [32m                  [0;39m 请求地址: http://localhost/ebook/list GET
+2021-07-12 17:29:29.139 INFO  com.qzh.aspect.LogAspect                          :50   [32m                  [0;39m 类名方法: com.qzh.controller.EBookController.list
+2021-07-12 17:29:29.139 INFO  com.qzh.aspect.LogAspect                          :51   [32m                  [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-07-12 17:29:29.139 INFO  com.qzh.aspect.LogAspect                          :72   [32m                  [0;39m 请求参数: [{"page":1,"size":3}]
+2021-07-12 17:29:29.141 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==>  Preparing: SELECT count(0) FROM ebook
+2021-07-12 17:29:29.141 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==> Parameters: 
+2021-07-12 17:29:29.141 TRACE com.qzh.mapper.EbookMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==    Columns: count(0)
+2021-07-12 17:29:29.142 TRACE com.qzh.mapper.EbookMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==        Row: 5
+2021-07-12 17:29:29.142 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m <==      Total: 1
+2021-07-12 17:29:29.142 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m ==>  Preparing: select id, `name`, category1_id, category2_id, description, cover, doc_count, view_count, vote_count from ebook LIMIT ?
+2021-07-12 17:29:29.142 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m ==> Parameters: 3(Integer)
+2021-07-12 17:29:29.143 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==    Columns: id, name, category1_id, category2_id, description, cover, doc_count, view_count, vote_count
+2021-07-12 17:29:29.143 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 1, Spring Boot 入门教程, 200, 202, 零基础入门 Java 开发，企业级应用开发最佳首选框架, /image/cover1.png, 0, 0, 0
+2021-07-12 17:29:29.143 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 2, Vue 入门教程, 100, 101, 零基础入门 Vue 开发，企业级应用开发最佳首选框架, /image/cover2.png, 4, 5, 0
+2021-07-12 17:29:29.143 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 3, Python 入门教程, 300, 301, 零基础入门 Python 开发，企业级应用开发最佳首选框架, null, 0, 0, 0
+2021-07-12 17:29:29.143 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m <==      Total: 3
+2021-07-12 17:29:29.144 INFO  com.qzh.aspect.LogAspect                          :84   [32m                  [0;39m 返回结果: {"content":{"list":[{"category1Id":200,"category2Id":202,"cover":"/image/cover1.png","description":"零基础入门 Java 开发，企业级应用开发最佳首选框架","docCount":0,"id":1,"name":"Spring Boot 入门教程","viewCount":0,"voteCount":0},{"category1Id":100,"category2Id":101,"cover":"/image/cover2.png","description":"零基础入门 Vue 开发，企业级应用开发最佳首选框架","docCount":4,"id":2,"name":"Vue 入门教程","viewCount":5,"voteCount":0},{"category1Id":300,"category2Id":301,"description":"零基础入门 Python 开发，企业级应用开发最佳首选框架","docCount":0,"id":3,"name":"Python 入门教程","viewCount":0,"voteCount":0}],"total":5},"success":true}
+2021-07-12 17:29:29.144 INFO  com.qzh.aspect.LogAspect                          :85   [32m                  [0;39m ------------- 结束 耗时：6 ms -------------
+2021-07-12 17:29:37.807 INFO  com.qzh.aspect.LogAspect                          :48   [32m                  [0;39m ------------- aop开始 -------------
+2021-07-12 17:29:37.808 INFO  com.qzh.aspect.LogAspect                          :49   [32m                  [0;39m 请求地址: http://localhost/category/all GET
+2021-07-12 17:29:37.808 INFO  com.qzh.aspect.LogAspect                          :50   [32m                  [0;39m 类名方法: com.qzh.controller.CategoryController.all
+2021-07-12 17:29:37.808 INFO  com.qzh.aspect.LogAspect                          :51   [32m                  [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-07-12 17:29:37.808 INFO  com.qzh.aspect.LogAspect                          :72   [32m                  [0;39m 请求参数: []
+2021-07-12 17:29:37.809 DEBUG com.qzh.mapper.CategoryMapper.selectByExample     :137  [32m                  [0;39m ==>  Preparing: select id, parent, `name`, sort from category order by sort asc
+2021-07-12 17:29:37.809 DEBUG com.qzh.mapper.CategoryMapper.selectByExample     :137  [32m                  [0;39m ==> Parameters: 
+2021-07-12 17:29:37.810 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==    Columns: id, parent, name, sort
+2021-07-12 17:29:37.810 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 100, 0, 前端开发, 100
+2021-07-12 17:29:37.810 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 101, 100, Vue, 101
+2021-07-12 17:29:37.810 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 102, 100, HTML & CSS, 102
+2021-07-12 17:29:37.811 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 200, 0, Java, 200
+2021-07-12 17:29:37.811 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 201, 200, 基础应用, 201
+2021-07-12 17:29:37.811 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 202, 200, 框架应用, 202
+2021-07-12 17:29:37.811 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 300, 0, Python, 300
+2021-07-12 17:29:37.811 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 301, 300, 基础应用, 301
+2021-07-12 17:29:37.811 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 302, 300, 进阶方向应用, 302
+2021-07-12 17:29:37.811 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 400, 0, 数据库, 400
+2021-07-12 17:29:37.812 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 401, 400, MySQL, 401
+2021-07-12 17:29:37.812 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 500, 0, 其它, 500
+2021-07-12 17:29:37.812 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 501, 500, 服务器, 501
+2021-07-12 17:29:37.812 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 502, 500, 开发工具, 502
+2021-07-12 17:29:37.812 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 503, 500, 热门服务端语言, 503
+2021-07-12 17:29:37.812 DEBUG com.qzh.mapper.CategoryMapper.selectByExample     :137  [32m                  [0;39m <==      Total: 15
+2021-07-12 17:29:37.813 INFO  com.qzh.aspect.LogAspect                          :84   [32m                  [0;39m 返回结果: {"content":[{"id":100,"name":"前端开发","parent":0,"sort":100},{"id":101,"name":"Vue","parent":100,"sort":101},{"id":102,"name":"HTML & CSS","parent":100,"sort":102},{"id":200,"name":"Java","parent":0,"sort":200},{"id":201,"name":"基础应用","parent":200,"sort":201},{"id":202,"name":"框架应用","parent":200,"sort":202},{"id":300,"name":"Python","parent":0,"sort":300},{"id":301,"name":"基础应用","parent":300,"sort":301},{"id":302,"name":"进阶方向应用","parent":300,"sort":302},{"id":400,"name":"数据库","parent":0,"sort":400},{"id":401,"name":"MySQL","parent":400,"sort":401},{"id":500,"name":"其它","parent":0,"sort":500},{"id":501,"name":"服务器","parent":500,"sort":501},{"id":502,"name":"开发工具","parent":500,"sort":502},{"id":503,"name":"热门服务端语言","parent":500,"sort":503}],"success":true}
+2021-07-12 17:29:37.813 INFO  com.qzh.aspect.LogAspect                          :85   [32m                  [0;39m ------------- 结束 耗时：6 ms -------------
+2021-07-12 17:29:37.823 INFO  com.qzh.aspect.LogAspect                          :48   [32m                  [0;39m ------------- aop开始 -------------
+2021-07-12 17:29:37.823 INFO  com.qzh.aspect.LogAspect                          :49   [32m                  [0;39m 请求地址: http://localhost/ebook/list GET
+2021-07-12 17:29:37.823 INFO  com.qzh.aspect.LogAspect                          :50   [32m                  [0;39m 类名方法: com.qzh.controller.EBookController.list
+2021-07-12 17:29:37.824 INFO  com.qzh.aspect.LogAspect                          :51   [32m                  [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-07-12 17:29:37.824 INFO  com.qzh.aspect.LogAspect                          :72   [32m                  [0;39m 请求参数: [{"page":1,"size":3}]
+2021-07-12 17:29:37.825 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==>  Preparing: SELECT count(0) FROM ebook
+2021-07-12 17:29:37.825 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==> Parameters: 
+2021-07-12 17:29:37.825 TRACE com.qzh.mapper.EbookMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==    Columns: count(0)
+2021-07-12 17:29:37.826 TRACE com.qzh.mapper.EbookMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==        Row: 5
+2021-07-12 17:29:37.826 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m <==      Total: 1
+2021-07-12 17:29:37.826 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m ==>  Preparing: select id, `name`, category1_id, category2_id, description, cover, doc_count, view_count, vote_count from ebook LIMIT ?
+2021-07-12 17:29:37.826 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m ==> Parameters: 3(Integer)
+2021-07-12 17:29:37.827 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==    Columns: id, name, category1_id, category2_id, description, cover, doc_count, view_count, vote_count
+2021-07-12 17:29:37.827 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 1, Spring Boot 入门教程, 200, 202, 零基础入门 Java 开发，企业级应用开发最佳首选框架, /image/cover1.png, 0, 0, 0
+2021-07-12 17:29:37.827 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 2, Vue 入门教程, 100, 101, 零基础入门 Vue 开发，企业级应用开发最佳首选框架, /image/cover2.png, 4, 5, 0
+2021-07-12 17:29:37.827 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 3, Python 入门教程, 300, 301, 零基础入门 Python 开发，企业级应用开发最佳首选框架, null, 0, 0, 0
+2021-07-12 17:29:37.827 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m <==      Total: 3
+2021-07-12 17:29:37.828 INFO  com.qzh.aspect.LogAspect                          :84   [32m                  [0;39m 返回结果: {"content":{"list":[{"category1Id":200,"category2Id":202,"cover":"/image/cover1.png","description":"零基础入门 Java 开发，企业级应用开发最佳首选框架","docCount":0,"id":1,"name":"Spring Boot 入门教程","viewCount":0,"voteCount":0},{"category1Id":100,"category2Id":101,"cover":"/image/cover2.png","description":"零基础入门 Vue 开发，企业级应用开发最佳首选框架","docCount":4,"id":2,"name":"Vue 入门教程","viewCount":5,"voteCount":0},{"category1Id":300,"category2Id":301,"description":"零基础入门 Python 开发，企业级应用开发最佳首选框架","docCount":0,"id":3,"name":"Python 入门教程","viewCount":0,"voteCount":0}],"total":5},"success":true}
+2021-07-12 17:29:37.828 INFO  com.qzh.aspect.LogAspect                          :85   [32m                  [0;39m ------------- 结束 耗时：5 ms -------------
+2021-07-12 17:31:05.899 INFO  com.qzh.aspect.LogAspect                          :48   [32m                  [0;39m ------------- aop开始 -------------
+2021-07-12 17:31:05.900 INFO  com.qzh.aspect.LogAspect                          :49   [32m                  [0;39m 请求地址: http://localhost/category/all GET
+2021-07-12 17:31:05.900 INFO  com.qzh.aspect.LogAspect                          :50   [32m                  [0;39m 类名方法: com.qzh.controller.CategoryController.all
+2021-07-12 17:31:05.900 INFO  com.qzh.aspect.LogAspect                          :51   [32m                  [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-07-12 17:31:05.900 INFO  com.qzh.aspect.LogAspect                          :72   [32m                  [0;39m 请求参数: []
+2021-07-12 17:31:05.902 DEBUG com.qzh.mapper.CategoryMapper.selectByExample     :137  [32m                  [0;39m ==>  Preparing: select id, parent, `name`, sort from category order by sort asc
+2021-07-12 17:31:05.902 DEBUG com.qzh.mapper.CategoryMapper.selectByExample     :137  [32m                  [0;39m ==> Parameters: 
+2021-07-12 17:31:05.903 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==    Columns: id, parent, name, sort
+2021-07-12 17:31:05.903 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 100, 0, 前端开发, 100
+2021-07-12 17:31:05.903 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 101, 100, Vue, 101
+2021-07-12 17:31:05.903 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 102, 100, HTML & CSS, 102
+2021-07-12 17:31:05.904 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 200, 0, Java, 200
+2021-07-12 17:31:05.904 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 201, 200, 基础应用, 201
+2021-07-12 17:31:05.904 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 202, 200, 框架应用, 202
+2021-07-12 17:31:05.904 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 300, 0, Python, 300
+2021-07-12 17:31:05.904 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 301, 300, 基础应用, 301
+2021-07-12 17:31:05.904 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 302, 300, 进阶方向应用, 302
+2021-07-12 17:31:05.905 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 400, 0, 数据库, 400
+2021-07-12 17:31:05.905 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 401, 400, MySQL, 401
+2021-07-12 17:31:05.905 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 500, 0, 其它, 500
+2021-07-12 17:31:05.905 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 501, 500, 服务器, 501
+2021-07-12 17:31:05.905 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 502, 500, 开发工具, 502
+2021-07-12 17:31:05.905 TRACE com.qzh.mapper.CategoryMapper.selectByExample     :143  [32m                  [0;39m <==        Row: 503, 500, 热门服务端语言, 503
+2021-07-12 17:31:05.905 DEBUG com.qzh.mapper.CategoryMapper.selectByExample     :137  [32m                  [0;39m <==      Total: 15
+2021-07-12 17:31:05.906 INFO  com.qzh.aspect.LogAspect                          :84   [32m                  [0;39m 返回结果: {"content":[{"id":100,"name":"前端开发","parent":0,"sort":100},{"id":101,"name":"Vue","parent":100,"sort":101},{"id":102,"name":"HTML & CSS","parent":100,"sort":102},{"id":200,"name":"Java","parent":0,"sort":200},{"id":201,"name":"基础应用","parent":200,"sort":201},{"id":202,"name":"框架应用","parent":200,"sort":202},{"id":300,"name":"Python","parent":0,"sort":300},{"id":301,"name":"基础应用","parent":300,"sort":301},{"id":302,"name":"进阶方向应用","parent":300,"sort":302},{"id":400,"name":"数据库","parent":0,"sort":400},{"id":401,"name":"MySQL","parent":400,"sort":401},{"id":500,"name":"其它","parent":0,"sort":500},{"id":501,"name":"服务器","parent":500,"sort":501},{"id":502,"name":"开发工具","parent":500,"sort":502},{"id":503,"name":"热门服务端语言","parent":500,"sort":503}],"success":true}
+2021-07-12 17:31:05.906 INFO  com.qzh.aspect.LogAspect                          :85   [32m                  [0;39m ------------- 结束 耗时：7 ms -------------
+2021-07-12 17:31:05.917 INFO  com.qzh.aspect.LogAspect                          :48   [32m                  [0;39m ------------- aop开始 -------------
+2021-07-12 17:31:05.917 INFO  com.qzh.aspect.LogAspect                          :49   [32m                  [0;39m 请求地址: http://localhost/ebook/list GET
+2021-07-12 17:31:05.917 INFO  com.qzh.aspect.LogAspect                          :50   [32m                  [0;39m 类名方法: com.qzh.controller.EBookController.list
+2021-07-12 17:31:05.917 INFO  com.qzh.aspect.LogAspect                          :51   [32m                  [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-07-12 17:31:05.917 INFO  com.qzh.aspect.LogAspect                          :72   [32m                  [0;39m 请求参数: [{"page":1,"size":3}]
+2021-07-12 17:31:05.918 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==>  Preparing: SELECT count(0) FROM ebook
+2021-07-12 17:31:05.919 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==> Parameters: 
+2021-07-12 17:31:05.920 TRACE com.qzh.mapper.EbookMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==    Columns: count(0)
+2021-07-12 17:31:05.920 TRACE com.qzh.mapper.EbookMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==        Row: 5
+2021-07-12 17:31:05.920 DEBUG com.qzh.mapper.EbookMapper.selectByExample_COUNT  :137  [32m                  [0;39m <==      Total: 1
+2021-07-12 17:31:05.921 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m ==>  Preparing: select id, `name`, category1_id, category2_id, description, cover, doc_count, view_count, vote_count from ebook LIMIT ?
+2021-07-12 17:31:05.921 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m ==> Parameters: 3(Integer)
+2021-07-12 17:31:05.923 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==    Columns: id, name, category1_id, category2_id, description, cover, doc_count, view_count, vote_count
+2021-07-12 17:31:05.923 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 1, Spring Boot 入门教程, 200, 202, 零基础入门 Java 开发，企业级应用开发最佳首选框架, /image/cover1.png, 0, 0, 0
+2021-07-12 17:31:05.923 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 2, Vue 入门教程, 100, 101, 零基础入门 Vue 开发，企业级应用开发最佳首选框架, /image/cover2.png, 4, 5, 0
+2021-07-12 17:31:05.923 TRACE com.qzh.mapper.EbookMapper.selectByExample        :143  [32m                  [0;39m <==        Row: 3, Python 入门教程, 300, 301, 零基础入门 Python 开发，企业级应用开发最佳首选框架, null, 0, 0, 0
+2021-07-12 17:31:05.923 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m <==      Total: 3
+2021-07-12 17:31:05.924 INFO  com.qzh.aspect.LogAspect                          :84   [32m                  [0;39m 返回结果: {"content":{"list":[{"category1Id":200,"category2Id":202,"cover":"/image/cover1.png","description":"零基础入门 Java 开发，企业级应用开发最佳首选框架","docCount":0,"id":1,"name":"Spring Boot 入门教程","viewCount":0,"voteCount":0},{"category1Id":100,"category2Id":101,"cover":"/image/cover2.png","description":"零基础入门 Vue 开发，企业级应用开发最佳首选框架","docCount":4,"id":2,"name":"Vue 入门教程","viewCount":5,"voteCount":0},{"category1Id":300,"category2Id":301,"description":"零基础入门 Python 开发，企业级应用开发最佳首选框架","docCount":0,"id":3,"name":"Python 入门教程","viewCount":0,"voteCount":0}],"total":5},"success":true}
+2021-07-12 17:31:05.924 INFO  com.qzh.aspect.LogAspect                          :85   [32m                  [0;39m ------------- 结束 耗时：7 ms -------------
+2021-07-12 17:31:07.970 INFO  com.qzh.aspect.LogAspect                          :48   [32m                  [0;39m ------------- aop开始 -------------
+2021-07-12 17:31:07.970 INFO  com.qzh.aspect.LogAspect                          :49   [32m                  [0;39m 请求地址: http://localhost/doc/all GET
+2021-07-12 17:31:07.970 INFO  com.qzh.aspect.LogAspect                          :50   [32m                  [0;39m 类名方法: com.qzh.controller.DocController.all
+2021-07-12 17:31:07.970 INFO  com.qzh.aspect.LogAspect                          :51   [32m                  [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-07-12 17:31:07.970 INFO  com.qzh.aspect.LogAspect                          :72   [32m                  [0;39m 请求参数: []
+2021-07-12 17:31:07.976 DEBUG com.qzh.mapper.DocMapper.selectByExample          :137  [32m                  [0;39m ==>  Preparing: select id, ebook_id, parent, `name`, sort, view_count, vote_count from doc order by sort asc
+2021-07-12 17:31:07.976 DEBUG com.qzh.mapper.DocMapper.selectByExample          :137  [32m                  [0;39m ==> Parameters: 
+2021-07-12 17:31:07.977 TRACE com.qzh.mapper.DocMapper.selectByExample          :143  [32m                  [0;39m <==    Columns: id, ebook_id, parent, name, sort, view_count, vote_count
+2021-07-12 17:31:07.978 TRACE com.qzh.mapper.DocMapper.selectByExample          :143  [32m                  [0;39m <==        Row: 1, 1, 0, 文档1, 1, 0, 0
+2021-07-12 17:31:07.978 TRACE com.qzh.mapper.DocMapper.selectByExample          :143  [32m                  [0;39m <==        Row: 2, 1, 1, 文档1.1, 1, 0, 0
+2021-07-12 17:31:07.978 TRACE com.qzh.mapper.DocMapper.selectByExample          :143  [32m                  [0;39m <==        Row: 4, 1, 3, 文档2.1, 1, 0, 0
+2021-07-12 17:31:07.978 TRACE com.qzh.mapper.DocMapper.selectByExample          :143  [32m                  [0;39m <==        Row: 6, 1, 5, 文档2.2.1, 1, 0, 0
+2021-07-12 17:31:07.978 TRACE com.qzh.mapper.DocMapper.selectByExample          :143  [32m                  [0;39m <==        Row: 3, 1, 0, 文档2, 2, 0, 0
+2021-07-12 17:31:07.978 TRACE com.qzh.mapper.DocMapper.selectByExample          :143  [32m                  [0;39m <==        Row: 5, 1, 3, 文档2.2, 2, 0, 0
+2021-07-12 17:31:07.979 DEBUG com.qzh.mapper.DocMapper.selectByExample          :137  [32m                  [0;39m <==      Total: 6
+2021-07-12 17:31:07.987 INFO  com.qzh.aspect.LogAspect                          :84   [32m                  [0;39m 返回结果: {"content":[{"ebookId":1,"id":1,"name":"文档1","parent":0,"sort":1,"viewCount":0,"voteCount":0},{"ebookId":1,"id":2,"name":"文档1.1","parent":1,"sort":1,"viewCount":0,"voteCount":0},{"ebookId":1,"id":4,"name":"文档2.1","parent":3,"sort":1,"viewCount":0,"voteCount":0},{"ebookId":1,"id":6,"name":"文档2.2.1","parent":5,"sort":1,"viewCount":0,"voteCount":0},{"ebookId":1,"id":3,"name":"文档2","parent":0,"sort":2,"viewCount":0,"voteCount":0},{"ebookId":1,"id":5,"name":"文档2.2","parent":3,"sort":2,"viewCount":0,"voteCount":0}],"success":true}
+2021-07-12 17:31:07.988 INFO  com.qzh.aspect.LogAspect                          :85   [32m                  [0;39m ------------- 结束 耗时：18 ms -------------
