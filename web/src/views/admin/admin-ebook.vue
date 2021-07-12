@@ -32,6 +32,10 @@
       <template #cover="{ text: cover }">
         <img v-if="cover" :src="cover" alt="avatar" style="width: 50px;height: 50px" />
       </template>
+      <template v-slot:category="{record}">
+<!--        {{text}}-->
+        <span>{{getCategoryName(record.category1Id)}} / {{getCategoryName(record.category2Id)}}</span>
+      </template>
       <template v-slot:action="{record}">
         <a-space size="small">
           <a-button type="primary" @click="edit(record)">
@@ -113,12 +117,8 @@
             dataIndex: 'name',
           },
           {
-            title: '分类1',
-            dataIndex: 'category1Id',
-          },
-          {
-            title: '分类2',
-            dataIndex: 'category2Id',
+            title: '分类',
+            slots: {customRender: 'category'}
           },
           {
             title: '文档数',
@@ -232,6 +232,9 @@
         };
 
         const level1 = ref();
+
+        let categorys: any;
+
         //查询所有分类
         const handleQueryCategory = () => {
           loading.value = true;
@@ -239,7 +242,7 @@
             loading.value = false;
             const data = response.data;
             if (data.success) {
-              const categorys = data.content;
+              categorys = data.content;
               console.log("原始数组" + categorys);
 
               level1.value = [];
@@ -250,6 +253,16 @@
             }
 
           });
+        };
+
+        const getCategoryName = (cid: number) => {
+          let result = "";
+          categorys.forEach((item: any) => {
+            if (item.id === cid) {
+              result = item.name;
+            }
+          });
+          return result;
         };
 
         onMounted(
@@ -269,6 +282,7 @@
           columns,
           loading,
           handleTableChange,
+          getCategoryName,
 
           edit,
           add,
