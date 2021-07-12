@@ -32,20 +32,20 @@ export class Tool {
    * 父ID属性为parent
    */
   public static array2Tree (array: any, parentId: number) {
-    if (Tool.isEmpty(array)) {
+    if (Tool.isEmpty(array)) {//判断传进的分类是否为空
       return [];
     }
 
-    const result = [];
-    for (let i = 0; i < array.length; i++) {
-      const c = array[i];
+    const result = [];//初始化结果集
+    for (let i = 0; i < array.length; i++) {//遍历分类
+      const c = array[i];//c为每一个分类
       // console.log(Number(c.parent), Number(parentId));
-      if (Number(c.parent) === Number(parentId)) {
-        result.push(c);
+      if (Number(c.parent) === Number(parentId)) {//判断每一个分类的节点是否等于0或递归进来的当前分类的子节点
+        result.push(c);//push到一级节点
 
         // 递归查看当前节点对应的子节点
-        const children = Tool.array2Tree(array, c.id);
-        if (Tool.isNotEmpty(children)) {
+        const children = Tool.array2Tree(array, c.id);//传递当前分类的id
+        if (Tool.isNotEmpty(children)) {//判断当前
           c.children = children;
         }
       }
