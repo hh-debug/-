@@ -120,6 +120,8 @@
         // 数据查询
         const handleQuery = () => {
           loading.value = true;
+          //清空现有数据
+          level1.value = [];
           Axios.get("/category/all").then((response) => {
             loading.value = false;
             const data = response.data;
