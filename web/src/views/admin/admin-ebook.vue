@@ -32,7 +32,7 @@
       <template #cover="{ text: cover }">
         <img v-if="cover" :src="cover" alt="avatar" style="width: 50px;height: 50px" />
       </template>
-      <template v-slot:action="{text,record}">
+      <template v-slot:action="{record}">
         <a-space size="small">
           <a-button type="primary" @click="edit(record)">
             编辑
@@ -69,11 +69,13 @@
       <a-form-item label="名称">
         <a-input v-model:value="ebook.name" />
       </a-form-item>
-      <a-form-item label="分类一">
-        <a-input v-model:value="ebook.category1Id" />
-      </a-form-item>
-      <a-form-item label="分类二">
-        <a-input v-model:value="ebook.category2Id" />
+      <a-form-item label="分类">
+        <a-cascader
+            v-model:value="categoryIds"
+            :field-names="{ label:'name',value:'id',children:'children' }"
+            :options="level1">
+
+        </a-cascader>
       </a-form-item>
       <a-form-item label="描述">
         <a-input v-model:value="ebook.description" type="text" />
@@ -174,11 +176,16 @@
         };
 
         // 表单
-        const ebook = ref({});
+        const categoryIds = ref();
+        const ebook = ref();
         const moduleVisible = ref(false);
         const moduleLoading = ref(false);
         const handleModalOk = () => {
           moduleLoading.value = true;
+
+          ebook.value.category1Id = categoryIds.value[0];
+          ebook.value.category2Id = categoryIds.value[1];
+
           Axios.post("/ebook/save",ebook.value).then((response) => {
             moduleLoading.value = false;
             const data = response.data;
@@ -199,6 +206,7 @@
         const edit = (record: any) => {
           moduleVisible.value = true;
           ebook.value = Tool.copy(record);
+          categoryIds.value = [ebook.value.category1Id,ebook.value.category2Id]
         };
 
         //新增
@@ -223,8 +231,30 @@
           });
         };
 
+        const level1 = ref();
+        //查询所有分类
+        const handleQueryCategory = () => {
+          loading.value = true;
+          Axios.get("category/all").then((response) => {
+            loading.value = false;
+            const data = response.data;
+            if (data.success) {
+              const categorys = data.content;
+              console.log("原始数组" + categorys);
+
+              level1.value = [];
+              level1.value = Tool.array2Tree(categorys, 0);
+              console.log("树形结构" + level1.value)
+            }else {
+              message.error(data.message)
+            }
+
+          });
+        };
+
         onMounted(
             () => {
+              handleQueryCategory();
               handleQuery({
                 page: 1,
                 size: pagination.value.pageSize
@@ -247,6 +277,10 @@
           moduleVisible,
           moduleLoading,
           handleModalOk,
+          categoryIds,
+          level1,
+
+
           ebook,
           handleDelete,
           handleQuery
