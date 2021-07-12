@@ -250,7 +250,13 @@
 
               level1.value = [];
               level1.value = Tool.array2Tree(categorys, 0);
-              console.log("树形结构" + level1.value)
+              console.log("树形结构" + level1.value);
+
+              //加载完分类管理再执行查询方法 否则异步网络慢会报错
+              handleQuery({
+                page: 1,
+                size: pagination.value.pageSize
+              });
             }else {
               message.error(data.message)
             }
@@ -271,10 +277,7 @@
         onMounted(
             () => {
               handleQueryCategory();
-              handleQuery({
-                page: 1,
-                size: pagination.value.pageSize
-              });
+
             }
         );
 
