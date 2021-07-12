@@ -142,7 +142,10 @@
 
         // 数据查询
         const handleQuery = (params: any) => {
+
+          //清空源数据
           loading.value = true;
+          ebooks.value = [];
           Axios.get("/ebook/list",{
             params: {
               page: params.page,
