@@ -2868,3 +2868,39 @@
 2021-07-12 16:21:29.655 DEBUG com.qzh.mapper.EbookMapper.selectByExample        :137  [32m                  [0;39m <==      Total: 2
 2021-07-12 16:21:29.655 INFO  com.qzh.aspect.LogAspect                          :84   [32m                  [0;39m 返回结果: {"content":{"list":[{"category1Id":400,"category2Id":401,"description":"零基础入门 Mysql 开发，企业级应用开发最佳首选框架","docCount":0,"id":4,"name":"Mysql 入门教程","viewCount":0,"voteCount":0},{"category1Id":400,"category2Id":401,"description":"零基础入门 Oracle 开发，企业级应用开发最佳首选框架","docCount":0,"id":5,"name":"Oracle 入门教程","viewCount":0,"voteCount":0}],"total":2},"success":true}
 2021-07-12 16:21:29.655 INFO  com.qzh.aspect.LogAspect                          :85   [32m                  [0;39m ------------- 结束 耗时：5 ms -------------
+2021-07-12 17:08:48.785 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :218  [32m                  [0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+2021-07-12 17:08:48.785 INFO  com.zaxxer.hikari.HikariDataSource                :350  [32m                  [0;39m HikariPool-4 - Shutdown initiated...
+2021-07-12 17:08:48.787 INFO  com.zaxxer.hikari.HikariDataSource                :352  [32m                  [0;39m HikariPool-4 - Shutdown completed.
+2021-07-12 17:08:48.896 INFO  com.qzh.WikiApplication                           :55   [32m                  [0;39m Starting WikiApplication using Java 1.8.0_221 on DESKTOP-4A6N60R with PID 10096 (E:\IdeaProject\wiki\target\classes started by hho in E:\IdeaProject\wiki)
+2021-07-12 17:08:48.896 INFO  com.qzh.WikiApplication                           :675  [32m                  [0;39m No active profile set, falling back to default profiles: default
+2021-07-12 17:08:49.049 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :108  [32m                  [0;39m Tomcat initialized with port(s): 80 (http)
+2021-07-12 17:08:49.049 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Initializing ProtocolHandler ["http-nio-80"]
+2021-07-12 17:08:49.050 INFO  org.apache.catalina.core.StandardService          :173  [32m                  [0;39m Starting service [Tomcat]
+2021-07-12 17:08:49.050 INFO  org.apache.catalina.core.StandardEngine           :173  [32m                  [0;39m Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-07-12 17:08:49.059 INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] :173  [32m                  [0;39m Initializing Spring embedded WebApplicationContext
+2021-07-12 17:08:49.059 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext    :289  [32m                  [0;39m Root WebApplicationContext: initialization completed in 161 ms
+2021-07-12 17:08:49.170 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :181  [32m                  [0;39m Initializing ExecutorService 'applicationTaskExecutor'
+2021-07-12 17:08:49.260 INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer    :58   [32m                  [0;39m LiveReload server is running on port 35729
+2021-07-12 17:08:49.265 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Starting ProtocolHandler ["http-nio-80"]
+2021-07-12 17:08:49.267 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :220  [32m                  [0;39m Tomcat started on port(s): 80 (http) with context path ''
+2021-07-12 17:08:49.269 INFO  com.qzh.WikiApplication                           :61   [32m                  [0;39m Started WikiApplication in 0.391 seconds (JVM running for 12618.144)
+2021-07-12 17:08:49.270 INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener :63   [32m                  [0;39m Condition evaluation unchanged
+2021-07-12 17:08:49.270 INFO  com.qzh.WikiApplication                           :20   [32m                  [0;39m 启动成功!
+2021-07-12 17:08:49.270 INFO  com.qzh.WikiApplication                           :21   [32m                  [0;39m 地址:	http://localhost:80
+2021-07-12 17:09:01.431 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :218  [32m                  [0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+2021-07-12 17:09:01.508 INFO  com.qzh.WikiApplication                           :55   [32m                  [0;39m Starting WikiApplication using Java 1.8.0_221 on DESKTOP-4A6N60R with PID 10096 (E:\IdeaProject\wiki\target\classes started by hho in E:\IdeaProject\wiki)
+2021-07-12 17:09:01.509 INFO  com.qzh.WikiApplication                           :675  [32m                  [0;39m No active profile set, falling back to default profiles: default
+2021-07-12 17:09:01.645 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :108  [32m                  [0;39m Tomcat initialized with port(s): 80 (http)
+2021-07-12 17:09:01.645 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Initializing ProtocolHandler ["http-nio-80"]
+2021-07-12 17:09:01.645 INFO  org.apache.catalina.core.StandardService          :173  [32m                  [0;39m Starting service [Tomcat]
+2021-07-12 17:09:01.645 INFO  org.apache.catalina.core.StandardEngine           :173  [32m                  [0;39m Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-07-12 17:09:01.656 INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] :173  [32m                  [0;39m Initializing Spring embedded WebApplicationContext
+2021-07-12 17:09:01.656 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext    :289  [32m                  [0;39m Root WebApplicationContext: initialization completed in 146 ms
+2021-07-12 17:09:01.771 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :181  [32m                  [0;39m Initializing ExecutorService 'applicationTaskExecutor'
+2021-07-12 17:09:01.863 INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer    :58   [32m                  [0;39m LiveReload server is running on port 35729
+2021-07-12 17:09:01.869 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Starting ProtocolHandler ["http-nio-80"]
+2021-07-12 17:09:01.871 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :220  [32m                  [0;39m Tomcat started on port(s): 80 (http) with context path ''
+2021-07-12 17:09:01.873 INFO  com.qzh.WikiApplication                           :61   [32m                  [0;39m Started WikiApplication in 0.382 seconds (JVM running for 12630.748)
+2021-07-12 17:09:01.873 INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener :63   [32m                  [0;39m Condition evaluation unchanged
+2021-07-12 17:09:01.874 INFO  com.qzh.WikiApplication                           :20   [32m                  [0;39m 启动成功!
+2021-07-12 17:09:01.874 INFO  com.qzh.WikiApplication                           :21   [32m                  [0;39m 地址:	http://localhost:80

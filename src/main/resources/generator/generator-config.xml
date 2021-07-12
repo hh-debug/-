@@ -42,7 +42,8 @@
 
 
 <!--        <table tableName="ebook"/>-->
-        <table tableName="category"/>
+<!--        <table tableName="category"/>-->
+        <table tableName="Doc"/>
 
     </context>
 </generatorConfiguration>
