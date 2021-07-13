@@ -22,4 +22,6 @@ public interface DocService {
     void save(DocSaveReq docSaveReq);
 
     void delete(List<String> idsStr);
+
+    public String findContent(Long id);
 }

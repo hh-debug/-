@@ -262,8 +262,9 @@
             moduleLoading.value = false;
             const data = response.data;
             if (data.success){
-              moduleVisible.value = false;
+              // moduleVisible.value = false;
               //重新加载列表
+              message.success("保存成功！");
               handleQuery();
             }else {
               message.error(data.message)
@@ -271,10 +272,31 @@
           });
         };
 
+        /**
+         * 内容查询
+         **/
+        const handleQueryContent = () => {
+          Axios.get("/doc/find-content/" + doc.value.id).then((response) => {
+            const data = response.data;
+            if (data.success) {
+              editor.txt.html(data.content)
+            } else {
+              message.error(data.message);
+            }
+          });
+        };
+
         //编辑
         const edit = (record: any) => {
+
+          // 清空富文本框
+          editor.txt.html("");
+
           moduleVisible.value = true;
           doc.value = Tool.copy(record);
+
+
+          handleQueryContent();
 
           // 不能选择当前节点及其所有子孙节点，作为父节点，会使树断开
           treeSelectData.value = Tool.copy(level1.value);
@@ -289,6 +311,10 @@
 
         //新增
         const add = () => {
+
+          // 清空富文本框
+          editor.txt.html("");
+
           moduleVisible.value = true;
           doc.value = {
             ebookId: route.query.ebookId
