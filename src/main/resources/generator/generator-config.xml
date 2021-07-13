@@ -43,7 +43,8 @@
 
 <!--        <table tableName="ebook"/>-->
 <!--        <table tableName="category"/>-->
-        <table tableName="Doc"/>
+<!--        <table tableName="Doc"/>-->
+        <table tableName="content"/>
 
     </context>
 </generatorConfiguration>

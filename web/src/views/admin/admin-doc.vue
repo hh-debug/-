@@ -286,6 +286,7 @@
             initEditor();
           },100);
         };
+
         //删除
         const handleDelete = (id: number) => {
           getDeleteIds(level1.value, id);
