@@ -16,7 +16,7 @@
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0",
     "vuex": "^4.0.0-0",
-    "wangeditor": "^4.6.3"
+    "wangeditor": "^4.7.5"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^2.33.0",
@@ -34,10 +34,10 @@
   },
   "rules": {
     "generator-star-spacing": "off",
-    "no-tabs":"off",
-    "no-unused-vars":"off",
-    "no-console":"off",
-    "no-irregular-whitespace":"off",
+    "no-tabs": "off",
+    "no-unused-vars": "off",
+    "no-console": "off",
+    "no-irregular-whitespace": "off",
     "no-debugger": "off"
   }
 }
