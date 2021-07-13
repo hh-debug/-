@@ -66,9 +66,10 @@ public class DocServiceImpl implements DocService {
     }
 
     @Override
-    public List<DocQueryResp> list() {
+    public List<DocQueryResp> list(Long ebookId) {
 
         DocExample docExample = new DocExample();
+        docExample.createCriteria().andEbookIdEqualTo(ebookId);
         docExample.setOrderByClause("sort asc");
 
         List<Doc> docs = docMapper.selectByExample(docExample);

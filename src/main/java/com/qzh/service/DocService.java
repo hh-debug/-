@@ -15,7 +15,7 @@ import java.util.List;
 public interface DocService {
     public PageResp<DocQueryResp> list(DocQueryReq docQueryReq);
 
-    public List<DocQueryResp> list();
+    public List<DocQueryResp> list(Long ebookId);
 
     public List<DocQueryResp> likeNameList(DocQueryReq docQueryReq);
 
