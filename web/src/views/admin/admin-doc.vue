@@ -176,12 +176,14 @@
         //因为树选择组件的属性状态，会随当前编辑节点而变化，所以单独声明一个响应式变量
         const treeSelectData = ref();
         treeSelectData.value = [];
-        const doc = ref({});
+        const doc = ref();
+        doc.value = {};
         const moduleVisible = ref(false);
         const moduleLoading = ref(false);
         // const editor = new E('content');
         // editor.create();
-        let editor=null;
+        let editor: any;
+        editor = null;
 
         const initEditor = () => {
           editor = new E('#content') ;
@@ -255,6 +257,7 @@
 
         const handleSave = () => {
           moduleLoading.value = true;
+          doc.value.content = editor.txt.html();
           Axios.post("/doc/save",doc.value).then((response) => {
             moduleLoading.value = false;
             const data = response.data;

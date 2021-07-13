@@ -2,8 +2,10 @@ package com.qzh.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.qzh.domain.Content;
 import com.qzh.domain.Doc;
 import com.qzh.domain.DocExample;
+import com.qzh.mapper.ContentMapper;
 import com.qzh.mapper.DocMapper;
 import com.qzh.req.DocQueryReq;
 import com.qzh.req.DocSaveReq;
@@ -30,6 +32,9 @@ public class DocServiceImpl implements DocService {
 
     @Resource
     private DocMapper docMapper;
+
+    @Resource
+    private ContentMapper contentMapper;
 
     @Autowired
     private SnowFlake snowFlake;
@@ -110,17 +115,25 @@ public class DocServiceImpl implements DocService {
     @Override
     public void save(DocSaveReq docSaveReq) {
         Doc doc = CopyUtil.copy(docSaveReq, Doc.class);
+        Content content = CopyUtil.copy(docSaveReq, Content.class);
         System.out.println("复制后的实体:"+doc);
         if (ObjectUtils.isEmpty(docSaveReq.getId())) {
-            long id = snowFlake.nextId();
-            doc.setId(id);
+            doc.setId(snowFlake.nextId());
             //新增
             docMapper.insert(doc);
+
+
+            content.setId(doc.getId());
+            //新增
+            contentMapper.insert(content);
         }else {
             //修改
             System.out.println("传递的主键id"+doc.getId());
             int i = docMapper.updateByPrimaryKey(doc);
-            docMapper.updateByPrimaryKey(doc);
+            int count = contentMapper.updateByPrimaryKeyWithBLOBs(content);
+            if (count == 0) {
+                contentMapper.insert(content);
+            }
             System.out.println("修改影响行数:"+i);
         }
     }
