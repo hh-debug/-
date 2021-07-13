@@ -20,12 +20,15 @@
             </a-button>
           </a-form-item>
         </a-form>
-        <a-table :columns="columns"
+        <a-table
+                 v-if="level1.length > 0"
+                 :columns="columns"
                  :data-source="level1"
                  :row-key="record => record.id"
                  :loading="loading"
                  :pagination="false"
                  size="small"
+                 :default-expand-all-rows="true"
         >
           <template #name="{ text, record}">
             {{record.sort}} {{text}}
@@ -129,6 +132,9 @@
         const docs = ref();
         const loading = ref(false);
         const level1 = ref();
+        level1.value = [];
+
+
         const columns = [
           {
             title: '名称',
