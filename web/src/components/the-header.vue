@@ -31,9 +31,12 @@
           关于我们
         </router-link>
       </a-menu-item>
-      <a class="login-menu" @click="showLoginModal">
+      <a-menu-item>
+      <a @click="showLoginModal" style="float: right">
         <span>登录</span>
       </a>
+      </a-menu-item>
+
     </a-menu>
 
     <a-modal
@@ -57,6 +60,11 @@
 
 <script lang="ts">
 import {defineComponent, ref} from 'vue';
+import axios from 'axios';
+import {message} from 'ant-design-vue';
+
+declare let hexMd5: any;
+declare let KEY: any;
 
 export default defineComponent({
   name: 'the-header',
@@ -76,6 +84,18 @@ export default defineComponent({
     // 登录
     const login = () => {
       console.log("开始登录");
+      loginModalLoading.value = true;
+      loginUser.value.password = hexMd5(loginUser.value.password + KEY);
+      axios.post('/user/login', loginUser.value).then((response) => {
+        loginModalLoading.value = false;
+        const data = response.data;
+        if (data.success) {
+          loginModalVisible.value = false;
+          message.success("登录成功！");
+        } else {
+          message.error(data.message);
+        }
+      });
     };
 
     return {
