@@ -22,14 +22,24 @@
       <a-menu-item key="/about">
         <router-link to="/about">关于我们</router-link>
       </a-menu-item>
-      <a-menu-item>
+      <a-popconfirm
+          title="确认退出登录?"
+          ok-text="是"
+          cancel-text="否"
+          @confirm="logout()"
+      >
+        <a class="login-menu" v-show="user.id">
+          <span>退出登录</span>
+        </a>
+      </a-popconfirm>
+<!--      <a-menu-item>-->
       <a class="login-menu" v-show="user.id">
         <span>您好：{{user.name}}</span>
       </a>
       <a class="login-menu" v-show="!user.id" @click="showLoginModal">
         <span>登录</span>
       </a>
-      </a-menu-item>
+<!--      </a-menu-item>-->
     </a-menu>
 
     <a-modal
@@ -51,7 +61,7 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, ref} from 'vue';
+import {defineComponent, ref,computed} from 'vue';
 import axios from 'axios';
 import {message} from 'ant-design-vue';
 import store from "@/store";
@@ -63,12 +73,11 @@ export default defineComponent({
   name: 'the-header',
 
   setup() {
-    const user = ref();
-    user.value = {};
+    const user = computed(() => store.state.user);
 
     // 用来登录
     const loginUser = ref({
-      loginName: "test",
+      loginName: "测试3",
       password: "test123"
     });
     const loginModalVisible = ref(false);
@@ -89,9 +98,21 @@ export default defineComponent({
           loginModalVisible.value = false;
           message.success("登录成功！");
 
-          user.value = data.content;
 
-          store.commit('setUser', user.value);
+          store.commit('setUser', data.content);
+        } else {
+          message.error(data.message);
+        }
+      });
+    };
+    // 退出登录
+    const logout = () => {
+      console.log("退出登录开始");
+      axios.get('/user/logout/' + user.value.token).then((response) => {
+        const data = response.data;
+        if (data.success) {
+          message.success("退出登录成功！");
+          store.commit("setUser", {});
         } else {
           message.error(data.message);
         }
@@ -104,7 +125,8 @@ export default defineComponent({
       showLoginModal,
       loginUser,
       login,
-      user
+      user,
+      logout
     }
   }
 });
