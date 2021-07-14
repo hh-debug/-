@@ -9,14 +9,14 @@
       <a-menu-item key="/">
         <router-link to="/">首页</router-link>
       </a-menu-item>
-      <a-menu-item key="/admin/user">
+      <a-menu-item key="/admin/user" :style="user.id?{}:{display:'none'}">
         <router-link to="/admin/user">用户管理</router-link>
       </a-menu-item>
-      <a-menu-item key="/admin/ebook">
+      <a-menu-item key="/admin/ebook" :style="user.id?{}:{display:'none'}">
         <!--这里的 /admin/ebook 是在router/index.ts里定义的路径，其他与其类似-->
         <router-link to="/admin/ebook">电子书管理</router-link>
       </a-menu-item>
-      <a-menu-item key="/admin/category">
+      <a-menu-item key="/admin/category" :style="user.id?{}:{display:'none'}">
         <router-link to="/admin/category">分类管理</router-link>
       </a-menu-item>
       <a-menu-item key="/about">
@@ -34,7 +34,7 @@
       </a-popconfirm>
 <!--      <a-menu-item>-->
       <a class="login-menu" v-show="user.id">
-        <span>您好：{{user.name}}</span>
+        <span v-text="'您好:' + user.name"></span>
       </a>
       <a class="login-menu" v-show="!user.id" @click="showLoginModal">
         <span>登录</span>
@@ -73,7 +73,7 @@ export default defineComponent({
   name: 'the-header',
 
   setup() {
-    const user = computed(() => store.state.user);
+
 
     // 用来登录
     const loginUser = ref({
@@ -98,7 +98,6 @@ export default defineComponent({
           loginModalVisible.value = false;
           message.success("登录成功！");
 
-
           store.commit('setUser', data.content);
         } else {
           message.error(data.message);
@@ -118,7 +117,7 @@ export default defineComponent({
         }
       });
     };
-
+    const user = computed(() => store.state.user);
     return {
       loginModalVisible,
       loginModalLoading,

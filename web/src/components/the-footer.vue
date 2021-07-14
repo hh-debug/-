@@ -1,6 +1,6 @@
 <template>
   <a-layout-footer style="text-align: center">
-    知识库系统 By HHO
+    知识库系统 By HHO {{user.name}}
   </a-layout-footer>
 </template>
 
