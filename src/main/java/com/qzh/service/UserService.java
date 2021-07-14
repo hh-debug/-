@@ -1,10 +1,12 @@
 package com.qzh.service;
 
 import com.qzh.domain.User;
+import com.qzh.req.UserLoginReq;
 import com.qzh.req.UserQueryReq;
 import com.qzh.req.UserResetPasswordReq;
 import com.qzh.req.UserSaveReq;
 import com.qzh.resp.PageResp;
+import com.qzh.resp.UserLoginResp;
 import com.qzh.resp.UserQueryResp;
 
 /**
@@ -22,4 +24,6 @@ public interface UserService {
     public User selectByLoginName(String loginName);
 
     void resetPassword(UserResetPasswordReq req);
+
+    UserLoginResp login(UserLoginReq req);
 }

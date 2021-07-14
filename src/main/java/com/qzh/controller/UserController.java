@@ -1,10 +1,12 @@
 package com.qzh.controller;
 
+import com.qzh.req.UserLoginReq;
 import com.qzh.req.UserQueryReq;
 import com.qzh.req.UserResetPasswordReq;
 import com.qzh.req.UserSaveReq;
 import com.qzh.resp.CommonResp;
 import com.qzh.resp.PageResp;
+import com.qzh.resp.UserLoginResp;
 import com.qzh.resp.UserQueryResp;
 import com.qzh.service.UserService;
 import org.springframework.util.DigestUtils;
@@ -54,6 +56,16 @@ public class UserController {
         req.setPassword(DigestUtils.md5DigestAsHex(req.getPassword().getBytes()));
         CommonResp resp = new CommonResp<>();
         userService.resetPassword(req);
+        return resp;
+    }
+
+
+    @PostMapping("/login")
+    public CommonResp login(@Valid @RequestBody UserLoginReq req) {
+        req.setPassword(DigestUtils.md5DigestAsHex(req.getPassword().getBytes()));
+        CommonResp<UserLoginResp> resp = new CommonResp<>();
+        UserLoginResp userLoginResp = userService.login(req);
+        resp.setContent(userLoginResp);
         return resp;
     }
 

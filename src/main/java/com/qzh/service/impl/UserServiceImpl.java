@@ -7,10 +7,12 @@ import com.qzh.domain.UserExample;
 import com.qzh.exception.BusinessException;
 import com.qzh.exception.BusinessExceptionCode;
 import com.qzh.mapper.UserMapper;
+import com.qzh.req.UserLoginReq;
 import com.qzh.req.UserQueryReq;
 import com.qzh.req.UserResetPasswordReq;
 import com.qzh.req.UserSaveReq;
 import com.qzh.resp.PageResp;
+import com.qzh.resp.UserLoginResp;
 import com.qzh.resp.UserQueryResp;
 import com.qzh.service.UserService;
 import com.qzh.util.CopyUtil;
@@ -134,5 +136,25 @@ public class UserServiceImpl implements UserService {
         User user = CopyUtil.copy(req, User.class);
         //里面的属性有值，才去更新， 没有值我就不更新这个字段，防止黑客更改信息
         userMapper.updateByPrimaryKeySelective(user);
+    }
+
+    @Override
+    public UserLoginResp login(UserLoginReq req) {
+        User userDb = selectByLoginName(req.getLoginName());
+        if (ObjectUtils.isEmpty(userDb)) {
+            // 用户名不存在
+            LOG.info("用户名不存在, {}", req.getLoginName());
+            throw new BusinessException(BusinessExceptionCode.LOGIN_USER_ERROR);
+        } else {
+            if (userDb.getPassword().equals(req.getPassword())) {
+                // 登录成功
+                UserLoginResp userLoginResp = CopyUtil.copy(userDb, UserLoginResp.class);
+                return userLoginResp;
+            } else {
+                // 密码不对
+                LOG.info("密码不对, 输入密码：{}, 数据库密码：{}", req.getPassword(), userDb.getPassword());
+                throw new BusinessException(BusinessExceptionCode.LOGIN_USER_ERROR);
+            }
+        }
     }
 }
