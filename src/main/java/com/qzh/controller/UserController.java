@@ -1,6 +1,7 @@
 package com.qzh.controller;
 
 import com.qzh.req.UserQueryReq;
+import com.qzh.req.UserResetPasswordReq;
 import com.qzh.req.UserSaveReq;
 import com.qzh.resp.CommonResp;
 import com.qzh.resp.PageResp;
@@ -46,6 +47,13 @@ public class UserController {
     public CommonResp delete(@PathVariable Long id) {
         CommonResp resp = new CommonResp<>();
         userService.delete(id);
+        return resp;
+    }
+    @PostMapping("/reset-password")
+    public CommonResp resetPassword(@Valid @RequestBody UserResetPasswordReq req) {
+        req.setPassword(DigestUtils.md5DigestAsHex(req.getPassword().getBytes()));
+        CommonResp resp = new CommonResp<>();
+        userService.resetPassword(req);
         return resp;
     }
 

@@ -8,6 +8,7 @@ import com.qzh.exception.BusinessException;
 import com.qzh.exception.BusinessExceptionCode;
 import com.qzh.mapper.UserMapper;
 import com.qzh.req.UserQueryReq;
+import com.qzh.req.UserResetPasswordReq;
 import com.qzh.req.UserSaveReq;
 import com.qzh.resp.PageResp;
 import com.qzh.resp.UserQueryResp;
@@ -126,5 +127,12 @@ public class UserServiceImpl implements UserService {
             return userList.get(0);
         }
 
+    }
+
+    @Override
+    public void resetPassword(UserResetPasswordReq req) {
+        User user = CopyUtil.copy(req, User.class);
+        //里面的属性有值，才去更新， 没有值我就不更新这个字段，防止黑客更改信息
+        userMapper.updateByPrimaryKeySelective(user);
     }
 }
