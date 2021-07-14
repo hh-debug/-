@@ -1,5 +1,6 @@
 package com.qzh.service;
 
+import com.qzh.domain.User;
 import com.qzh.req.UserQueryReq;
 import com.qzh.req.UserSaveReq;
 import com.qzh.resp.PageResp;
@@ -16,5 +17,7 @@ public interface UserService {
     public void save(UserSaveReq req);
 
     public void delete(Long id);
+
+    public User selectByLoginName(String loginName);
 
 }
