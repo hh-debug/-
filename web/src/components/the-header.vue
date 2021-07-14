@@ -137,5 +137,6 @@ export default defineComponent({
   float: right;
   color: white;
   padding-left: 10px;
+  padding-right: 80px;
 }
 </style>
