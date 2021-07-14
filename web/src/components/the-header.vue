@@ -1,42 +1,35 @@
 <template>
   <a-layout-header class="header">
-    <div class="logo" />
+<!--    <div class="logo" >java知识库</div>-->
     <a-menu
         theme="dark"
         mode="horizontal"
-        v-model:selectedKeys="selectedKeys1"
         :style="{ lineHeight: '64px' }"
     >
       <a-menu-item key="/">
-        <router-link to="/">
-        首页
-        </router-link>
+        <router-link to="/">首页</router-link>
       </a-menu-item>
       <a-menu-item key="/admin/user">
         <router-link to="/admin/user">用户管理</router-link>
       </a-menu-item>
       <a-menu-item key="/admin/ebook">
-        <router-link to="/admin/ebook">
-          电子书管理
-        </router-link>
+        <!--这里的 /admin/ebook 是在router/index.ts里定义的路径，其他与其类似-->
+        <router-link to="/admin/ebook">电子书管理</router-link>
       </a-menu-item>
-
       <a-menu-item key="/admin/category">
-        <router-link to="/admin/category">
-          分类管理
-        </router-link>
+        <router-link to="/admin/category">分类管理</router-link>
       </a-menu-item>
-      <a-menu-item key="/About">
-        <router-link to="/About">
-          关于我们
-        </router-link>
+      <a-menu-item key="/about">
+        <router-link to="/about">关于我们</router-link>
       </a-menu-item>
       <a-menu-item>
-      <a @click="showLoginModal" style="float: right">
+      <a class="login-menu" v-show="user.id">
+        <span>您好：{{user.name}}</span>
+      </a>
+      <a class="login-menu" v-show="!user.id" @click="showLoginModal">
         <span>登录</span>
       </a>
       </a-menu-item>
-
     </a-menu>
 
     <a-modal
@@ -54,7 +47,6 @@
         </a-form-item>
       </a-form>
     </a-modal>
-
   </a-layout-header>
 </template>
 
@@ -70,10 +62,13 @@ export default defineComponent({
   name: 'the-header',
 
   setup() {
+    const user = ref();
+    user.value = {};
+
     // 用来登录
     const loginUser = ref({
       loginName: "test",
-      password: "test"
+      password: "test123"
     });
     const loginModalVisible = ref(false);
     const loginModalLoading = ref(false);
@@ -92,6 +87,8 @@ export default defineComponent({
         if (data.success) {
           loginModalVisible.value = false;
           message.success("登录成功！");
+
+          user.value = data.content;
         } else {
           message.error(data.message);
         }
@@ -103,7 +100,8 @@ export default defineComponent({
       loginModalLoading,
       showLoginModal,
       loginUser,
-      login
+      login,
+      user
     }
   }
 });
