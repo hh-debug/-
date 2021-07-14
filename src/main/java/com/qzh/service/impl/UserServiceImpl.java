@@ -97,6 +97,8 @@ public class UserServiceImpl implements UserService {
 
         } else {
             // 更新
+            user.setLoginName(null);
+            user.setPassword(null);
             userMapper.updateByPrimaryKey(user);
         }
     }
