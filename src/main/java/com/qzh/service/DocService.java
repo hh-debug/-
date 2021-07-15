@@ -26,4 +26,6 @@ public interface DocService {
     public String findContent(Long id);
 
     void vote(Long id);
+
+    void updateEbookInfo();
 }
