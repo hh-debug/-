@@ -131,7 +131,7 @@ export default defineComponent({
 });
 </script>
 
-<style>
+<style scoped>
 .login-menu {
   float: right;
   color: white;
