@@ -15,7 +15,22 @@
           </a-tree>
         </a-col>
         <a-col :span="18">
+          <div>
+            <h2>{{doc.name}}</h2>
+            <div>
+              <span>阅读数：{{doc.viewCount}}</span> &nbsp; &nbsp;
+              <span>点赞数：{{doc.voteCount}}</span>
+            </div>
+            <a-divider style="height: 2px; background-color: #9999cc"/>
+          </div>
           <div class="wangeditor" :innerHTML="html"></div>
+          <div class="vote-div">
+            <a-button type="primary" shape="round" :size="'large'" @click="vote">
+              <template #icon>
+                <LikeOutlined/> &nbsp;点赞：{{doc.voteCount}}
+              </template>
+            </a-button>
+          </div>
         </a-col>
       </a-row>
     </a-layout-content>
@@ -106,6 +121,17 @@ export default defineComponent({
       }
     };
 
+    // 点赞
+    const vote = () => {
+      axios.get('/doc/vote/' + doc.value.id).then((response) => {
+        const data = response.data;
+        if (data.success) {
+          doc.value.voteCount++;
+        } else {
+          message.error(data.message);
+        }
+      });
+    };
     onMounted(() => {
       handleQuery();
     });
@@ -115,7 +141,8 @@ export default defineComponent({
       html,
       onSelect,
       defaultSelectedKeys,
-      doc
+      doc,
+      vote
     }
   }
 });

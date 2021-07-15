@@ -5,6 +5,8 @@ import com.github.pagehelper.PageInfo;
 import com.qzh.domain.Content;
 import com.qzh.domain.Doc;
 import com.qzh.domain.DocExample;
+import com.qzh.exception.BusinessException;
+import com.qzh.exception.BusinessExceptionCode;
 import com.qzh.mapper.ContentMapper;
 import com.qzh.mapper.DocMapper;
 import com.qzh.mapper.DocMapperCust;
@@ -14,6 +16,8 @@ import com.qzh.resp.DocQueryResp;
 import com.qzh.resp.PageResp;
 import com.qzh.service.DocService;
 import com.qzh.util.CopyUtil;
+import com.qzh.util.RedisUtil;
+import com.qzh.util.RequestContext;
 import com.qzh.util.SnowFlake;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -36,6 +40,9 @@ public class DocServiceImpl implements DocService {
 
     @Resource
     private DocMapperCust docMapperCust;
+
+    @Resource
+    public RedisUtil redisUtil;
 
     @Resource
     private ContentMapper contentMapper;
@@ -175,6 +182,20 @@ public class DocServiceImpl implements DocService {
             return "";
         } else {
             return content.getContent();
+        }
+    }
+    /**
+     * 点赞
+     */
+    @Override
+    public void vote(Long id) {
+        // docMapperCust.increaseVoteCount(id);
+        // 远程IP+doc.id作为key，24小时内不能重复
+        String ip = RequestContext.getRemoteAddr();
+        if (redisUtil.validateRepeat("DOC_VOTE_" + id + "_" + ip, 5000)) {
+            docMapperCust.increaseVoteCount(id);
+        } else {
+            throw new BusinessException(BusinessExceptionCode.VOTE_REPEAT);
         }
     }
 }

@@ -24,4 +24,6 @@ public interface DocService {
     void delete(List<String> idsStr);
 
     public String findContent(Long id);
+
+    void vote(Long id);
 }
