@@ -7,6 +7,7 @@ import com.qzh.domain.Doc;
 import com.qzh.domain.DocExample;
 import com.qzh.mapper.ContentMapper;
 import com.qzh.mapper.DocMapper;
+import com.qzh.mapper.DocMapperCust;
 import com.qzh.req.DocQueryReq;
 import com.qzh.req.DocSaveReq;
 import com.qzh.resp.DocQueryResp;
@@ -32,6 +33,9 @@ public class DocServiceImpl implements DocService {
 
     @Resource
     private DocMapper docMapper;
+
+    @Resource
+    private DocMapperCust docMapperCust;
 
     @Resource
     private ContentMapper contentMapper;
@@ -120,6 +124,10 @@ public class DocServiceImpl implements DocService {
         System.out.println("复制后的实体:"+doc);
         if (ObjectUtils.isEmpty(docSaveReq.getId())) {
             doc.setId(snowFlake.nextId());
+
+            doc.setViewCount(0);
+            doc.setVoteCount(0);
+
             //新增
             docMapper.insert(doc);
 
@@ -149,9 +157,20 @@ public class DocServiceImpl implements DocService {
 //        docMapper.deleteByPrimaryKey(id);
     }
 
+
+    /**
+     * 查找文档内容
+     *
+     * @param id
+     * @return
+     */
+
     @Override
     public String findContent(Long id) {
         Content content = contentMapper.selectByPrimaryKey(id);
+
+        // 文档阅读数+1
+        docMapperCust.increaseViewCount(id);
         if (ObjectUtils.isEmpty(content)) {
             return "";
         } else {

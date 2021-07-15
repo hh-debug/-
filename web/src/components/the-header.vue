@@ -74,7 +74,7 @@ export default defineComponent({
 
   setup() {
 
-
+    const user = computed(() => store.state.user);
     // 用来登录
     const loginUser = ref({
       loginName: "测试3",
@@ -117,7 +117,7 @@ export default defineComponent({
         }
       });
     };
-    const user = computed(() => store.state.user);
+
     return {
       loginModalVisible,
       loginModalLoading,
