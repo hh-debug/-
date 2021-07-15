@@ -197,6 +197,10 @@ public class DocServiceImpl implements DocService {
         } else {
             throw new BusinessException(BusinessExceptionCode.VOTE_REPEAT);
         }
+
+        //推送消息
+
+
     }
 
     @Override

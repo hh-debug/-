@@ -54,6 +54,7 @@ export class Tool {
   }
 
   /**
+   * websocket 增加的方法
    * 随机生成[len]长度的[radix]进制数
    * @param len
    * @param radix 默认62
