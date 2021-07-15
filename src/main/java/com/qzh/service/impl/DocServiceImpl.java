@@ -19,6 +19,7 @@ import com.qzh.util.CopyUtil;
 import com.qzh.util.RedisUtil;
 import com.qzh.util.RequestContext;
 import com.qzh.util.SnowFlake;
+import com.qzh.websocket.WebSocketServer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
@@ -49,6 +50,9 @@ public class DocServiceImpl implements DocService {
 
     @Autowired
     private SnowFlake snowFlake;
+
+    @Resource
+    private WebSocketServer webSocketServer;
 
     @Override
     public PageResp<DocQueryResp> list(DocQueryReq docQueryReq) {
@@ -199,12 +203,15 @@ public class DocServiceImpl implements DocService {
         }
 
         //推送消息
-
+        Doc doc = docMapper.selectByPrimaryKey(id);
+        webSocketServer.sendInfo("[" + doc.getName() + "]被点赞!");
 
     }
 
     @Override
     public void updateEbookInfo() {
+
+
         docMapperCust.updateEbookInfo();
     }
 }
