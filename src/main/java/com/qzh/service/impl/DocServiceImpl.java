@@ -15,13 +15,15 @@ import com.qzh.req.DocSaveReq;
 import com.qzh.resp.DocQueryResp;
 import com.qzh.resp.PageResp;
 import com.qzh.service.DocService;
+import com.qzh.service.WsService;
 import com.qzh.util.CopyUtil;
 import com.qzh.util.RedisUtil;
 import com.qzh.util.RequestContext;
 import com.qzh.util.SnowFlake;
-import com.qzh.websocket.WebSocketServer;
+import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.ObjectUtils;
 
 import javax.annotation.Resource;
@@ -52,7 +54,7 @@ public class DocServiceImpl implements DocService {
     private SnowFlake snowFlake;
 
     @Resource
-    private WebSocketServer webSocketServer;
+    public WsService wsService;
 
     @Override
     public PageResp<DocQueryResp> list(DocQueryReq docQueryReq) {
@@ -129,6 +131,7 @@ public class DocServiceImpl implements DocService {
     }
 
     @Override
+    @Transactional
     public void save(DocSaveReq docSaveReq) {
         Doc doc = CopyUtil.copy(docSaveReq, Doc.class);
         Content content = CopyUtil.copy(docSaveReq, Content.class);
@@ -204,7 +207,8 @@ public class DocServiceImpl implements DocService {
 
         //推送消息
         Doc doc = docMapper.selectByPrimaryKey(id);
-        webSocketServer.sendInfo("[" + doc.getName() + "]被点赞!");
+        String logId = MDC.get("LOG_ID");
+        wsService.sendInfo("【" + doc.getName() + "】被点赞！", logId);
 
     }
 
